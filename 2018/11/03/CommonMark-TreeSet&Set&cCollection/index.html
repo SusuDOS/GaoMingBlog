@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/GaoMing_18000211.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/GaoMing_18000211.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/GaoMing_18000211.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/GaoMing_18000211.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/GaoMing_18000211.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/GaoMing_18000211.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/GaoMing_18000211.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java Colletion Set," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="注册&amp;amp;登录 首先需要设置登录界面，进入界面后选择想进行的操作。 注册界面进入后，提示用户设置注册账户&amp;amp;用户密码，然后将数据追加到数据库–集合，此处不考虑用户存在问题，因为程序只运行一次，注册仅有一个账户。 登录界面，提示输入账户&amp;amp;密码，获取得到数据后遍历集合判断是否存在，存在则判断登录成功。 登录成功后可以进行其他操作，操作完成后提示是否需要退出or继续操作。 代码实例如下">
+<meta name="keywords" content="Java Colletion Set">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CommonMark-TreeSet&amp;Set&amp;cCollection">
+<meta property="og:url" content="http://yoursite.com/2018/11/03/CommonMark-TreeSet&Set&cCollection/index.html">
+<meta property="og:site_name" content="一舒夜一">
+<meta property="og:description" content="注册&amp;amp;登录 首先需要设置登录界面，进入界面后选择想进行的操作。 注册界面进入后，提示用户设置注册账户&amp;amp;用户密码，然后将数据追加到数据库–集合，此处不考虑用户存在问题，因为程序只运行一次，注册仅有一个账户。 登录界面，提示输入账户&amp;amp;密码，获取得到数据后遍历集合判断是否存在，存在则判断登录成功。 登录成功后可以进行其他操作，操作完成后提示是否需要退出or继续操作。 代码实例如下">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/Uo98zQX.png">
+<meta property="og:image" content="https://i.imgur.com/0I7xwSL.png">
+<meta property="og:updated_time" content="2018-11-25T14:33:41.703Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CommonMark-TreeSet&amp;Set&amp;cCollection">
+<meta name="twitter:description" content="注册&amp;amp;登录 首先需要设置登录界面，进入界面后选择想进行的操作。 注册界面进入后，提示用户设置注册账户&amp;amp;用户密码，然后将数据追加到数据库–集合，此处不考虑用户存在问题，因为程序只运行一次，注册仅有一个账户。 登录界面，提示输入账户&amp;amp;密码，获取得到数据后遍历集合判断是否存在，存在则判断登录成功。 登录成功后可以进行其他操作，操作完成后提示是否需要退出or继续操作。 代码实例如下">
+<meta name="twitter:image" content="https://i.imgur.com/Uo98zQX.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/GaoMing_18000211.github.io/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":15,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/03/CommonMark-TreeSet&Set&cCollection/"/>
+
+
+
+
+
+  <title>CommonMark-TreeSet&Set&cCollection | 一舒夜一</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/GaoMing_18000211.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一舒夜一</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">主页简介</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/GaoMing_18000211.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/GaoMing_18000211.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/GaoMing_18000211.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-books">
+          <a href="/GaoMing_18000211.github.io/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-films">
+          <a href="/GaoMing_18000211.github.io/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/GaoMing_18000211.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/GaoMing_18000211.github.io/2018/11/03/CommonMark-TreeSet&Set&cCollection/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CS_GaoMing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/GaoMing_18000211.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一舒夜一">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CommonMark-TreeSet&Set&cCollection</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-03T06:45:49+08:00">
+                2018-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/GaoMing_18000211.github.io/categories/Java基础学习/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="注册-amp-登录"><a href="#注册-amp-登录" class="headerlink" title="注册&amp;登录"></a>注册&amp;登录</h2><ul>
+<li>首先需要设置登录界面，进入界面后选择想进行的操作。</li>
+<li>注册界面进入后，提示用户设置注册账户&amp;用户密码，然后将数据追加到数据库–集合，此处不考虑用户存在问题，因为程序只运行一次，注册仅有一个账户。</li>
+<li>登录界面，提示输入账户&amp;密码，获取得到数据后遍历集合判断是否存在，存在则判断登录成功。</li>
+<li>登录成功后可以进行其他操作，操作完成后提示是否需要退出or继续操作。</li>
+<li>代码实例如下：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br></pre></td><td class="code"><pre><span class="line">package TestAa;</span><br><span class="line"></span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">/*用户类，描述用户的相关信息.*/</span><br><span class="line">class user &#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private String password;</span><br><span class="line"></span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public String getPassword() &#123;</span><br><span class="line">		return password;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setPassword(String password) &#123;</span><br><span class="line">		this.password = password;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public int hashCode() &#123;</span><br><span class="line">		final int prime = 31;</span><br><span class="line">		int result = 1;</span><br><span class="line">		result = prime * result + ((name == null) ? 0 : name.hashCode());</span><br><span class="line">		result = prime * result</span><br><span class="line">				+ ((password == null) ? 0 : password.hashCode());</span><br><span class="line">		return result;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public boolean equals(Object obj) &#123;</span><br><span class="line">		if (this == obj)</span><br><span class="line">			return true;</span><br><span class="line">		if (obj == null)</span><br><span class="line">			return false;</span><br><span class="line">		if (getClass() != obj.getClass())</span><br><span class="line">			return false;</span><br><span class="line">		user other = (user) obj;</span><br><span class="line">		if (name == null) &#123;</span><br><span class="line">			if (other.name != null)</span><br><span class="line">				return false;</span><br><span class="line">		&#125; else if (!name.equals(other.name))</span><br><span class="line">			return false;</span><br><span class="line">		if (password == null) &#123;</span><br><span class="line">			if (other.password != null)</span><br><span class="line">				return false;</span><br><span class="line">		&#125; else if (!password.equals(other.password))</span><br><span class="line">			return false;</span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public user() &#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public user(String name, String password) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.password = password;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 操作类，个人认为此处没有用实现接口类的必要，完全定义一个对数据库的操作类即可. */</span><br><span class="line">class OperatorClass &#123;</span><br><span class="line">	// 静态修饰，随着类的加载而加载，被所有的成员所共用。</span><br><span class="line">	private static ArrayList&lt;user&gt; array = new ArrayList&lt;user&gt;();</span><br><span class="line"></span><br><span class="line">	// 判断登录成功与否操作.</span><br><span class="line">	public boolean isLogin(String username, String password) &#123;</span><br><span class="line">		boolean flag = false;</span><br><span class="line"></span><br><span class="line">		for (user u : array) &#123;</span><br><span class="line">			if (u.getName().equals(username)</span><br><span class="line">					&amp;&amp; u.getPassword().equals(password)) &#123;</span><br><span class="line">				flag = true;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return flag;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	// 注册操作，添加至集合.</span><br><span class="line">	public void regist(user user) &#123;</span><br><span class="line">		array.add(user);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class application &#123;</span><br><span class="line">	public static void start() &#123;</span><br><span class="line">		System.out.println(&quot;游戏开始了.&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static void end() &#123;</span><br><span class="line">		System.out.println(&quot;游戏结束了.&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public application() &#123;</span><br><span class="line">		super();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 主类，对效果进行操作，也称之为测试类. */</span><br><span class="line">public class regist_Log &#123;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * @param args</span><br><span class="line">	 */</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		// 限制循环次数，不使用while是确定正常用户操作的特性.</span><br><span class="line">		for (int Cast = 0; Cast &lt; 30; ++Cast) &#123;</span><br><span class="line">			System.out.println(&quot;--------------------用户主界面--------------------&quot;);</span><br><span class="line">			System.out.println(&quot;1:\t用户注册&quot;);</span><br><span class="line">			System.out.println(&quot;2:\t用户登录&quot;);</span><br><span class="line">			System.out.println(&quot;3:\t用户退出&quot;);</span><br><span class="line">			Scanner sc = new Scanner(System.in);</span><br><span class="line">			System.out.println(&quot;请选择你想进行的操作：&quot;);</span><br><span class="line">			String lineAa = sc.nextLine();</span><br><span class="line">			OperatorClass Operator = new OperatorClass();</span><br><span class="line"></span><br><span class="line">			// 登录主界面</span><br><span class="line">			switch (lineAa) &#123;</span><br><span class="line">			case &quot;1&quot;:</span><br><span class="line">				// 注册界面</span><br><span class="line">				System.out.println(&quot;----------------注册界面----------------&quot;);</span><br><span class="line">				System.out.println(&quot;请输入用户名：&quot;);</span><br><span class="line">				String userName = sc.nextLine();</span><br><span class="line">				System.out.println(&quot;请输入密码：&quot;);</span><br><span class="line">				String passWord = sc.nextLine();</span><br><span class="line">				user user = new user(userName, passWord);</span><br><span class="line">				Operator.regist(user);</span><br><span class="line">				System.out.println(&quot;注册成功&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case &quot;2&quot;:</span><br><span class="line">				// 登录界面，请输入用户名和密码</span><br><span class="line">				for (int count = 0; count &lt; 3;) &#123;</span><br><span class="line">					System.out.println(&quot;----------------登录界面----------------&quot;);</span><br><span class="line">					System.out.println(&quot;请输入用户名：&quot;);</span><br><span class="line">					String username = sc.nextLine();</span><br><span class="line">					System.out.println(&quot;请输入密码：&quot;);</span><br><span class="line">					String password = sc.nextLine();</span><br><span class="line"></span><br><span class="line">					boolean flag = Operator.isLogin(username, password);</span><br><span class="line"></span><br><span class="line">					if (flag) &#123;</span><br><span class="line">						System.out.println(&quot;登录成功,可以开始操作了.&quot;);</span><br><span class="line">						System.out.println(&quot;继续么？y/n&quot;);</span><br><span class="line">						while (true) &#123;</span><br><span class="line">							String continueAa = sc.nextLine();</span><br><span class="line">							if (continueAa.equalsIgnoreCase(&quot;y&quot;)) &#123;</span><br><span class="line">								application.start();</span><br><span class="line">								System.out.println(&quot;你还玩吗?y/n&quot;);</span><br><span class="line">							&#125; else &#123;</span><br><span class="line">								break;</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;</span><br><span class="line">						System.out.println(&quot;欢迎下次再来.&quot;);</span><br><span class="line">						System.exit(0);</span><br><span class="line">					&#125; else &#123;</span><br><span class="line">						System.out.println(&quot;登录失败.&quot;);</span><br><span class="line">						++count;</span><br><span class="line">					&#125;</span><br><span class="line">					if (count == 3)</span><br><span class="line">						System.exit(0);</span><br><span class="line">				&#125;</span><br><span class="line">				break;</span><br><span class="line">			case &quot;3&quot;:</span><br><span class="line">				System.out.println(&quot;谢谢使用，欢迎下次再来&quot;);</span><br><span class="line">				System.exit(0);</span><br><span class="line">			default:</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h2><p>描述：是一个Collection的子接口，对比于Collection子接口List。前者为不重复元素的集合，后者为可以重复元素的集合。</p>
+<ul>
+<li><img src="https://i.imgur.com/Uo98zQX.png" alt=""></li>
+<li>Set集合的特点：    <blockquote>
+<p>无序&amp;唯一。</p>
+</blockquote>
+</li>
+<li><p>HashSet集合：<br>描述：底层数据结构是哈希表-链表数组。要实现数据的唯一性，其使用：hashCode()和equals()两个方法。<br>执行顺序：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if hashcode相同</span><br><span class="line">	if 内容相同</span><br><span class="line">		元素存在</span><br><span class="line">	else</span><br><span class="line">		追加到集合</span><br><span class="line">else</span><br><span class="line">	追加到集合.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关于hashcode&amp;equals使用自动生成即可。</p>
+</li>
+<li><p>代码实例</p>
+<ul>
+<li><p>实例一：HashSet存储字符串并遍历</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;		</span><br><span class="line">	Set&lt;String&gt; set = new HashSet&lt;String&gt;();		</span><br><span class="line">	set.add(&quot;hello&quot;);</span><br><span class="line">	set.add(&quot;Jack&quot;);</span><br><span class="line">	set.add(&quot;world&quot;);</span><br><span class="line">	set.add(&quot;Jack&quot;);</span><br><span class="line">	set.add(&quot;world&quot;);</span><br><span class="line">	// 增强for</span><br><span class="line">	for (String s : set) &#123;</span><br><span class="line">		System.out.println(s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实例二：HashSet存储自定义对象并遍历</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">package TestAa;</span><br><span class="line"></span><br><span class="line">import java.util.HashSet;</span><br><span class="line">import java.util.Set;</span><br><span class="line"></span><br><span class="line">class animal &#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line"></span><br><span class="line">	public animal() &#123;</span><br><span class="line">		super();</span><br><span class="line">		// TODO Auto-generated constructor stub</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public animal(String name, int age) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public int getAge() &#123;</span><br><span class="line">		return age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setAge(int age) &#123;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public int hashCode() &#123;</span><br><span class="line">		final int prime = 31;</span><br><span class="line">		int result = 1;</span><br><span class="line">		result = prime * result + age;</span><br><span class="line">		result = prime * result + ((name == null) ? 0 : name.hashCode());</span><br><span class="line">		return result;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public boolean equals(Object obj) &#123;</span><br><span class="line">		if (this == obj)</span><br><span class="line">			return true;</span><br><span class="line">		if (obj == null)</span><br><span class="line">			return false;</span><br><span class="line">		if (getClass() != obj.getClass())</span><br><span class="line">			return false;</span><br><span class="line">		animal other = (animal) obj;</span><br><span class="line">		if (age != other.age)</span><br><span class="line">			return false;</span><br><span class="line">		if (name == null) &#123;</span><br><span class="line">			if (other.name != null)</span><br><span class="line">				return false;</span><br><span class="line">		&#125; else if (!name.equals(other.name))</span><br><span class="line">			return false;</span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public String toString() &#123;</span><br><span class="line">		return &quot;animal [name=&quot; + name + &quot;, age=&quot; + age + &quot;]&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class CompareBb &#123;</span><br><span class="line">	/**</span><br><span class="line">	 * @param args</span><br><span class="line">	 */</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line"></span><br><span class="line">		Set&lt;animal&gt; animalSet = new HashSet&lt;animal&gt;();</span><br><span class="line">		animalSet.add(new animal(&quot;Tom&quot;, 5));</span><br><span class="line">		animalSet.add(new animal(&quot;Tom&quot;, 5));</span><br><span class="line"></span><br><span class="line">		animalSet.add(new animal(&quot;Jack&quot;, 5));</span><br><span class="line">		animalSet.add(new animal(&quot;Jack&quot;, 4));</span><br><span class="line"></span><br><span class="line">		animalSet.add(new animal(&quot;Rose&quot;, 5));</span><br><span class="line">		animalSet.add(new animal(&quot;Rose&quot;, 3));</span><br><span class="line">		System.out.println(&quot;animalSet:&quot; + animalSet);</span><br><span class="line">		for (animal temp : animalSet) &#123;</span><br><span class="line">			System.out.println(&quot;name:&quot; + temp.getName() + &quot;\tage:&quot;</span><br><span class="line">					+ temp.getAge());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>LinkedHashSet</p>
+<ul>
+<li>LinkedHashSet:底层数据结构由哈希表和链表组成。</li>
+<li>哈希表保证元素的唯一性。</li>
+<li>链表保证元素有素,由于数据的存储在底部一定是按照一定的顺序记录的，一般指数据的有序性指的是输出输入顺序不会发生改变。</li>
+<li><p>代码实例：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import java.util.LinkedHashSet;</span><br><span class="line">public class LinkedHashSetCc &#123;</span><br><span class="line">	public static void main(String[] args) &#123;		</span><br><span class="line">		LinkedHashSet&lt;String&gt; hs = new LinkedHashSet&lt;String&gt;();</span><br><span class="line">		</span><br><span class="line">		hs.add(&quot;hello&quot;);</span><br><span class="line">		hs.add(&quot;world&quot;);</span><br><span class="line">		hs.add(&quot;Tom&quot;);</span><br><span class="line">		hs.add(&quot;world&quot;);</span><br><span class="line">		</span><br><span class="line">		for (String s : hs) &#123;</span><br><span class="line">			System.out.println(s);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>TreeSet</p>
+<ul>
+<li>底层数据结构是红黑树-是一个自平衡的二叉树-数据结构中描述为二叉排序树。</li>
+<li><p>元素排序实现</p>
+<ul>
+<li><p>自然排序：元素本身可以比较，让元素所属的类实现Comparable接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/*for example*/</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// 创建集合对象</span><br><span class="line">		// 自然顺序进行排序</span><br><span class="line">		TreeSet&lt;Integer&gt; ts = new TreeSet&lt;Integer&gt;();		</span><br><span class="line">		ts.add(20);</span><br><span class="line">		ts.add(18);</span><br><span class="line">		ts.add(22);	</span><br><span class="line">		ts.add(19);	</span><br><span class="line">		ts.add(24);		</span><br><span class="line">		for (Integer i : ts) &#123;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>比较器排序：集合具备比较性，让集合构造方法接收Comparator的实现类对象。        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">/*此为也为Compareable的实现方式.*/</span><br><span class="line">package TestAa;</span><br><span class="line"></span><br><span class="line">import java.util.TreeSet;</span><br><span class="line"></span><br><span class="line">/*如果一个类的元素要想能够进行自然排序，就必须实现自然排序接口Comparable*/</span><br><span class="line"></span><br><span class="line">class animalCc implements Comparable&lt;animalCc&gt; &#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line"></span><br><span class="line">	public animalCc() &#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public animalCc(String name, int age) &#123;</span><br><span class="line"></span><br><span class="line">		this.name = name;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public int getAge() &#123;</span><br><span class="line">		return age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setAge(int age) &#123;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	/* 关键性代码块. */</span><br><span class="line">	public int compareTo(animalCc arg0) &#123;</span><br><span class="line">		// 规则为树的插入排序，小走左边，大走右边，相同则不添加。</span><br><span class="line">		// return -1;添加顺序的逆序排</span><br><span class="line">		// return 1;添加顺序的顺序排.</span><br><span class="line">		// return 0; 自动生成的默认参数为0，其意思是与比较元素完全相同，所以元素只存储一个</span><br><span class="line">		/*</span><br><span class="line">		 * 设置排序规则：如：第一规则为年龄，，升序，其余自己分析，保证数据不丢失。</span><br><span class="line">		 */</span><br><span class="line">		/* 判断，年龄。 */</span><br><span class="line">		int num1 = this.age - arg0.age;</span><br><span class="line">		/* 判断姓名 */</span><br><span class="line">		int num2 = num1 == 0 ? this.name.compareTo(arg0.name) : num1;</span><br><span class="line">		return num2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class TreeObject &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		TreeSet&lt;animalCc&gt; ts = new TreeSet&lt;animalCc&gt;();</span><br><span class="line">		animalCc s1 = new animalCc(&quot;Tom&quot;, 27);</span><br><span class="line">		animalCc s2 = new animalCc(&quot;Jack&quot;, 29);</span><br><span class="line">		animalCc s3 = new animalCc(&quot;Jack&quot;, 23);</span><br><span class="line">		animalCc s4 = new animalCc(&quot;Coffee&quot;, 27);</span><br><span class="line">		animalCc s5 = new animalCc(&quot;Tom&quot;, 22);</span><br><span class="line">		animalCc s6 = new animalCc(&quot;Jack&quot;, 29);</span><br><span class="line">		animalCc s7 = new animalCc(&quot;Tom&quot;, 22);</span><br><span class="line">		ts.add(s1);</span><br><span class="line">		ts.add(s2);</span><br><span class="line">		ts.add(s3);</span><br><span class="line">		ts.add(s4);</span><br><span class="line">		ts.add(s5);</span><br><span class="line">		ts.add(s6);</span><br><span class="line">		ts.add(s7);</span><br><span class="line"></span><br><span class="line">		for (animalCc s : ts) &#123;</span><br><span class="line">			System.out.println(s.getName() + &quot;---&quot; + s.getAge());</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>代码实例：比较器排序</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">		/*集合具备比较性,	让集合的构造方法接收一个比较器接口的子类对象 Comparator</span><br><span class="line">		/*for example*/</span><br><span class="line">		class student&#123;</span><br><span class="line">			成员变量</span><br><span class="line">			成员方法</span><br><span class="line">			构造方法</span><br><span class="line">			标准代码块部分.</span><br><span class="line">		&#125;</span><br><span class="line">		/*构造一个比较器接口的子类对象.*/</span><br><span class="line">		import java.util.Comparator;</span><br><span class="line">		public class MyComparator implements Comparator&lt;Student&gt; &#123;</span><br><span class="line">			</span><br><span class="line">			public int compare(Student s1, Student s2) &#123;</span><br><span class="line">				// int num = this.name.length() - s.name.length();</span><br><span class="line">				// this -- s1</span><br><span class="line">				// s -- s2</span><br><span class="line">		</span><br><span class="line">				// 姓名长度</span><br><span class="line">				int num = s1.getName().length() - s2.getName().length();</span><br><span class="line">				// 姓名内容</span><br><span class="line">				int num2 = num == 0 ? s1.getName().compareTo(s2.getName()) : num;</span><br><span class="line">				// 年龄</span><br><span class="line">				int num3 = num2 == 0 ? s1.getAge() - s2.getAge() : num2;</span><br><span class="line">				return num3;</span><br><span class="line">			&#125;</span><br><span class="line">		</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		/*测试组部分*/</span><br><span class="line">		public class TreeSetDemo &#123;</span><br><span class="line">			public static void main(String[] args) &#123;</span><br><span class="line">				</span><br><span class="line">				/*匿名内部类对其实现，无需要新建一个实现比较器接口的子类。-上部分也可以直接省略.*/</span><br><span class="line">				TreeSet&lt;Student&gt; ts = new TreeSet&lt;Student&gt;(new Comparator&lt;Student&gt;() &#123;</span><br><span class="line">					@Override</span><br><span class="line">					public int compare(Student s1, Student s2) &#123;</span><br><span class="line">						// 姓名长度</span><br><span class="line">						int num = s1.getName().length() - s2.getName().length();</span><br><span class="line">						// 姓名内容</span><br><span class="line">						int num2 = num == 0 ? s1.getName().compareTo(s2.getName())</span><br><span class="line">								: num;</span><br><span class="line">						// 年龄</span><br><span class="line">						int num3 = num2 == 0 ? s1.getAge() - s2.getAge() : num2;</span><br><span class="line">						return num3;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;);</span><br><span class="line">		</span><br><span class="line">				// 创建元素</span><br><span class="line">				Student s1 = new Student(&quot;linqingxia&quot;, 27);</span><br><span class="line">				Student s2 = new Student(&quot;zhangguorong&quot;, 29);</span><br><span class="line">				Student s3 = new Student(&quot;wanglihong&quot;, 23);</span><br><span class="line">				Student s4 = new Student(&quot;linqingxia&quot;, 27);</span><br><span class="line">				Student s5 = new Student(&quot;liushishi&quot;, 22);</span><br><span class="line">				Student s6 = new Student(&quot;wuqilong&quot;, 40);</span><br><span class="line">				Student s7 = new Student(&quot;fengqingy&quot;, 22);</span><br><span class="line">				Student s8 = new Student(&quot;linqingxia&quot;, 29);</span><br><span class="line">		</span><br><span class="line">				// 添加元素</span><br><span class="line">				ts.add(s1);</span><br><span class="line">				ts.add(s2);</span><br><span class="line">				ts.add(s3);</span><br><span class="line">				ts.add(s4);</span><br><span class="line">				ts.add(s5);</span><br><span class="line">				ts.add(s6);</span><br><span class="line">				ts.add(s7);</span><br><span class="line">				ts.add(s8);</span><br><span class="line">		</span><br><span class="line">				// 遍历</span><br><span class="line">				for (Student s : ts) &#123;</span><br><span class="line">					System.out.println(s.getName() + &quot;---&quot; + s.getAge());</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		```	</span><br><span class="line">	</span><br><span class="line">### Collection集合总结</span><br><span class="line">- Collection子类结构</span><br><span class="line">![](https://i.imgur.com/YeeWkSJ.png)</span><br><span class="line"></span><br><span class="line">- Collection集合使用</span><br></pre></td></tr></table></figure>
+<p>  if Uniqueness</p>
+<pre><code>Set
+    if Sort
+        TreeSet
+    else    
+        HashSet
+    Default HashSet.
+</code></pre><p>  else</p>
+<pre><code>List
+    if Safety
+        Vector
+    esle
+        ArrayList or LinkedList
+            Inquire：ArrayList
+            add/del：LinkedList
+    Default ArrayList。
+</code></pre><p>  Default ArrayList.</p>
+<p>  if Collection</p>
+<pre><code>ArrayList.
+</code></pre><p><code>`</code></p>
+</li>
+</ul>
+</li>
+<li><p>数据结构选择</p>
+<p>  <img src="https://i.imgur.com/0I7xwSL.png" alt=""></p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/GaoMing_18000211.github.io/tags/Java-Colletion-Set/" rel="tag"># Java Colletion Set</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/GaoMing_18000211.github.io/2018/11/03/Collection&Ma&Poker/" rel="next" title="Collection&Ma&Poker">
+                <i class="fa fa-chevron-left"></i> Collection&Ma&Poker
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/GaoMing_18000211.github.io/2018/11/07/recursion&file/" rel="prev" title="recursion&file">
+                recursion&file <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">CS_GaoMing</p>
+              <p class="site-description motion-element" itemprop="description">在这里记录我的人生&学习！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/GaoMing_18000211.github.io/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/GaoMing_18000211.github.io/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/GaoMing_18000211.github.io/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/GaoMing_18000211" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:WD329416525@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注册-amp-登录"><span class="nav-number">1.</span> <span class="nav-text">注册&amp;登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set集合"><span class="nav-number">2.</span> <span class="nav-text">Set集合</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CS_GaoMing</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
