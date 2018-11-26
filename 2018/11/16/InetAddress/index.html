@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/GaoMing_18000211.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/GaoMing_18000211.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/GaoMing_18000211.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/GaoMing_18000211.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/GaoMing_18000211.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/GaoMing_18000211.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/GaoMing_18000211.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="网络编程 套接字," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="InetAddress此类表示Internet协议（IP）地址。 IP地址是由IP使用的32位或128位无符号数字，构建UDP和TCP协议的低级协议。 IP地址结构由定义RFC 790: Assigned Numbers ， RFC 1918: Address Allocation for Private Internets ， RFC 2365: Administratively Scoped">
+<meta name="keywords" content="网络编程 套接字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="InetAddress">
+<meta property="og:url" content="http://yoursite.com/2018/11/16/InetAddress/index.html">
+<meta property="og:site_name" content="一舒夜一">
+<meta property="og:description" content="InetAddress此类表示Internet协议（IP）地址。 IP地址是由IP使用的32位或128位无符号数字，构建UDP和TCP协议的低级协议。 IP地址结构由定义RFC 790: Assigned Numbers ， RFC 1918: Address Allocation for Private Internets ， RFC 2365: Administratively Scoped">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-25T14:34:07.211Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="InetAddress">
+<meta name="twitter:description" content="InetAddress此类表示Internet协议（IP）地址。 IP地址是由IP使用的32位或128位无符号数字，构建UDP和TCP协议的低级协议。 IP地址结构由定义RFC 790: Assigned Numbers ， RFC 1918: Address Allocation for Private Internets ， RFC 2365: Administratively Scoped">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/GaoMing_18000211.github.io/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":15,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/16/InetAddress/"/>
+
+
+
+
+
+  <title>InetAddress | 一舒夜一</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  
+  	<script type="text/javascript"
+	color="0,0,0" opacity='0.7' zIndex="-1" count="100"
+	src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/GaoMing_18000211.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">一舒夜一</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">主页简介</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/GaoMing_18000211.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/GaoMing_18000211.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/GaoMing_18000211.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-books">
+          <a href="/GaoMing_18000211.github.io/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-films">
+          <a href="/GaoMing_18000211.github.io/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/GaoMing_18000211.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/GaoMing_18000211.github.io/2018/11/16/InetAddress/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CS_GaoMing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/GaoMing_18000211.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一舒夜一">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">InetAddress</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-16T00:45:49+08:00">
+                2018-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/GaoMing_18000211.github.io/categories/Java基础学习/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="InetAddress"><a href="#InetAddress" class="headerlink" title="InetAddress"></a>InetAddress</h2><p>此类表示Internet协议（IP）地址。 IP地址是由IP使用的32位或128位无符号数字，构建UDP和TCP协议的低级协议。 IP地址结构由定义RFC 790: Assigned Numbers ， RFC 1918: Address Allocation for Private Internets ， RFC 2365: Administratively Scoped IP Multicast和RFC 2373: IP Version 6 Addressing Architecture 。 InetAddress的一个实例由一个IP地址和可能的相应主机名组成（取决于它是用主机名构造还是已经完成了反向主机名解析）。</p>
+<ul>
+<li><p>该类的使用主要是借助API查看对应的常用函数</p>
+<ul>
+<li>主机ip常用InetAddress.</li>
+<li>Code eg：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">package NormalFunction;</span><br><span class="line"></span><br><span class="line">import java.net.InetAddress;</span><br><span class="line">import java.net.UnknownHostException;</span><br><span class="line"></span><br><span class="line">public class TestFuntion &#123;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * @param args</span><br><span class="line">	 * @throws UnknownHostException</span><br><span class="line">	 */</span><br><span class="line">	public static void main(String[] args) throws UnknownHostException &#123;</span><br><span class="line">		/* 静态方法对象-getAllByName&amp;getByName. */</span><br><span class="line">		</span><br><span class="line">		InetAddress address = InetAddress.getByName(&quot;192.168.0.168&quot;);</span><br><span class="line">		/*获取主机名字*/</span><br><span class="line">		</span><br><span class="line">		String hostName = address.getHostName();</span><br><span class="line">		</span><br><span class="line">		/*获取主机ip*/</span><br><span class="line">		String ip = address.getHostAddress();</span><br><span class="line">		</span><br><span class="line">		System.out.println(hostName + &quot;----&quot; + ip);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>UDP数据报的获取&amp;接收</p>
+<p>  此类表示用于发送和接收数据报数据包的套接字。</p>
+<p>  数据报套接字是分组传送服务的发送或接收点。 在数据报套接字上发送或接收的每个数据包都被单独寻址和路由。 从一个机器发送到另一个机器的多个分组可以不同地路由，并且可以以任何顺序到达。</p>
+<ul>
+<li><p>Send&amp;Receive Code eg：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line">/*for example*/</span><br><span class="line">/*发送端与接收端对不能写在一个Java类文件里面DatagramSocket.receive是阻塞式.*/</span><br><span class="line"></span><br><span class="line">/*接收端*/</span><br><span class="line">package NormalFunction;</span><br><span class="line"></span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.net.DatagramPacket;</span><br><span class="line">import java.net.DatagramSocket;</span><br><span class="line">import java.net.InetAddress;</span><br><span class="line"></span><br><span class="line">public class TestReceived &#123;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * @param args</span><br><span class="line">	 * @throws IOException</span><br><span class="line">	 */</span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		/* 创建接收端套接字. */</span><br><span class="line">		DatagramSocket rdgs = new DatagramSocket(15000);</span><br><span class="line">		byte[] rbuffer = new byte[1024];</span><br><span class="line">		int rlength = rbuffer.length;</span><br><span class="line">		DatagramPacket rdgp = new DatagramPacket(rbuffer, rlength);</span><br><span class="line">		rdgs.receive(rdgp);</span><br><span class="line">		InetAddress raddress = rdgp.getAddress();</span><br><span class="line">		String ipName = raddress.getHostName();/* 获取发送端主机名. */</span><br><span class="line">		String ipX = raddress.getHostAddress(); /* 获取发送端IP地址. */</span><br><span class="line"></span><br><span class="line">		/* 接收端解析并且显示在控制台. */</span><br><span class="line">		byte[] Consolebuffer = rdgp.getData();</span><br><span class="line">		int Consolelength = Consolebuffer.length;</span><br><span class="line">		// String ConsoleString = new String(Consolebuffer);</span><br><span class="line">		String ConsoleString = new String(Consolebuffer, 0, Consolelength);</span><br><span class="line">		System.out.println(&quot;ReceivedFromName:&quot; + ipName + &quot;  ip:&quot; + ipX</span><br><span class="line">				+ &quot;  Content:&quot; + ConsoleString);</span><br><span class="line">		rdgs.close();		</span><br><span class="line">	&#125;		</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/*发送端*/</span><br><span class="line">package NormalFunction;</span><br><span class="line"></span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.net.DatagramPacket;</span><br><span class="line">import java.net.DatagramSocket;</span><br><span class="line">import java.net.InetAddress;</span><br><span class="line"></span><br><span class="line">public class TestSend &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line"></span><br><span class="line">		/* 创建套接字对象-发送端 */</span><br><span class="line">		DatagramSocket dgs = new DatagramSocket();</span><br><span class="line">		byte[] sendbys = &quot;thisTestSenderData!&quot;.getBytes();</span><br><span class="line">		int sendlength = sendbys.length;</span><br><span class="line">		InetAddress address = InetAddress.getByName(&quot;192.168.0.168&quot;);</span><br><span class="line">		int port = 15000;</span><br><span class="line">		DatagramPacket senddgs = new DatagramPacket(sendbys, sendlength,</span><br><span class="line">				address, port);</span><br><span class="line">		dgs.send(senddgs);</span><br><span class="line">		dgs.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/*combine_files*/</span><br><span class="line">package NormalFunction;</span><br><span class="line"></span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.net.DatagramPacket;</span><br><span class="line">import java.net.DatagramSocket;</span><br><span class="line">import java.net.InetAddress;</span><br><span class="line"></span><br><span class="line">public class Sender_Receive &#123;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * @param args</span><br><span class="line">	 * @throws IOException</span><br><span class="line">	 */</span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		/* 创建接收端套接字. */</span><br><span class="line">		DatagramSocket rdgs = null;</span><br><span class="line">		try &#123;</span><br><span class="line">			rdgs = new DatagramSocket(15000);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		byte[] rbuffer = new byte[1024];</span><br><span class="line">		int rlength = rbuffer.length;</span><br><span class="line">		DatagramPacket rdgp = new DatagramPacket(rbuffer, rlength);</span><br><span class="line">		try &#123;</span><br><span class="line">			rdgs.receive(rdgp);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		InetAddress raddress = rdgp.getAddress();</span><br><span class="line">		String ipName = raddress.getHostName();/* 获取发送端主机名. */</span><br><span class="line">		String ipX = raddress.getHostAddress(); /* 获取发送端IP地址. */</span><br><span class="line"></span><br><span class="line">		/* 接收端解析并且显示在控制台. */</span><br><span class="line">		byte[] Consolebuffer = rdgp.getData();</span><br><span class="line">		int Consolelength = Consolebuffer.length;</span><br><span class="line">		// String ConsoleString = new String(Consolebuffer);</span><br><span class="line">		String ConsoleString = new String(Consolebuffer, 0, Consolelength);</span><br><span class="line">		System.out.println(&quot;ReceivedFromName:&quot; + ipName + &quot;  ip:&quot; + ipX</span><br><span class="line">				+ &quot;  Content:&quot; + ConsoleString);</span><br><span class="line">		rdgs.close();</span><br><span class="line">		System.out.println(&quot;this is a deviding line!&quot;);</span><br><span class="line"></span><br><span class="line">		/* 创建套接字对象-发送端 */</span><br><span class="line">		DatagramSocket dgs = new DatagramSocket();</span><br><span class="line">		byte[] sendbys = &quot;thisTestSenderData!&quot;.getBytes();</span><br><span class="line">		int sendlength = sendbys.length;</span><br><span class="line">		InetAddress address = InetAddress.getByName(&quot;192.168.0.168&quot;);</span><br><span class="line">		int port = 15000;</span><br><span class="line">		DatagramPacket senddgs = new DatagramPacket(sendbys, sendlength,</span><br><span class="line">				address, port);</span><br><span class="line">		dgs.send(senddgs);</span><br><span class="line">		dgs.close();		</span><br><span class="line">	&#125;		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>数据发送=&gt;聊天窗口</p>
+<ul>
+<li><p>将上述的单条数据发送改为由键盘输入的发送，并且接收，用多线程实现，不使用多线程为上代码问题。。</p>
+<ul>
+<li>UDP:Code eg-runable实现：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">/*实现runble接口实现方式.*/</span><br><span class="line">package NormalFunction;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.net.DatagramPacket;</span><br><span class="line">import java.net.DatagramSocket;</span><br><span class="line">import java.net.InetAddress;</span><br><span class="line">import java.net.SocketException;</span><br><span class="line"></span><br><span class="line">class sender implements Runnable &#123;</span><br><span class="line">	private DatagramSocket sd_sender;</span><br><span class="line"></span><br><span class="line">	public sender(DatagramSocket sd_sender) &#123;</span><br><span class="line">		this.sd_sender = sd_sender;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			/* 键盘获取数据. */</span><br><span class="line">			BufferedReader br = new BufferedReader(new InputStreamReader(</span><br><span class="line">					System.in));</span><br><span class="line">			String line = null;</span><br><span class="line">			while ((line = br.readLine()) != null) &#123;</span><br><span class="line">				if (&quot;over!&quot;.equals(line)) &#123;</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">				/* 数据打包并且发送. */</span><br><span class="line">				byte[] bys = line.getBytes();</span><br><span class="line">				DatagramPacket dp_sender = new DatagramPacket(bys, bys.length,</span><br><span class="line">						InetAddress.getByName(&quot;192.168.0.255&quot;), 15360);</span><br><span class="line">				sd_sender.send(dp_sender);</span><br><span class="line">			&#125;</span><br><span class="line">			sd_sender.close();</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class receiver implements Runnable &#123;</span><br><span class="line">	private DatagramSocket ds_receiver;</span><br><span class="line"></span><br><span class="line">	public receiver(DatagramSocket ds_receiver) &#123;</span><br><span class="line">		this.ds_receiver = ds_receiver;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			while (true) &#123;</span><br><span class="line">				byte[] bys = new byte[1024];</span><br><span class="line">				DatagramPacket dp_receiver = new DatagramPacket(bys, bys.length);</span><br><span class="line">				ds_receiver.receive(dp_receiver);</span><br><span class="line"></span><br><span class="line">				/* parseData */</span><br><span class="line">				String ip = dp_receiver.getAddress().getHostAddress();</span><br><span class="line">				String s = new String(dp_receiver.getData(), 0,</span><br><span class="line">						dp_receiver.getLength());</span><br><span class="line">				System.out.println(&quot;from &quot; + ip + &quot; data is : &quot; + s);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class MultiThreadSend_Receive &#123;</span><br><span class="line">	public static void main(String[] args) throws SocketException &#123;</span><br><span class="line">		DatagramSocket ds_client = new DatagramSocket();</span><br><span class="line">		DatagramSocket ds_receiver = new DatagramSocket(15360);</span><br><span class="line"></span><br><span class="line">		sender sender_client = new sender(ds_client);</span><br><span class="line">		receiver receiver_client = new receiver(ds_receiver);</span><br><span class="line"></span><br><span class="line">		Thread thread_client = new Thread(sender_client);</span><br><span class="line">		Thread thread_receive = new Thread(receiver_client);</span><br><span class="line">		thread_client.start();</span><br><span class="line">		thread_receive.start();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>UDP:Code eg-extends实现：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">package NormalFunction;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.net.DatagramPacket;</span><br><span class="line">import java.net.DatagramSocket;</span><br><span class="line">import java.net.InetAddress;</span><br><span class="line">import java.net.SocketException;</span><br><span class="line"></span><br><span class="line">import com.sun.webkit.ThemeClient;</span><br><span class="line"></span><br><span class="line">class sender extends Thread &#123;</span><br><span class="line">	private DatagramSocket sd_sender;</span><br><span class="line"></span><br><span class="line">	public sender(DatagramSocket sd_sender) &#123;</span><br><span class="line">		this.sd_sender = sd_sender;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			/* 键盘获取数据. */</span><br><span class="line">			BufferedReader br = new BufferedReader(new InputStreamReader(</span><br><span class="line">					System.in));</span><br><span class="line">			String line = null;</span><br><span class="line">			while ((line = br.readLine()) != null) &#123;</span><br><span class="line">				if (&quot;over!&quot;.equals(line)) &#123;</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">				/* 数据打包并且发送至广播域. */</span><br><span class="line">				byte[] bys = line.getBytes();</span><br><span class="line">				DatagramPacket dp_sender = new DatagramPacket(bys, bys.length,</span><br><span class="line">						InetAddress.getByName(&quot;192.168.0.255&quot;), 15360);</span><br><span class="line">				sd_sender.send(dp_sender);</span><br><span class="line">			&#125;</span><br><span class="line">			sd_sender.close();</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class receiver extends Thread &#123;</span><br><span class="line">	private DatagramSocket ds_receiver;</span><br><span class="line"></span><br><span class="line">	public receiver(DatagramSocket ds_receiver) &#123;</span><br><span class="line">		this.ds_receiver = ds_receiver;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			while (true) &#123;</span><br><span class="line">				byte[] bys = new byte[1024];</span><br><span class="line">				DatagramPacket dp_receiver = new DatagramPacket(bys, bys.length);</span><br><span class="line">				ds_receiver.receive(dp_receiver);</span><br><span class="line"></span><br><span class="line">				/* parseData */</span><br><span class="line">				String ip = dp_receiver.getAddress().getHostAddress();</span><br><span class="line">				String s = new String(dp_receiver.getData(), 0,</span><br><span class="line">						dp_receiver.getLength());</span><br><span class="line">				System.out.println(&quot;from &quot; + ip + &quot; data is : &quot; + s);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class MultiThreadSend_Receive &#123;</span><br><span class="line">	public static void main(String[] args) throws SocketException &#123;</span><br><span class="line">		DatagramSocket ds_client = new DatagramSocket();</span><br><span class="line">		DatagramSocket ds_receiver = new DatagramSocket(15360);</span><br><span class="line"></span><br><span class="line">		sender sender_client = new sender(ds_client);</span><br><span class="line">		receiver receiver_client = new receiver(ds_receiver);</span><br><span class="line"></span><br><span class="line">		sender_client.start();</span><br><span class="line">		receiver_client.start();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>TCP实现的数据传送</p>
+<p>  UDP数据包是非连接方式传播的，也就是说只保证自己的数据在网内广播，不是针对性的链接，同时也不保证数据被指定的机器接收到，TCP是连接式连接的，保证数据的传送，但是效率偏低，同样UDP也存在着一个问题就是容易产生垃圾广播数据，尤其是在非令牌环路广播域中，产生大量垃圾数据，造成网络速度迟缓。</p>
+<ul>
+<li><p>TCP：Code实现单条数据的传输与发送.</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">/*for example*/</span><br><span class="line"></span><br><span class="line">/*数据发送端*/</span><br><span class="line">package CompareTool;</span><br><span class="line"></span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.OutputStream;</span><br><span class="line">import java.net.Socket;</span><br><span class="line">import java.net.UnknownHostException;</span><br><span class="line"></span><br><span class="line">public class TCP_Client &#123;</span><br><span class="line">	public static void main(String[] args) throws UnknownHostException,</span><br><span class="line">			IOException &#123;		</span><br><span class="line">		Socket clientSocket = new Socket(&quot;192.168.119.9&quot;, 15360);</span><br><span class="line">		OutputStream clientStream = clientSocket.getOutputStream();</span><br><span class="line">		clientStream.write(&quot;thisSenderData!&quot;.getBytes());</span><br><span class="line">		clientSocket.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*数据服务器端*/</span><br><span class="line">package CompareTool;</span><br><span class="line"></span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStream;</span><br><span class="line">import java.net.ServerSocket;</span><br><span class="line">import java.net.Socket;</span><br><span class="line"></span><br><span class="line">public class TCP_Server &#123;</span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		ServerSocket serverSocket = new ServerSocket(15360);</span><br><span class="line">		Socket nextSocket = serverSocket.accept();</span><br><span class="line">		byte[] bysServer = new byte[1024];</span><br><span class="line">		</span><br><span class="line">		InputStream ServerStream = nextSocket.getInputStream();</span><br><span class="line">		int serverLength = ServerStream.read(bysServer);</span><br><span class="line">		String getString = new String(bysServer, 0, serverLength);</span><br><span class="line">		System.out.println(&quot;ReceivedData:&quot; + getString);</span><br><span class="line">		serverSocket.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*服务器端实现方式二：*/</span><br><span class="line">package CompareTool;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.net.ServerSocket;</span><br><span class="line">import java.net.Socket;</span><br><span class="line"></span><br><span class="line">public class TCP_Server &#123;</span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		ServerSocket serverSocket = new ServerSocket(15360);</span><br><span class="line">		Socket nextSocket = serverSocket.accept();</span><br><span class="line"></span><br><span class="line">		BufferedReader serverReader = new BufferedReader(new InputStreamReader(</span><br><span class="line">				nextSocket.getInputStream()));</span><br><span class="line">		String lineServer = null;</span><br><span class="line">		while ((lineServer = serverReader.readLine()) != null) &#123;</span><br><span class="line">			System.out.println(&quot;ReceivedData:&quot; + lineServer);</span><br><span class="line">		&#125;</span><br><span class="line">		serverSocket.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>TCP：Code实现的由键盘输入实现和数据发送-控制台显示.</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">/*客户端*/</span><br><span class="line">package ImproveTCP;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.BufferedWriter;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.io.OutputStreamWriter;</span><br><span class="line">import java.net.Socket;</span><br><span class="line"></span><br><span class="line">public class ClientPort &#123;</span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		/* 创建套接字对象 */</span><br><span class="line">		Socket clientSocket = new Socket(&quot;192.168.119.9&quot;, 15360);</span><br><span class="line">		</span><br><span class="line">		/*输入输出流的定义.*/</span><br><span class="line">		BufferedReader clientReader = new BufferedReader(new InputStreamReader(</span><br><span class="line">				System.in));	 /*从键盘获取流，因此是reader.*/</span><br><span class="line">		BufferedWriter clientWrite = new BufferedWriter(new OutputStreamWriter(</span><br><span class="line">				clientSocket.getOutputStream()));	/*将套接字的数据流暴露出来，进行写入，发送。*/</span><br><span class="line">		String clientString = null;</span><br><span class="line">		</span><br><span class="line">		/*每一行输出一次，遇到over!终止发送数据.*/</span><br><span class="line">		while((clientString = clientReader.readLine())!= null)&#123;</span><br><span class="line">			if (&quot;over!&quot;.equals(clientString)) &#123;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">			clientWrite.write(clientString);</span><br><span class="line">			clientWrite.newLine();</span><br><span class="line">			clientWrite.flush();</span><br><span class="line">		&#125;		</span><br><span class="line">		clientSocket.close();</span><br><span class="line">	&#125;			</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/*服务器端*/</span><br><span class="line">package ImproveTCP;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.net.ServerSocket;</span><br><span class="line">import java.net.Socket;</span><br><span class="line"></span><br><span class="line">public class ServerPort &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		ServerSocket serverSocket = new ServerSocket(15360);</span><br><span class="line"></span><br><span class="line">		/* 收到数据需要提示发送端，当前已收到数据 */</span><br><span class="line">		Socket nextSocket = serverSocket.accept();</span><br><span class="line">		String serverString = null;</span><br><span class="line">		BufferedReader serverReader = new BufferedReader(new InputStreamReader(</span><br><span class="line">				nextSocket.getInputStream()));</span><br><span class="line">		while ((serverString = serverReader.readLine()) != null) &#123;</span><br><span class="line">			System.out.println(&quot;ServerPort: current receivedData:&quot; + serverString);</span><br><span class="line">		&#125;</span><br><span class="line">		serverSocket.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>TCP：Code实现的由键盘输入实现和数据发送-数据写入到文本文档.</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">/*client code*/</span><br><span class="line">package TCP_TXT;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.BufferedWriter;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.io.OutputStreamWriter;</span><br><span class="line">import java.net.Socket;</span><br><span class="line"></span><br><span class="line">public class ClientFiles &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		Socket clientSocket = new Socket(&quot;192.168.119.9&quot;, 15360);</span><br><span class="line">		BufferedReader clientReader = new BufferedReader(new InputStreamReader(</span><br><span class="line">				System.in));</span><br><span class="line">		BufferedWriter clientWriter = new BufferedWriter(</span><br><span class="line">				new OutputStreamWriter(clientSocket.getOutputStream()));</span><br><span class="line">		String clientString = null;</span><br><span class="line">		while ((clientString = clientReader.readLine()) != null) &#123;</span><br><span class="line">			clientWriter.write(clientString);</span><br><span class="line">			clientWriter.newLine();</span><br><span class="line">			clientWriter.flush();</span><br><span class="line">		&#125;</span><br><span class="line">		clientSocket.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/*server code*/</span><br><span class="line">package TCP_TXT;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.BufferedWriter;</span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.FileWriter;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.net.ServerSocket;</span><br><span class="line">import java.net.Socket;</span><br><span class="line"></span><br><span class="line">public class ServerFiles &#123;</span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		File files = new File(&quot;test.txt&quot;);</span><br><span class="line">		BufferedWriter fileWriter = new BufferedWriter(new FileWriter(files));</span><br><span class="line">		ServerSocket serverSocket = new ServerSocket(15360);</span><br><span class="line">		Socket nextSocket = serverSocket.accept();</span><br><span class="line">		BufferedReader serverReader = new BufferedReader(new InputStreamReader(</span><br><span class="line">				nextSocket.getInputStream()));</span><br><span class="line"></span><br><span class="line">		String serverString = null;</span><br><span class="line">		while ((serverString = serverReader.readLine()) != null) &#123;</span><br><span class="line">			if (serverString.equals(&quot;over!&quot;)) &#123;</span><br><span class="line">				fileWriter.close();</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">			fileWriter.write(serverString);</span><br><span class="line">			fileWriter.newLine();</span><br><span class="line">			fileWriter.flush();</span><br><span class="line">		&#125;</span><br><span class="line">		serverSocket.close();</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>TCP：Code，服务器端接受由客户端文本文件发送的数据- </p>
+<ul>
+<li>显示在控制台&amp;写入到文本文件两种方式，尤其提示，服务器端一定要注意关闭流/flush二者必选其一，不然无法显示，但是逻辑没有警告也不报错，但是就是达不到显示or复制文件的效果。</li>
+<li><p>Code如下：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">/*for example----客户端*/</span><br><span class="line">package TCP_TXT_TO_SERVER;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.BufferedWriter;</span><br><span class="line">import java.io.FileReader;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.OutputStreamWriter;</span><br><span class="line">import java.net.Socket;</span><br><span class="line"></span><br><span class="line">public class ClientPort &#123;</span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		/*socket对象*/</span><br><span class="line">		Socket clientSocket = new Socket(&quot;192.168.119.9&quot;, 15360);</span><br><span class="line">		</span><br><span class="line">		/*文本文件流*/</span><br><span class="line">		BufferedReader clientfiles = new BufferedReader(new FileReader(</span><br><span class="line">				&quot;F:\\Java\\TestCc\\SourceTxt.txt&quot;));</span><br><span class="line">		</span><br><span class="line">		/*通道数据流 */</span><br><span class="line">		BufferedWriter clientWriter = new BufferedWriter(</span><br><span class="line">				new OutputStreamWriter(clientSocket.getOutputStream()));</span><br><span class="line">		/*行内容的读取并且写入发送*/</span><br><span class="line">		String clientString = null;</span><br><span class="line">		while ((clientString = clientfiles.readLine()) != null) &#123;</span><br><span class="line">			clientWriter.write(clientString);</span><br><span class="line">			clientWriter.newLine();</span><br><span class="line">			clientWriter.flush();</span><br><span class="line">		&#125;</span><br><span class="line">		/*通道流，文件流，套接字的关闭.*/</span><br><span class="line">		clientfiles.close();</span><br><span class="line">		clientWriter.close();</span><br><span class="line">		clientSocket.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/*for example----服务器端*/</span><br><span class="line">package TCP_TXT_TO_SERVER;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.BufferedWriter;</span><br><span class="line">import java.io.FileWriter;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.net.ServerSocket;</span><br><span class="line">import java.net.Socket;</span><br><span class="line"></span><br><span class="line">public class ServerPort &#123;</span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		/*服务套接字对象*/</span><br><span class="line">		ServerSocket serverSocket = new ServerSocket(15360);</span><br><span class="line">		</span><br><span class="line">		/*解析获取套接字，准备解析。*/</span><br><span class="line">		Socket nextSocket = serverSocket.accept();</span><br><span class="line">		</span><br><span class="line">		/*将套接字的通道流暴露出来，准备读取通道流，属于流的读取，相对于内存是写入。*/</span><br><span class="line">		BufferedReader serverReader = new BufferedReader(new InputStreamReader(</span><br><span class="line">				nextSocket.getInputStream()));</span><br><span class="line">		</span><br><span class="line">		/*文本流的创建， 准备写入到文本写出内存。*/</span><br><span class="line">		BufferedWriter filesWriter = new BufferedWriter(new FileWriter(</span><br><span class="line">				&quot;ServerText.txt&quot;));</span><br><span class="line">		</span><br><span class="line">		String serverString = null;</span><br><span class="line">		/* this Console expression. */		</span><br><span class="line">		 while ((serverString = serverReader.readLine()) != null) &#123;</span><br><span class="line">		  System.out.println(serverString); &#125; </span><br><span class="line">		 </span><br><span class="line">		/* this store to text files. */</span><br><span class="line">		/*while ((serverString = serverReader.readLine()) != null) &#123;</span><br><span class="line">			filesWriter.write(serverString);</span><br><span class="line">			filesWriter.newLine();</span><br><span class="line">			filesWriter.flush();</span><br><span class="line">		&#125;*/</span><br><span class="line">		filesWriter.close();</span><br><span class="line">		serverReader.close();</span><br><span class="line">		nextSocket.close();</span><br><span class="line">		serverSocket.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>带提示的TCP文本传输，完成后提示客户端且关闭连接-实现上个人认为比较完美。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line">/*for example-服务器端*/</span><br><span class="line">package TCP_TXT_TO_SERVER;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.BufferedWriter;</span><br><span class="line">import java.io.FileWriter;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.io.OutputStreamWriter;</span><br><span class="line">import java.net.ServerSocket;</span><br><span class="line">import java.net.Socket;</span><br><span class="line"></span><br><span class="line">public class ServerPort &#123;</span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		/* 服务套接字对象 */</span><br><span class="line">		ServerSocket serverSocket = new ServerSocket(15360);</span><br><span class="line"></span><br><span class="line">		/* 解析获取套接字，准备解析。 */</span><br><span class="line">		Socket nextSocket = serverSocket.accept();</span><br><span class="line"></span><br><span class="line">		/* 将套接字的通道流暴露出来，准备读取通道流，属于流的读取，相对于内存是写入。 */</span><br><span class="line">		BufferedReader serverReader = new BufferedReader(new InputStreamReader(</span><br><span class="line">				nextSocket.getInputStream()));</span><br><span class="line"></span><br><span class="line">		/* 文本流的创建， 准备写入到文本写出内存。 */</span><br><span class="line">		BufferedWriter filesWriter = new BufferedWriter(new FileWriter(</span><br><span class="line">				&quot;ServerText.txt&quot;));</span><br><span class="line"></span><br><span class="line">		String serverString = null;</span><br><span class="line">		while ((serverString = serverReader.readLine()) != null) &#123;</span><br><span class="line">			filesWriter.write(serverString);</span><br><span class="line">			filesWriter.newLine();</span><br><span class="line">			filesWriter.flush();</span><br><span class="line">		&#125;</span><br><span class="line">		/* 给客户端发送提示：传输完成！ */</span><br><span class="line">		BufferedWriter tipServer = new BufferedWriter(new OutputStreamWriter(</span><br><span class="line">				nextSocket.getOutputStream()));</span><br><span class="line">		tipServer.write(&quot;传输完成！&quot;);</span><br><span class="line">		tipServer.newLine();	/*此行可略。*/</span><br><span class="line">		tipServer.flush();	/*无此行，客户端收到提示为null.*/</span><br><span class="line">		/nextSocket.shutdownOutput();  /*可略，因为后面有关闭.*/</span><br><span class="line"></span><br><span class="line">		/* 释放对应资源。 */</span><br><span class="line">		filesWriter.close();</span><br><span class="line">		serverReader.close();</span><br><span class="line">		nextSocket.close();</span><br><span class="line">		serverSocket.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/*for example-客户端*/</span><br><span class="line">package TCP_TXT_TO_SERVER;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.BufferedWriter;</span><br><span class="line">import java.io.FileReader;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.io.OutputStreamWriter;</span><br><span class="line">import java.net.Socket;</span><br><span class="line"></span><br><span class="line">public class ClientPort &#123;</span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		/* socket对象 */</span><br><span class="line">		Socket clientSocket = new Socket(&quot;192.168.119.9&quot;, 15360);</span><br><span class="line"></span><br><span class="line">		/* 文本文件流 */</span><br><span class="line">		BufferedReader clientfiles = new BufferedReader(new FileReader(</span><br><span class="line">				&quot;F:\\Java\\TestCc\\SourceTxt.txt&quot;));</span><br><span class="line"></span><br><span class="line">		/* 通道数据流 */</span><br><span class="line">		BufferedWriter clientWriter = new BufferedWriter(</span><br><span class="line">				new OutputStreamWriter(clientSocket.getOutputStream()));</span><br><span class="line">		/* 行内容的读取并且写入发送 */</span><br><span class="line">		String clientString = null;</span><br><span class="line">		while ((clientString = clientfiles.readLine()) != null) &#123;</span><br><span class="line">			clientWriter.write(clientString);</span><br><span class="line">			clientWriter.newLine();/*此两行不影响显示效果.*/</span><br><span class="line">			clientWriter.flush();</span><br><span class="line">		&#125;</span><br><span class="line">		/* 通道流，文件流，套接字的关闭. */</span><br><span class="line">		clientSocket.shutdownOutput();</span><br><span class="line"></span><br><span class="line">		/* 接收服务器端的提示：传输完成！ */</span><br><span class="line">		BufferedReader tipFromServer = new BufferedReader(</span><br><span class="line">				new InputStreamReader(clientSocket.getInputStream()));</span><br><span class="line">		String temp = tipFromServer.readLine();</span><br><span class="line">		System.out.println(&quot;提示：&quot; + temp);</span><br><span class="line"></span><br><span class="line">		clientfiles.close();</span><br><span class="line">		clientSocket.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>TCP-服务器端同时接收多个客户端的上传.</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">/*for example*/</span><br><span class="line">	- 要实现线程的多线程访问，需要做到的是，将服务器端主实现部分分割，客户端保留。同时主函数调用服务器线程，一旦客户端运行就可以捕捉到数据包，然后将文件存档，利用CurrentMillionTime可以实现名称问题，但是仍然存在一个同时访问情况下的高并发问题。</span><br><span class="line"></span><br><span class="line">/*客戶端*/</span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.BufferedWriter;</span><br><span class="line">import java.io.FileReader;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.io.OutputStreamWriter;</span><br><span class="line">import java.net.Socket;</span><br><span class="line"></span><br><span class="line">public class UploadClient &#123;</span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		</span><br><span class="line">		Socket s = new Socket(&quot;192.168.119.9&quot;, 15360);	</span><br><span class="line">		BufferedReader br = new BufferedReader(new FileReader(</span><br><span class="line">				&quot;TestAa.java&quot;));</span><br><span class="line">		</span><br><span class="line">		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(</span><br><span class="line">				s.getOutputStream()));</span><br><span class="line"></span><br><span class="line">		String line = null;</span><br><span class="line">		while ((line = br.readLine()) != null) &#123;</span><br><span class="line">			bw.write(line);</span><br><span class="line">			bw.newLine();</span><br><span class="line">			bw.flush();</span><br><span class="line">		&#125;	</span><br><span class="line">		s.shutdownOutput();</span><br><span class="line">	</span><br><span class="line">		BufferedReader brClient = new BufferedReader(new InputStreamReader(</span><br><span class="line">				s.getInputStream()));</span><br><span class="line">		String client = brClient.readLine();</span><br><span class="line">		System.out.println(client);</span><br><span class="line">	</span><br><span class="line">		br.close();</span><br><span class="line">		s.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/*服务器线程*/</span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.BufferedWriter;</span><br><span class="line">import java.io.FileWriter;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.io.OutputStreamWriter;</span><br><span class="line">import java.net.Socket;</span><br><span class="line"></span><br><span class="line">public class UserThread implements Runnable &#123;</span><br><span class="line">	private Socket s;</span><br><span class="line"></span><br><span class="line">	public UserThread(Socket s) &#123;</span><br><span class="line">		this.s = s;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		try &#123;			</span><br><span class="line">			BufferedReader br = new BufferedReader(new InputStreamReader(</span><br><span class="line">					s.getInputStream()));			</span><br><span class="line"></span><br><span class="line">			/*文件名問題*/</span><br><span class="line">			String newName = System.currentTimeMillis() + &quot;.java&quot;;</span><br><span class="line">			BufferedWriter bw = new BufferedWriter(new FileWriter(newName));</span><br><span class="line"></span><br><span class="line">			String line = null;</span><br><span class="line">			while ((line = br.readLine()) != null) &#123; // 阻塞</span><br><span class="line">				bw.write(line);</span><br><span class="line">				bw.newLine();</span><br><span class="line">				bw.flush();</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			/*提示*/</span><br><span class="line">			BufferedWriter bwServer = new BufferedWriter(</span><br><span class="line">					new OutputStreamWriter(s.getOutputStream()));</span><br><span class="line">			bwServer.write(&quot;Over!&quot;);		</span><br><span class="line">			bwServer.flush();</span><br><span class="line">			</span><br><span class="line">			bw.close();</span><br><span class="line">			s.close();</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/*服务器主函数*/</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.net.ServerSocket;</span><br><span class="line">import java.net.Socket;</span><br><span class="line"></span><br><span class="line">public class UploadServer &#123;</span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		/*创建ServerSocket对象但是关闭ss.*/</span><br><span class="line">		ServerSocket ss = new ServerSocket(11111);</span><br><span class="line">		while (true) &#123;</span><br><span class="line">			Socket s = ss.accept();</span><br><span class="line">			new Thread(new UserThread(s)).start();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>总结：数据的传输需要</p>
+<blockquote>
+<p>发送端-套接字，写入到内存-BufferedReader-Socket.getInputStreamReader匹配-&gt;写入到流，BufferedWriter-&gt;socket.getOutputStreamWriter…然后自动发送。</p>
+<blockquote>
+<p>服务器端则需要定义ServerSocket，accep函数获取Socket，然后将通道流暴露出来，然后利用BufferReader将流读取到内存，对应BufferedReader.readLine()，获取为String，然后可以直接显示在控制台，or创建BufferWriter-&gt;new BufferedWriter(new FileWriter(“path”))-&gt;利用BufferedWriter对象，调用writer()函数，注意要显示效果，需要传输关闭流/flush即可。</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/GaoMing_18000211.github.io/tags/网络编程-套接字/" rel="tag"># 网络编程 套接字</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/GaoMing_18000211.github.io/2018/11/12/多线程&定时器&调用运行环境/" rel="next" title="多线程&定时器&调用运行环境">
+                <i class="fa fa-chevron-left"></i> 多线程&定时器&调用运行环境
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/GaoMing_18000211.github.io/2018/11/17/类加载器&反射&代理/" rel="prev" title="类加载器&反射&代理">
+                类加载器&反射&代理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">CS_GaoMing</p>
+              <p class="site-description motion-element" itemprop="description">在这里记录我的人生&学习！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/GaoMing_18000211.github.io/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/GaoMing_18000211.github.io/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/GaoMing_18000211.github.io/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/SusuDOS/GaoMing_18000211.github.io" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:WD329416525@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.baidu.com/" title="友情链接： 百度一下，你就知道!" target="_blank">友情链接： 百度一下，你就知道!</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://cn.bing.com/?FORM=BEHPTB&ensearch=1" title="友情链接： 微软Bing搜索 - 国际版" target="_blank">友情链接： 微软Bing搜索 - 国际版</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#InetAddress"><span class="nav-number">1.</span> <span class="nav-text">InetAddress</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CS_GaoMing</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+ 
+</body>
+</html>
