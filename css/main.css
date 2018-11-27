@@ -185,7 +185,7 @@ th {
 }
 body {
   position: relative;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 15px;
   line-height: 2;
   color: #555;
@@ -216,7 +216,7 @@ h6 {
   padding: 0;
   font-weight: bold;
   line-height: 1.5;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Roboto Slab', 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 h2,
 h3,
@@ -1129,9 +1129,9 @@ pre .javascript .function {
   display: inline-block;
   vertical-align: top;
   line-height: 36px;
-  font-size: 20px;
+  font-size: 12px;
   font-weight: normal;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'lobster Two', 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .site-subtitle {
   margin-top: 10px;
@@ -1219,7 +1219,7 @@ pre .javascript .function {
   opacity: 0;
 }
 .post-body {
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 @media (max-width: 767px) {
   .post-body {
@@ -1497,7 +1497,7 @@ pre .javascript .function {
 .posts-expand .post-meta {
   margin: 3px 0 60px 0;
   color: #999;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 12px;
   text-align: center;
 }
@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffc9ff;
+  background: #ffe8da;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2697,12 +2697,12 @@ hr {
   float: right;
 }
 .menu {
-  float: right;
-  margin: 8px 0 0 0;
+  float: center;
+  margin: 12px 0 0 0;
 }
 @media (max-width: 767px) {
   .menu {
-    margin: 20px 0 0 0;
+    margin: 16px 0 0 0;
     padding: 0;
   }
 }
@@ -2721,7 +2721,7 @@ hr {
   padding: 0 10px;
   background: none;
   border: none;
-  border-radius: 2px;
+  border-radius: 10px;
   transition-property: background;
 }
 @media (max-width: 767px) {
@@ -2744,6 +2744,16 @@ hr {
   .menu {
     float: none;
   }
+}
+# 个人添加的配置内容宽度！,
+header {
+  width: 100%;
+}
+.container .main-inner {
+  width: 65%;
+}
+.content-wrap {
+  width: calc -70%;
 }
 .site-search form {
   display: none;
@@ -2781,12 +2791,12 @@ hr {
 }
 @media (max-width: 767px) {
   .posts-expand .post-title {
-    font-size: 22px;
+    font-size: 16px;
   }
 }
 @media (min-width: 1600px) {
   .posts-expand .post-title {
-    font-size: 26px;
+    font-size: 20px;
   }
 }
 .posts-expand .post-title:hover:before {
@@ -2902,4 +2912,22 @@ hr {
     width: auto;
     text-align: center;
   }
+}
+.post-body a {
+  color: #0593d3;
+  border-bottom: none;
+  border-bottom: 1px solid #0593d3;
+}
+.post-body a:hover {
+  color: #fc6423;
+  border-bottom: none;
+  border-bottom: 1px solid #fc6423;
+}
+code {
+  color: #c7254e;
+  background: #f9f2f4;
+  border: 1px solid #d6d6d6;
+  padding: 1px 4px;
+  word-break: break-all;
+  border-radius: 4px;
 }
