@@ -94,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="List 泛型," />
+  <meta name="keywords" content="List,泛型," />
 
 
 
@@ -105,18 +105,18 @@
 
 
 
-<meta name="description" content="List list子类及其特性  ArrayList:  底层数据结构是数组，查询快，增删慢，线程不安全，效率高。   12345678910111213141516171819202122/*for example*/	public static void main(String[] args) &amp;#123;				ArrayList array = new ArrayList();				ar">
-<meta name="keywords" content="List 泛型">
+<meta name="description" content="Listlist子类及其特性ArrayList: 底层数据结构是数组，查询快，增删慢，线程不安全，效率高。12345678910111213141516171819202122/*for example*/public static void main(String[] args) &amp;#123;			ArrayList array = new ArrayList();		array.add(&quot;he">
+<meta name="keywords" content="List,泛型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Common-List">
+<meta property="og:title" content="Common-List&amp;泛型">
 <meta property="og:url" content="http://yoursite.com/2018/10/29/Common-List&泛型/index.html">
 <meta property="og:site_name" content="GaoMing&#39;  Blog">
-<meta property="og:description" content="List list子类及其特性  ArrayList:  底层数据结构是数组，查询快，增删慢，线程不安全，效率高。   12345678910111213141516171819202122/*for example*/	public static void main(String[] args) &amp;#123;				ArrayList array = new ArrayList();				ar">
+<meta property="og:description" content="Listlist子类及其特性ArrayList: 底层数据结构是数组，查询快，增删慢，线程不安全，效率高。12345678910111213141516171819202122/*for example*/public static void main(String[] args) &amp;#123;			ArrayList array = new ArrayList();		array.add(&quot;he">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-25T14:33:34.107Z">
+<meta property="og:updated_time" content="2018-11-27T07:29:12.555Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Common-List">
-<meta name="twitter:description" content="List list子类及其特性  ArrayList:  底层数据结构是数组，查询快，增删慢，线程不安全，效率高。   12345678910111213141516171819202122/*for example*/	public static void main(String[] args) &amp;#123;				ArrayList array = new ArrayList();				ar">
+<meta name="twitter:title" content="Common-List&amp;泛型">
+<meta name="twitter:description" content="Listlist子类及其特性ArrayList: 底层数据结构是数组，查询快，增删慢，线程不安全，效率高。12345678910111213141516171819202122/*for example*/public static void main(String[] args) &amp;#123;			ArrayList array = new ArrayList();		array.add(&quot;he">
 
 
 
@@ -152,7 +152,7 @@
 
 
 
-  <title>Common-List | GaoMing'  Blog</title>
+  <title>Common-List&泛型 | GaoMing'  Blog</title>
   
 
 
@@ -355,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Common-List</h1>
+          <h1 class="post-title" itemprop="name headline">Common-List&泛型</h1>
         
 
         <div class="post-meta">
@@ -407,7 +407,7 @@
 
           
           
-             <span id="/GaoMing_18000211.github.io/2018/10/29/Common-List&泛型/" class="leancloud_visitors" data-flag-title="Common-List">
+             <span id="/GaoMing_18000211.github.io/2018/10/29/Common-List&泛型/" class="leancloud_visitors" data-flag-title="Common-List&泛型">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -438,510 +438,103 @@
       
 
       
-        <h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><ul>
-<li><p>list子类及其特性</p>
-<ul>
-<li><p>ArrayList:<br>  底层数据结构是数组，查询快，增删慢，线程不安全，效率高。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/*for example*/</span><br><span class="line">	public static void main(String[] args) &#123;		</span><br><span class="line">		ArrayList array = new ArrayList();</span><br><span class="line">		</span><br><span class="line">		array.add(&quot;hello&quot;);</span><br><span class="line">		array.add(&quot;world&quot;);</span><br><span class="line">		</span><br><span class="line">		Rem：1</span><br><span class="line">		// array.add(new Integer(100));// 标准写法</span><br><span class="line">		//array.add(10); // JDK5以后的自动装箱,等价于：array.add(Integer.valueOf(10));</span><br><span class="line">		</span><br><span class="line">		Iterator it = array.iterator();</span><br><span class="line">		while (it.hasNext()) &#123;</span><br><span class="line">		Rem：1，若使用Rem处代码，强转数据类型：</span><br><span class="line">			// String s = (String) it.next();			</span><br><span class="line">			则：</span><br><span class="line">			// ClassCastException</span><br><span class="line">			</span><br><span class="line">			String s = (String) it.next();</span><br><span class="line">			System.out.println(s);</span><br><span class="line">			/*代码黄色警告线，因为事先不指定的数据类型，若添加的数据类型不一致，强转后抛出ClassCaseExcpetion异常，为隐患使用方法.*/</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><h2 id="list子类及其特性"><a href="#list子类及其特性" class="headerlink" title="list子类及其特性"></a>list子类及其特性</h2><h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList:"></a>ArrayList:</h3><ul>
+<li>底层数据结构是数组，查询快，增删慢，线程不安全，效率高。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*for example*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;		</span><br><span class="line">	ArrayList array = <span class="keyword">new</span> ArrayList();</span><br><span class="line">	</span><br><span class="line">	array.add(<span class="string">"hello"</span>);</span><br><span class="line">	array.add(<span class="string">"world"</span>);</span><br><span class="line">	</span><br><span class="line">	Rem：<span class="number">1</span></span><br><span class="line">	<span class="comment">// array.add(new Integer(100));// 标准写法</span></span><br><span class="line">	<span class="comment">//array.add(10); // JDK5以后的自动装箱,等价于：array.add(Integer.valueOf(10));</span></span><br><span class="line">	</span><br><span class="line">	Iterator it = array.iterator();</span><br><span class="line">	<span class="keyword">while</span> (it.hasNext()) &#123;</span><br><span class="line">	Rem：<span class="number">1</span>，若使用Rem处代码，强转数据类型：</span><br><span class="line">		<span class="comment">// String s = (String) it.next();			</span></span><br><span class="line">		则：</span><br><span class="line">		<span class="comment">// ClassCastException</span></span><br><span class="line">		</span><br><span class="line">		String s = (String) it.next();</span><br><span class="line">		System.out.println(s);</span><br><span class="line">		<span class="comment">/*代码黄色警告线，因为事先不指定的数据类型，若添加的数据类型不一致，强转后抛出ClassCaseExcpetion异常，为隐患使用方法.*/</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Vector:<br>  底层数据结构是数组，查询快，增删慢，线程安全，效率低。<br>  由于集合是JDK1.2后才有的特性，所以针对出现在JKD1.0的Vector本身有自己的添加获取功能，但是可以使用父类ArrayList对应功能所代替。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/*1.0版本的本身独有功能：*/</span><br><span class="line">添加：public void addElement(E obj)		--	add()</span><br><span class="line">获取：public E elementAt(int index)		--	get()</span><br><span class="line">				public Enumeration&lt;E&gt; elements()	--  iterator()</span><br></pre></td></tr></table></figure>
-<p>  代码实例：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">	public static void main(String[] args) &#123;		</span><br><span class="line">			Vector v = new Vector();</span><br><span class="line">	</span><br><span class="line">			v.addElement(&quot;hello&quot;);</span><br><span class="line">			v.addElement(&quot;world&quot;);		</span><br><span class="line">			</span><br><span class="line">			for (int x = 0; x &lt; v.size(); x++) &#123;</span><br><span class="line">				String s = (String) v.elementAt(x);</span><br><span class="line">				System.out.println(s);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(&quot;------------------&quot;);</span><br><span class="line">	</span><br><span class="line">			Enumeration en = v.elements(); </span><br><span class="line">			while (en.hasMoreElements()) &#123;</span><br><span class="line">				String s = (String) en.nextElement();</span><br><span class="line">				System.out.println(s);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	```	</span><br><span class="line">	</span><br><span class="line">- LinkedList:</span><br><span class="line">	底层数据结构是链表，查询慢，增删快，线程不安全，效率高。由于其有不同的底层结构所有也有特有函数。</span><br><span class="line"></span><br><span class="line">	```		</span><br><span class="line">	添加：</span><br><span class="line">		public void addFirst()	//表头添加，头插法.</span><br><span class="line">		public void addLast()	//表尾添加，尾插法.</span><br><span class="line">	删除</span><br><span class="line">		public Object removeFirst()	//删除第一个节点.</span><br><span class="line">		public Object removeLast()	//删除第二个节点.</span><br><span class="line">	获取</span><br><span class="line">		public Object getFirst()	//获取第一个节点.</span><br><span class="line">		public Object getLast()		//获取最后一个节点.</span><br></pre></td></tr></table></figure>
-<p>  代码实例</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">		public static void main(String[] args) &#123;</span><br><span class="line">				LinkedList link = new LinkedList();</span><br><span class="line">				</span><br><span class="line">				link.add(&quot;hello&quot;);	//后面追加.</span><br><span class="line">				link.add(&quot;world&quot;);</span><br><span class="line">				</span><br><span class="line">				// public void addFirst(Object e)		</span><br><span class="line">				// public void addLast(Object e)		</span><br><span class="line">		</span><br><span class="line">				// public Object getFirst()</span><br><span class="line">				// System.out.println(&quot;getFirst:&quot; + link.getFirst());</span><br><span class="line">				// public Obejct getLast()</span><br><span class="line">				// System.out.println(&quot;getLast:&quot; + link.getLast());</span><br><span class="line">		</span><br><span class="line">				// public Object removeFirst()</span><br><span class="line">				System.out.println(&quot;removeFirst:&quot; + link.removeFirst());</span><br><span class="line">				// public Object removeLast()</span><br><span class="line">				System.out.println(&quot;removeLast:&quot; + link.removeLast());</span><br><span class="line">		</span><br><span class="line">				// 输出对象名，tostring(),返回对象内容。</span><br><span class="line">				System.out.println(&quot;link:&quot; + link);</span><br><span class="line">			&#125;</span><br><span class="line">		```			</span><br><span class="line">- 总结</span><br><span class="line">	- 遍历字符串集合，仅保留重复元素的其中一个。</span><br></pre></td></tr></table></figure>
-<p>  public static void main(String[] args) {</p>
-<pre><code>    // TODO Auto-generated method stub
-    ArrayList arrayStr = new ArrayList();
-    arrayStr.add(&quot;Good&quot;);
-    arrayStr.add(&quot;luck&quot;);
-    arrayStr.add(&quot;tom&quot;);
-    arrayStr.add(&quot;Good&quot;);
-    arrayStr.add(&quot;Good&quot;);
-    arrayStr.add(&quot;Good&quot;);
-    arrayStr.add(&quot;luck&quot;);
-    arrayStr.add(&quot;tom&quot;);
-    Iterator It = arrayStr.iterator();
-    ArrayList NewArrayStr = new ArrayList();
-    /* Method:the first */
-    while (It.hasNext()) {
-        String temp = (String) It.next();
-        if (!(NewArrayStr.contains(temp))) {
-            NewArrayStr.add(temp);
-        }
-    }
-    System.out.println(&quot;Result:&quot; + NewArrayStr);
-    System.out.println(&quot;******this is dividing line******&quot;);
-    /* Method:the second */
-    for (int x = 0; x &lt; arrayStr.size() - 1; ++x) {
-        for (int y = x + 1; y &lt; arrayStr.size(); ++y) {
-            if (arrayStr.get(x).equals(arrayStr.get(y))) {
-                arrayStr.remove(y);
-                // 目的是为了解决相同元素，叠上来的时候造成数据漏检。
-                y--;
-            }
-        }
-    }
-    System.out.println(&quot;Result:&quot; + arrayStr);
-}
-</code></pre>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">		</span><br><span class="line">- 遍历对象集合，仅保留重复元素的其中一个。</span><br></pre></td></tr></table></figure>
-<p>  package TestAa;</p>
-<p>  import java.util.ArrayList;<br>  import java.util.Iterator;</p>
-<p>  class Animal {</p>
-<pre><code>private int age;
-private String name;
-
-public Animal() {
-    super();
-    // TODO Auto-generated constructor stub
-}
-
-public int getAge() {
-    return age;
-}
-
-public void setAge(int age) {
-    this.age = age;
-}
-
-public String getName() {
-    return name;
-}
-
-public void setName(String name) {
-    this.name = name;
-}
-
-public Animal(String name, int age) {
-    super();
-    this.age = age;
-    this.name = name;
-}
-
-@Override
-public String toString() {
-    // TODO Auto-generated method stub
-    return this.getName() + &quot;:&quot; + this.getAge();
-}
-
-// contain使用的是equal方法，所以需要重写equal方法。
-@Override
-public boolean equals(Object obj) {
-    if (this == obj)
-        return true;
-    if (obj == null)
-        return false;
-    if (getClass() != obj.getClass())
-        return false;
-    Animal other = (Animal) obj;
-    if (age != other.age)
-        return false;
-    if (name == null) {
-        if (other.name != null)
-            return false;
-    } else if (!name.equals(other.name))
-        return false;
-    return true;
-}
-</code></pre><p>  }</p>
-<p>  public class CompareAa {</p>
-<pre><code>/**
- * @param args
- */
-public static void main(String[] args) {
-    // TODO Auto-generated method stub
-    ArrayList arrayList = new ArrayList();
-    Animal animal1 = new Animal(&quot;Tom&quot;, 3);
-    Animal animal2 = new Animal(&quot;Jack&quot;, 5);
-    Animal animal3 = new Animal(&quot;Tom&quot;, 2);
-    Animal animal4 = new Animal(&quot;Tom&quot;, 3);
-    Animal animal5 = new Animal(&quot;Jack&quot;, 5);
-    Animal animal6 = new Animal(&quot;Tom&quot;, 2);
-    Animal animal7 = new Animal(&quot;Tom&quot;, 2);
-    Animal animal8 = new Animal(&quot;Jack&quot;, 5);
-    Animal animal9 = new Animal(&quot;Tom&quot;, 2);
-    arrayList.add(animal1);
-    arrayList.add(animal2);
-    arrayList.add(animal3);
-    arrayList.add(animal4);
-    arrayList.add(animal5);
-    arrayList.add(animal6);
-    arrayList.add(animal7);
-    arrayList.add(animal8);
-    arrayList.add(animal9);
-
-    /* method:the first... */
-    Iterator it = arrayList.iterator();
-    ArrayList newArray = new ArrayList();
-    while (it.hasNext()) {
-        Animal tempCc = (Animal) it.next();
-        if (!(newArray.contains(tempCc)))
-            newArray.add(tempCc);
-    }
-    System.out.println(newArray);
-    System.out.println(&quot;*****this is a dividing line******&quot;);
-    /* method:the second... */
-    for (int x = 0; x &lt; arrayList.size() - 1; ++x) {
-        for (int y = x + 1; y &lt; arrayList.size(); ++y) {
-            if (arrayList.get(x).equals(arrayList.get(y))) {
-                arrayList.remove(y);
-                // 目的是为了解决相同元素漏检的问题。
-                y--;
-            }
-        }
-    }
-    System.out.println(arrayList);
-
-}
-</code></pre><p>  }</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">		</span><br><span class="line">- 用LinkedList模拟栈结构。</span><br></pre></td></tr></table></figure>
-<p>  package TestAa;<br>  import java.util.LinkedList;    </p>
-<p>  class StackCc {</p>
-<pre><code>private LinkedList linkCc;
-
-public StackCc() {
-    linkCc = new LinkedList();
-    // TODO Auto-generated constructor stub
-}
-
-public Object popCc() {
-    return linkCc.removeFirst();
-}
-
-public void pushCc(Object obj) {
-    linkCc.addFirst(obj);
-}
-
-@Override
-public String toString() {
-    return &quot;StackCc [linkCc=&quot; + linkCc + &quot;]&quot;;
-}
-</code></pre><p>  }</p>
-<p>  public class CompareAa {</p>
-<pre><code>/**
- * @param args
- */
-public static void main(String[] args) {
-    // TODO Auto-generated method stub
-    StackCc Cc = new StackCc();
-    Cc.pushCc(&quot;hello&quot;);
-    Cc.pushCc(&quot;world&quot;);
-    System.out.println(Cc);
-    System.out.println(&quot;******this is a dividing line******&quot;);
-    Cc.popCc();
-    Cc.popCc();
-    System.out.println(Cc);
-}        
-</code></pre><p>  }</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 泛型</span><br><span class="line">是一种把明确类型的工作推迟到创建对象或者调用方法的时候才去明确的特殊的类型，可以理解为一个程序的模版，在需要的时候才将所需要的数据类型填入其中，而在模版需要数据类型的位置需要添加一个占位标记符号&lt;&gt;，&lt;font size = 3, color = 0X6FFF&gt;该数据类型只能是引用类型&lt;/font&gt;。</span><br><span class="line">- 出现时间：JDK1.5</span><br><span class="line">- 特点：</span><br><span class="line">	- 把运行时期的问题提前到了编译期间</span><br><span class="line">	- 避免了强制类型转换</span><br><span class="line">	- 优化了程序设计，解决了黄色警告线问题，让程序更安全，上诉的所有代码都有黄色警告，而使用泛型可以解决该问题，比如：已经确定ArrayList数据类型是String，防止list(new Integer(100))，导致下面强转时候报错。</span><br><span class="line">	- 安全性描述：早期的时候，我们使用Object来代表任意的类型，因为其为超类，是类的父类，但是实际使用的时候其实是限制了数据类型了，不能任意的转化，只能转化为本身，这就是存在的安全隐患，也就是警告提示的原因。 也就是说这样的程序其实并不是安全的。所以Java在JDK5后引入了泛型，提高程序的安全性。</span><br><span class="line">	- 代码实例</span><br><span class="line">		- 泛型&amp;String数据类型</span><br></pre></td></tr></table></figure>
-<p>  /<em>for example</em>/<br>  public static void main(String[] args) {</p>
-<pre><code>//创建对象时候指定添加到数据类型就是String数据类型。        
-ArrayList&lt;String&gt; array = new ArrayList&lt;String&gt;();
-
-array.add(&quot;hello&quot;);
-array.add(&quot;world&quot;);    
-
-Iterator&lt;String&gt; it = array.iterator();
-while (it.hasNext()) {            
-    String s = it.next();
-    System.out.println(s);
-System.out.println(&quot;--------this is a dividing ling--------&quot;);
-
-for (String Cc : array) {
-    System.out.println(Cc);
-}
-System.out.println(&quot;-------this is a dividing ling-------&quot;);
-for (int x = 0; x &lt; array.size(); ++x) {
-    System.out.println(array.get(x));
-}
-</code></pre><p>  }<br>  /<em>  泛型就是事先确定数据类型，不能具体确定的数据类型就使用占位符-通配符描述。</em>/</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 泛型&amp;对象数据类型</span><br></pre></td></tr></table></figure>
-<p>  /<em>数据对象类型为对象类的遍历实现</em>/<br>  package TestAa;</p>
-<p>  import java.util.ArrayList;<br>  import java.util.Iterator;</p>
-<p>  class Animal {</p>
-<pre><code>private String name;
-private int age;
-
-public Animal(String name, int age) {
-    super();
-    this.name = name;
-    this.age = age;
-}
-
-public Animal() {
-    super();
-    // TODO Auto-generated constructor stub
-}
-
-public String getName() {
-    return name;
-}
-
-public void setName(String name) {
-    this.name = name;
-}
-
-public int getAge() {
-    return age;
-}
-
-public void setAge(int age) {
-    this.age = age;
-}
-</code></pre><p>  }</p>
-<p>  public class CompareAa {        </p>
-<pre><code>/**
- * @param args
- */        
-public static void main(String[] args) {
-    // JDK7的新特性：泛型推断。
-    // ArrayList&lt;Student&gt; array = new ArrayList&lt;&gt;();不会报错也不会警告，但是不建议这样使用。
-    ArrayList&lt;Animal&gt; array = new ArrayList&lt;&gt;();
-
-    Animal s1 = new Animal(&quot;Tom&quot;, 4);
-    Animal s2 = new Animal(&quot;Jack&quot;, 2);
-    Animal s3 = new Animal(&quot;Coffe&quot;, 5);
-
-    array.add(s1);
-    array.add(s2);
-    array.add(s3);
-
-    Iterator&lt;Animal&gt; it = array.iterator();
-    while (it.hasNext()) {
-        Animal s = it.next();
-        System.out.println(s.getName() + &quot;---&quot; + s.getAge());
-    }
-    System.out.println(&quot;------this is a dividing line------&quot;);
-
-    for (int x = 0; x &lt; array.size(); x++) {
-        Animal s = array.get(x);
-        System.out.println(s.getName() + &quot;---&quot; + s.getAge());
-    }
-    System.out.println(&quot;------this is a dividing line------&quot;);
-    for (Animal s : array) {
-        System.out.println(s.getName() + &quot;---&quot; + s.getAge());
-    }
-}
-</code></pre><p>  }</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">- 类别</span><br><span class="line">	- 泛型类</span><br></pre></td></tr></table></figure>
-<p>  /<em> for example</em>/<br>  /<em>该段在编译时候不会报错也不会警告，但是运行错误，原因是类型转化问题</em>/<br>  public class ObjectTool {</p>
-<pre><code>private Object obj;
-
-public Object getObj() {
-    return obj;
-}
-
-public void setObj(Object obj) { 
-    // Object obj = new Integer(30);
-    this.obj = obj;
-}
-</code></pre><p>  }<br>  public class ObjectToolDemo {</p>
-<pre><code>public static void main(String[] args) {
-    ObjectTool ot = new ObjectTool();
-
-    // 运行正常。
-    ot.setObj(new Integer(2));
-    Integer i = (Integer) ot.getObj();
-    System.out.println(&quot;年龄是：&quot; + i);
-
-    ot.setObj(new String(&quot;Tom&quot;));
-    String s = (String) ot.getObj();
-    System.out.println(&quot;姓名是：&quot; + s);
-
-    System.out.println(&quot;---------&quot;);
-    ot.setObj(new Integer(2));
-    // 报错，类型转换错误，ClassCastException
-    String ss = (String) ot.getObj();
-    System.out.println(&quot;姓名是：&quot; + ss);
-}
-</code></pre><p>  }<br>  System.out.println(“——-this is a dividing line———“);<br>  /<em>泛型解决方案</em>/<br>  public class ObjectTool<t> {</t></p>
-<pre><code>private T obj;
-
-public T getObj() {
-    return obj;
-}
-
-public void setObj(T obj) {
-    this.obj = obj;
-}
-</code></pre><p>  }<br>  public class ObjectToolDemo {</p>
-<pre><code>public static void main(String[] args) {
-
-    ObjectTool&lt;String&gt; ot = new ObjectTool&lt;String&gt;();        
-    ot.setObj(new String(&quot;Tom&quot;));
-    String s = ot.getObj();
-    System.out.println(&quot;姓名是：&quot; + s);
-
-    ObjectTool&lt;Integer&gt; ot2 = new ObjectTool&lt;Integer&gt;();
-    // ot2.setObj(new String(&quot;Jack&quot;));//这个时候编译期间就过不去
-    ot2.setObj(new Integer(27));
-    Integer i = ot2.getObj();
-    System.out.println(&quot;年龄是：&quot; + i);
-}
-</code></pre><p>  }</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 泛型方法</span><br></pre></td></tr></table></figure>
-<p>  public class ObjectTool {</p>
-<pre><code>public &lt;T&gt; void show(T t) {
-    System.out.println(t);
-}
-</code></pre><p>  }<br>  public class ObjectToolDemo {</p>
-<pre><code>public static void main(String[] args) {
-    // 定义到泛型方法后，可以接受任意数据类型。
-    ObjectTool ot = new ObjectTool();
-    ot.show(&quot;hello&quot;);
-    ot.show(100);
-    ot.show(true);
-}
-</code></pre><p>  }</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 泛型接口</span><br></pre></td></tr></table></figure>
-<p>  public interface Inter<t> {</t></p>
-<pre><code>public abstract void show(T t);
-</code></pre><p>  }<br>  /<em>第一种：实现类在实现接口的时候已经知道数据类型</em>/</p>
-<p>  public class InterImpl implements Inter<string> {    </string></p>
-<pre><code>@Override
-public void show(String t) {
-    System.out.println(t);
-}
-</code></pre><p>   }</p>
-<p>  //第二种情况：还不知道数据类型.<br>  public class InterImpl<t> implements Inter<t> {</t></t></p>
-<pre><code>@Override
-public void show(T t) {
-    System.out.println(t);
-}
-</code></pre><p>  }</p>
-<pre><code>public static void main(String[] args) {
-    /*第一种*/
-     Inter&lt;String&gt; i = new InterImpl();
-    i.show(&quot;hello&quot;);
-
-    /*第二种情况的测试*/
-    Inter&lt;String&gt; i = new InterImpl&lt;String&gt;();
-    i.show(&quot;hello&quot;);
-
-    Inter&lt;Integer&gt; ii = new InterImpl&lt;Integer&gt;();
-    ii.show(100);
-}
-</code></pre>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">- 泛型高级通配符</span><br><span class="line">	- ?</span><br><span class="line">	- ? extends E</span><br><span class="line">	- ? super E</span><br><span class="line">	- 代码实例</span><br></pre></td></tr></table></figure>
-<p>  /<em>for example</em>/<br>  public class GenericDemo {</p>
-<pre><code>public static void main(String[] args) {
-    // 泛型如果明确的写的时候，前后必须一致
-    Collection&lt;Object&gt; c1 = new ArrayList&lt;Object&gt;();
-    // Collection&lt;Object&gt; c2 = new ArrayList&lt;Animal&gt;();    报错    
-
-    // ?表示任意的类型都是可以的
-    Collection&lt;?&gt; c5 = new ArrayList&lt;Object&gt;();        
-    Collection&lt;?&gt; c6 = new ArrayList&lt;Animal&gt;();            
-
-    // ? extends E:向下限定，E及其子类
-    // Collection&lt;? extends Animal&gt; c9 = new ArrayList&lt;Object&gt;();
-    Collection&lt;? extends Animal&gt; c10 = new ArrayList&lt;Animal&gt;();
-    Collection&lt;? extends Animal&gt; c11 = new ArrayList&lt;Dog&gt;();        
-
-    // ? super E:向上限定，E极其父类
-    Collection&lt;? super Animal&gt; c13 = new ArrayList&lt;Object&gt;();
-    Collection&lt;? super Animal&gt; c14 = new ArrayList&lt;Animal&gt;();
-    // Collection&lt;? super Animal&gt; c15 = new ArrayList&lt;Dog&gt;();
-
-}
-</code></pre><p>  }</p>
-<p>  class Animal {<br>  }<br>  class extends Dog{<br>  }</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	</span><br><span class="line">### 增强for循环</span><br><span class="line">一种简化的for循环结构。</span><br><span class="line">- 格式	</span><br><span class="line">-</span><br></pre></td></tr></table></figure>
-<p>for(DataType Variable : Collection/Object){<br>  Variable in Array/Collection.<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">	</span><br><span class="line">### 可变参数</span><br><span class="line">Arrays工具下一个函数：</span><br><span class="line">static &lt;T&gt; List&lt;T&gt; asList(T... a) 返回由指定数组支持的固定大小的列表。 </span><br><span class="line"> - </span><br><span class="line">			</span><br><span class="line">		List&lt;String&gt; list = Arrays.asList(&quot;hello&quot;, &quot;world&quot;);</span><br><span class="line">				// UnsupportedOperationException</span><br><span class="line">				// list.add(&quot;NewDay&quot;);</span><br><span class="line">				// UnsupportedOperationException</span><br><span class="line">				// list.remove(NewLife);</span><br><span class="line">				list.set(1, &quot;Test&quot;);</span><br><span class="line">		</span><br><span class="line">				for (String s : list) &#123;</span><br><span class="line">					System.out.println(s);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">###  集合嵌套遍历</span><br><span class="line">- 实例一</span><br></pre></td></tr></table></figure>
-<p>/<em>for example,二层嵌套</em>/<br>public class CollectionCc {<br>  public static void main(String[] args) {</p>
-<pre><code>// 最外层集合
-
-ArrayList&lt;ArrayList&lt;Animal&gt;&gt; bigArrayList = new ArrayList&lt;ArrayList&lt;Animal&gt;&gt;();
-//创建对应的所有对象，分别添加进组，再小组进大组。
-ArrayList&lt;Animal&gt; firstArrayList = new ArrayList&lt;Student&gt;();    
-bigArrayList.add(firstArrayList);
-
-ArrayList&lt;Animal&gt; secondArrayList = new ArrayList&lt;Student&gt;();
-bigArrayList.add(secondArrayList);
-
-ArrayList&lt;Animal&gt; thirdArrayList = new ArrayList&lt;Student&gt;();
-bigArrayList.add(thirdArrayList);
-
-// 遍历集合
-for (ArrayList&lt;Animal&gt; array : bigArrayList) {
-    for (Student s : array) {
-        System.out.println(s.getName() + &quot;---&quot; + s.getAge());
-    }
-}
-</code></pre><p>  }<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 实例二</span><br></pre></td></tr></table></figure>
-<p>/<em>获取1-100随机数</em>/<br>public static void main(String[] args) {        </p>
-<pre><code>Random r = new Random();
-
-//泛型集合
-ArrayList&lt;Integer&gt; arrayCc = new ArrayList&lt;Integer&gt;();        
-int count = 0;
-
-while (count &lt; 10) {            
-    int number = r.nextInt(20) + 1;            
-
-    if(!arrayCc.contains(number)){
-        //如果不存在:就添加，统计变量++。
-        arrayCc.add(number);
-        count++;
-    }
-}        
-//增强for遍历.
-for(Integer i : array){
-    System.out.println(i);
-}
-System.out.println(array);
-</code></pre><p>  }</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 实例三</span><br></pre></td></tr></table></figure>
-<p>/<em>for example</em>/<br>/<em>获取键盘输入的不确定个数的最大值.</em>/<br>public static void main(String[] args) {        </p>
-<pre><code>Scanner sc = new Scanner(System.in);
-
-// 数据不确定的情况下。只能是用集合存储，翻新保证程序的健壮性.
-ArrayList&lt;Integer&gt; array = new ArrayList&lt;Integer&gt;();
-
-// 设置结束符号，此处为0.
-while (true) {
-    System.out.println(&quot;请输入数据：&quot;);
-    int number = sc.nextInt();
-    if (number != 0) {
-        array.add(number);
-    } else {
-        break;
-    }
-}
-
-// 把集合转成数组
-// public &lt;T&gt; T[] toArray(T[] a)
-Integer[] i = new Integer[array.size()];
-// Integer[] ii = array.toArray(i);
-array.toArray(i);
-
-// 对数组排序,public static void sort(Object[] a).
-Arrays.sort(i);
-
-// 获取该数组中的最大索引的值
-System.out.println(&quot;数组是：&quot; + arrayToString(i) + &quot;,最大值是:&quot;
-        + i[i.length - 1]);
-</code></pre><p>  }</p>
-<p>  public static String arrayToString(Integer[] i) {</p>
-<pre><code>StringBuilder sb = new StringBuilder();
-
-sb.append(&quot;[&quot;);
-for (int x = 0; x &lt; i.length; x++) {
-    if (x == i.length - 1) {
-        sb.append(i[x]);
-    } else {
-        sb.append(i[x]).append(&quot;, &quot;);
-    }
-}
-sb.append(&quot;]&quot;);
-
-return sb.toString();
-</code></pre><p>  }</p>
-<p><code>`</code></p>
+</ul>
+<h3 id="Vector"><a href="#Vector" class="headerlink" title="Vector:"></a>Vector:</h3><p><strong>特性：</strong>底层数据结构是数组，查询快，增删慢，线程安全，效率低。<br>由于集合是JDK1.2后才有的特性，所以针对出现在JKD1.0的Vector本身有自己的添加获取功能，但是可以使用父类ArrayList对应功能所代替。</p>
+<ul>
+<li><p>常用函数&amp;方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*1.0版本的本身独有功能：*/</span></span><br><span class="line">添加：<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addElement</span><span class="params">(E obj)</span>		--	<span class="title">add</span><span class="params">()</span></span></span><br><span class="line"><span class="function">获取：<span class="keyword">public</span> E <span class="title">elementAt</span><span class="params">(<span class="keyword">int</span> index)</span>		--	<span class="title">get</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	<span class="keyword">public</span> Enumeration&lt;E&gt; <span class="title">elements</span><span class="params">()</span>	--  <span class="title">iterator</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Vector:代码实例    </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*for example*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;		</span><br><span class="line">	Vector v = <span class="keyword">new</span> Vector();</span><br><span class="line"></span><br><span class="line">	v.addElement(<span class="string">"hello"</span>);</span><br><span class="line">	v.addElement(<span class="string">"world"</span>);		</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; v.size(); x++) &#123;</span><br><span class="line">		String s = (String) v.elementAt(x);</span><br><span class="line">		System.out.println(s);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(<span class="string">"------------------"</span>);</span><br><span class="line"></span><br><span class="line">	Enumeration en = v.elements(); </span><br><span class="line">	<span class="keyword">while</span> (en.hasMoreElements()) &#123;</span><br><span class="line">		String s = (String) en.nextElement();</span><br><span class="line">		System.out.println(s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList:"></a>LinkedList:</h3><p><strong>描述：</strong>底层数据结构是链表，查询慢，增删快，线程不安全，效率高。由于其有不同的底层结构所有也有特有函数。</p>
+<ul>
+<li>LinkedList常用函数</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">添加：</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addFirst</span><span class="params">()</span>	<span class="comment">//表头添加，头插法.</span></span></span><br><span class="line"><span class="function">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addLast</span><span class="params">()</span>	<span class="comment">//表尾添加，尾插法.</span></span></span><br><span class="line"><span class="function">删除</span></span><br><span class="line"><span class="function">	<span class="keyword">public</span> Object <span class="title">removeFirst</span><span class="params">()</span>	<span class="comment">//删除第一个节点.</span></span></span><br><span class="line"><span class="function">	<span class="keyword">public</span> Object <span class="title">removeLast</span><span class="params">()</span>	<span class="comment">//删除第二个节点.</span></span></span><br><span class="line"><span class="function">获取</span></span><br><span class="line"><span class="function">	<span class="keyword">public</span> Object <span class="title">getFirst</span><span class="params">()</span>	<span class="comment">//获取第一个节点.</span></span></span><br><span class="line"><span class="function">	<span class="keyword">public</span> Object <span class="title">getLast</span><span class="params">()</span>		<span class="comment">//获取最后一个节点.</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>LinkedList:代码实例</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*for example*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	LinkedList link = <span class="keyword">new</span> LinkedList();</span><br><span class="line">	</span><br><span class="line">	link.add(<span class="string">"hello"</span>);	<span class="comment">//后面追加.</span></span><br><span class="line">	link.add(<span class="string">"world"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// public void addFirst(Object e)		</span></span><br><span class="line">	<span class="comment">// public void addLast(Object e)		</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// public Object getFirst()</span></span><br><span class="line">	<span class="comment">// System.out.println("getFirst:" + link.getFirst());</span></span><br><span class="line">	<span class="comment">// public Obejct getLast()</span></span><br><span class="line">	<span class="comment">// System.out.println("getLast:" + link.getLast());</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// public Object removeFirst()</span></span><br><span class="line">	System.out.println(<span class="string">"removeFirst:"</span> + link.removeFirst());</span><br><span class="line">	<span class="comment">// public Object removeLast()</span></span><br><span class="line">	System.out.println(<span class="string">"removeLast:"</span> + link.removeLast());</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 输出对象名，tostring(),返回对象内容。</span></span><br><span class="line">	System.out.println(<span class="string">"link:"</span> + link);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="集合总结"><a href="#集合总结" class="headerlink" title="集合总结"></a>集合总结</h2><ul>
+<li>代码：遍历字符串集合，仅保留重复元素的其中一个.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	ArrayList arrayStr = <span class="keyword">new</span> ArrayList();</span><br><span class="line">	arrayStr.add(<span class="string">"Good"</span>);</span><br><span class="line">	arrayStr.add(<span class="string">"luck"</span>);</span><br><span class="line">	arrayStr.add(<span class="string">"tom"</span>);</span><br><span class="line">	arrayStr.add(<span class="string">"Good"</span>);</span><br><span class="line">	arrayStr.add(<span class="string">"Good"</span>);</span><br><span class="line">	arrayStr.add(<span class="string">"Good"</span>);</span><br><span class="line">	arrayStr.add(<span class="string">"luck"</span>);</span><br><span class="line">	arrayStr.add(<span class="string">"tom"</span>);</span><br><span class="line">	Iterator It = arrayStr.iterator();</span><br><span class="line">	ArrayList NewArrayStr = <span class="keyword">new</span> ArrayList();</span><br><span class="line">	<span class="comment">/* Method:the first */</span></span><br><span class="line">	<span class="keyword">while</span> (It.hasNext()) &#123;</span><br><span class="line">		String temp = (String) It.next();</span><br><span class="line">		<span class="keyword">if</span> (!(NewArrayStr.contains(temp))) &#123;</span><br><span class="line">			NewArrayStr.add(temp);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(<span class="string">"Result:"</span> + NewArrayStr);</span><br><span class="line">	System.out.println(<span class="string">"******this is dividing line******"</span>);</span><br><span class="line">	<span class="comment">/* Method:the second */</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; arrayStr.size() - <span class="number">1</span>; ++x) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> y = x + <span class="number">1</span>; y &lt; arrayStr.size(); ++y) &#123;</span><br><span class="line">			<span class="keyword">if</span> (arrayStr.get(x).equals(arrayStr.get(y))) &#123;</span><br><span class="line">				arrayStr.remove(y);</span><br><span class="line">				<span class="comment">// 目的是为了解决相同元素，叠上来的时候造成数据漏检。</span></span><br><span class="line">				y--;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(<span class="string">"Result:"</span> + arrayStr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>代码：遍历对象集合，仅保留重复元素的其中一个.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line">Package TestAa;</span><br><span class="line"></span><br><span class="line">importrt java.util.ArrayList;</span><br><span class="line">importrt java.util.Iterator;</span><br><span class="line"></span><br><span class="line">s Animal &#123;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"><span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>();</span><br><span class="line">	<span class="comment">// TODO Auto-generated constructor stub</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>();</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.getName() + <span class="string">":"</span> + <span class="keyword">this</span>.getAge();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// contain使用的是equal方法，所以需要重写equal方法。</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span> == obj)</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	<span class="keyword">if</span> (obj == <span class="keyword">null</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	<span class="keyword">if</span> (getClass() != obj.getClass())</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	Animal other = (Animal) obj;</span><br><span class="line">	<span class="keyword">if</span> (age != other.age)</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	<span class="keyword">if</span> (name == <span class="keyword">null</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (other.name != <span class="keyword">null</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (!name.equals(other.name))</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CompareAa</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		ArrayList arrayList = <span class="keyword">new</span> ArrayList();</span><br><span class="line">		Animal animal1 = <span class="keyword">new</span> Animal(<span class="string">"Tom"</span>, <span class="number">3</span>);</span><br><span class="line">		Animal animal2 = <span class="keyword">new</span> Animal(<span class="string">"Jack"</span>, <span class="number">5</span>);</span><br><span class="line">		Animal animal3 = <span class="keyword">new</span> Animal(<span class="string">"Tom"</span>, <span class="number">2</span>);</span><br><span class="line">		Animal animal4 = <span class="keyword">new</span> Animal(<span class="string">"Tom"</span>, <span class="number">3</span>);</span><br><span class="line">		Animal animal5 = <span class="keyword">new</span> Animal(<span class="string">"Jack"</span>, <span class="number">5</span>);</span><br><span class="line">		Animal animal6 = <span class="keyword">new</span> Animal(<span class="string">"Tom"</span>, <span class="number">2</span>);</span><br><span class="line">		Animal animal7 = <span class="keyword">new</span> Animal(<span class="string">"Tom"</span>, <span class="number">2</span>);</span><br><span class="line">		Animal animal8 = <span class="keyword">new</span> Animal(<span class="string">"Jack"</span>, <span class="number">5</span>);</span><br><span class="line">		Animal animal9 = <span class="keyword">new</span> Animal(<span class="string">"Tom"</span>, <span class="number">2</span>);</span><br><span class="line">		arrayList.add(animal1);</span><br><span class="line">		arrayList.add(animal2);</span><br><span class="line">		arrayList.add(animal3);</span><br><span class="line">		arrayList.add(animal4);</span><br><span class="line">		arrayList.add(animal5);</span><br><span class="line">		arrayList.add(animal6);</span><br><span class="line">		arrayList.add(animal7);</span><br><span class="line">		arrayList.add(animal8);</span><br><span class="line">		arrayList.add(animal9);</span><br><span class="line"></span><br><span class="line">		<span class="comment">/* method:the first... */</span></span><br><span class="line">		Iterator it = arrayList.iterator();</span><br><span class="line">		ArrayList newArray = <span class="keyword">new</span> ArrayList();</span><br><span class="line">		<span class="keyword">while</span> (it.hasNext()) &#123;</span><br><span class="line">			Animal tempCc = (Animal) it.next();</span><br><span class="line">			<span class="keyword">if</span> (!(newArray.contains(tempCc)))</span><br><span class="line">				newArray.add(tempCc);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(newArray);</span><br><span class="line">		System.out.println(<span class="string">"*****this is a dividing line******"</span>);</span><br><span class="line">		<span class="comment">/* method:the second... */</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; arrayList.size() - <span class="number">1</span>; ++x) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> y = x + <span class="number">1</span>; y &lt; arrayList.size(); ++y) &#123;</span><br><span class="line">				<span class="keyword">if</span> (arrayList.get(x).equals(arrayList.get(y))) &#123;</span><br><span class="line">					arrayList.remove(y);</span><br><span class="line">					<span class="comment">// 目的是为了解决相同元素漏检的问题。</span></span><br><span class="line">					y--;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(arrayList);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用LinkedList模拟栈结构.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*for example*/</span></span><br><span class="line"><span class="keyword">package</span> TestAa;		</span><br><span class="line"><span class="keyword">import</span> java.util.LinkedList;	</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StackCc</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> LinkedList linkCc;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">StackCc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		linkCc = <span class="keyword">new</span> LinkedList();</span><br><span class="line">		<span class="comment">// TODO Auto-generated constructor stub</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">popCc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> linkCc.removeFirst();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pushCc</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">		linkCc.addFirst(obj);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"StackCc [linkCc="</span> + linkCc + <span class="string">"]"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CompareAa</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		StackCc Cc = <span class="keyword">new</span> StackCc();</span><br><span class="line">		Cc.pushCc(<span class="string">"hello"</span>);</span><br><span class="line">		Cc.pushCc(<span class="string">"world"</span>);</span><br><span class="line">		System.out.println(Cc);</span><br><span class="line">		System.out.println(<span class="string">"******this is a dividing line******"</span>);</span><br><span class="line">		Cc.popCc();</span><br><span class="line">		Cc.popCc();</span><br><span class="line">		System.out.println(Cc);</span><br><span class="line">	&#125;		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p><strong>描述：</strong>是一种把明确类型的工作推迟到创建对象或者调用方法的时候才去明确的特殊的类型，可以理解为一个程序的模版，在需要的时候才将所需要的数据类型填入其中，而在模版需要数据类型的位置需要添加一个占位标记符号&lt;&gt;，<font size="3," color="0X6FFF">该数据类型只能是引用类型</font>。</p>
+<ul>
+<li>出现时间：JDK1.5</li>
+<li><p>特点：</p>
+<ul>
+<li>把运行时期的问题提前到了编译期间</li>
+<li>避免了强制类型转换</li>
+<li>优化了程序设计，解决了黄色警告线问题，让程序更安全，上诉的所有代码都有黄色警告，而使用泛型可以解决该问题，比如：已经确定ArrayList数据类型是String，防止list(new Integer(100))，导致下面强转时候报错。</li>
+<li>安全性描述：早期的时候，我们使用Object来代表任意的类型，因为其为超类，是类的父类，但是实际使用的时候其实是限制了数据类型了，不能任意的转化，只能转化为本身，这就是存在的安全隐患，也就是警告提示的原因。 也就是说这样的程序其实并不是安全的。所以Java在JDK5后引入了泛型，提高程序的安全性。</li>
+<li><p>代码实例</p>
+<ul>
+<li><p>泛型&amp;String数据类型 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*for example*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//创建对象时候指定添加到数据类型就是String数据类型。		</span></span><br><span class="line">	ArrayList&lt;String&gt; array = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">		</span><br><span class="line">	array.add(<span class="string">"hello"</span>);</span><br><span class="line">	array.add(<span class="string">"world"</span>);	</span><br><span class="line">		</span><br><span class="line">	Iterator&lt;String&gt; it = array.iterator();</span><br><span class="line">	<span class="keyword">while</span> (it.hasNext()) &#123;			</span><br><span class="line">		String s = it.next();</span><br><span class="line">		System.out.println(s);</span><br><span class="line">	System.out.println(<span class="string">"--------this is a dividing ling--------"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (String Cc : array) &#123;</span><br><span class="line">		System.out.println(Cc);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(<span class="string">"-------this is a dividing ling-------"</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; array.size(); ++x) &#123;</span><br><span class="line">		System.out.println(array.get(x));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*  泛型就是事先确定数据类型，不能具体确定的数据类型就使用占位符-通配符描述。*/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>泛型&amp;对象数据类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">/*数据对象类型为对象类的遍历实现*/</span><br><span class="line">package TestAa;</span><br><span class="line"></span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.Iterator;</span><br><span class="line"></span><br><span class="line">class Animal &#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line"></span><br><span class="line">	public Animal(String name, int age) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public Animal() &#123;</span><br><span class="line">		super();</span><br><span class="line">		// TODO Auto-generated constructor stub</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public int getAge() &#123;</span><br><span class="line">		return age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setAge(int age) &#123;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class CompareAa &#123;		</span><br><span class="line">	/**</span><br><span class="line">	 * @param args</span><br><span class="line">	 */		</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// JDK7的新特性：泛型推断。</span><br><span class="line">		// ArrayList&lt;Student&gt; array = new ArrayList&lt;&gt;();不会报错也不会警告，但是不建议这样使用。</span><br><span class="line">		ArrayList&lt;Animal&gt; array = new ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">		Animal s1 = new Animal(&quot;Tom&quot;, 4);</span><br><span class="line">		Animal s2 = new Animal(&quot;Jack&quot;, 2);</span><br><span class="line">		Animal s3 = new Animal(&quot;Coffe&quot;, 5);</span><br><span class="line"></span><br><span class="line">		array.add(s1);</span><br><span class="line">		array.add(s2);</span><br><span class="line">		array.add(s3);</span><br><span class="line"></span><br><span class="line">		Iterator&lt;Animal&gt; it = array.iterator();</span><br><span class="line">		while (it.hasNext()) &#123;</span><br><span class="line">			Animal s = it.next();</span><br><span class="line">			System.out.println(s.getName() + &quot;---&quot; + s.getAge());</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;------this is a dividing line------&quot;);</span><br><span class="line"></span><br><span class="line">		for (int x = 0; x &lt; array.size(); x++) &#123;</span><br><span class="line">			Animal s = array.get(x);</span><br><span class="line">			System.out.println(s.getName() + &quot;---&quot; + s.getAge());</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;------this is a dividing line------&quot;);</span><br><span class="line">		for (Animal s : array) &#123;</span><br><span class="line">			System.out.println(s.getName() + &quot;---&quot; + s.getAge());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li><p>类别</p>
+<ul>
+<li><p>泛型类</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* for example*/</span></span><br><span class="line"><span class="comment">/*该段在编译时候不会报错也不会警告，但是运行错误，原因是类型转化问题*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ObjectTool</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> Object obj;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">getObj</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> obj;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setObj</span><span class="params">(Object obj)</span> </span>&#123; </span><br><span class="line">		<span class="comment">// Object obj = new Integer(30);</span></span><br><span class="line">		<span class="keyword">this</span>.obj = obj;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ObjectToolDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		ObjectTool ot = <span class="keyword">new</span> ObjectTool();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 运行正常。</span></span><br><span class="line">		ot.setObj(<span class="keyword">new</span> Integer(<span class="number">2</span>));</span><br><span class="line">		Integer i = (Integer) ot.getObj();</span><br><span class="line">		System.out.println(<span class="string">"年龄是："</span> + i);</span><br><span class="line"></span><br><span class="line">		ot.setObj(<span class="keyword">new</span> String(<span class="string">"Tom"</span>));</span><br><span class="line">		String s = (String) ot.getObj();</span><br><span class="line">		System.out.println(<span class="string">"姓名是："</span> + s);</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"---------"</span>);</span><br><span class="line">		ot.setObj(<span class="keyword">new</span> Integer(<span class="number">2</span>));</span><br><span class="line">		<span class="comment">// 报错，类型转换错误，ClassCastException</span></span><br><span class="line">		String ss = (String) ot.getObj();</span><br><span class="line">		System.out.println(<span class="string">"姓名是："</span> + ss);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">"-------this is a dividing line---------"</span>);</span><br><span class="line"><span class="comment">/*泛型解决方案*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ObjectTool</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> T obj;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> T <span class="title">getObj</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> obj;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setObj</span><span class="params">(T obj)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.obj = obj;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ObjectToolDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		ObjectTool&lt;String&gt; ot = <span class="keyword">new</span> ObjectTool&lt;String&gt;();		</span><br><span class="line">		ot.setObj(<span class="keyword">new</span> String(<span class="string">"Tom"</span>));</span><br><span class="line">		String s = ot.getObj();</span><br><span class="line">		System.out.println(<span class="string">"姓名是："</span> + s);</span><br><span class="line"></span><br><span class="line">		ObjectTool&lt;Integer&gt; ot2 = <span class="keyword">new</span> ObjectTool&lt;Integer&gt;();</span><br><span class="line">		<span class="comment">// ot2.setObj(new String("Jack"));//这个时候编译期间就过不去</span></span><br><span class="line">		ot2.setObj(<span class="keyword">new</span> Integer(<span class="number">27</span>));</span><br><span class="line">		Integer i = ot2.getObj();</span><br><span class="line">		System.out.println(<span class="string">"年龄是："</span> + i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>泛型方法</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ObjectTool</span> </span>&#123;</span><br><span class="line">	<span class="keyword">public</span> &lt;T&gt; <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">		System.out.println(t);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ObjectToolDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// 定义到泛型方法后，可以接受任意数据类型。</span></span><br><span class="line">		ObjectTool ot = <span class="keyword">new</span> ObjectTool();</span><br><span class="line">		ot.show(<span class="string">"hello"</span>);</span><br><span class="line">		ot.show(<span class="number">100</span>);</span><br><span class="line">		ot.show(<span class="keyword">true</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>泛型接口</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Inter</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(T t)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*第一种：实现类在实现接口的时候已经知道数据类型*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterImpl</span> <span class="keyword">implements</span> <span class="title">Inter</span>&lt;<span class="title">String</span>&gt; </span>&#123;	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(String t)</span> </span>&#123;</span><br><span class="line">		System.out.println(t);</span><br><span class="line">	&#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//第二种情况：还不知道数据类型.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterImpl</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">Inter</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">		System.out.println(t);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">/*第一种*/</span></span><br><span class="line">		 Inter&lt;String&gt; i = <span class="keyword">new</span> InterImpl();</span><br><span class="line">		i.show(<span class="string">"hello"</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">/*第二种情况的测试*/</span></span><br><span class="line">		Inter&lt;String&gt; i = <span class="keyword">new</span> InterImpl&lt;String&gt;();</span><br><span class="line">		i.show(<span class="string">"hello"</span>);</span><br><span class="line"></span><br><span class="line">		Inter&lt;Integer&gt; ii = <span class="keyword">new</span> InterImpl&lt;Integer&gt;();</span><br><span class="line">		ii.show(<span class="number">100</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>泛型高级通配符</p>
+<ul>
+<li>?</li>
+<li>? extends E</li>
+<li>? super E</li>
+<li>代码实例  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*for example*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// 泛型如果明确的写的时候，前后必须一致</span></span><br><span class="line">		Collection&lt;Object&gt; c1 = <span class="keyword">new</span> ArrayList&lt;Object&gt;();</span><br><span class="line">		<span class="comment">// Collection&lt;Object&gt; c2 = new ArrayList&lt;Animal&gt;();	报错	</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">// ?表示任意的类型都是可以的</span></span><br><span class="line">		Collection&lt;?&gt; c5 = <span class="keyword">new</span> ArrayList&lt;Object&gt;();		</span><br><span class="line">		Collection&lt;?&gt; c6 = <span class="keyword">new</span> ArrayList&lt;Animal&gt;();			</span><br><span class="line"></span><br><span class="line">		<span class="comment">// ? extends E:向下限定，E及其子类</span></span><br><span class="line">		<span class="comment">// Collection&lt;? extends Animal&gt; c9 = new ArrayList&lt;Object&gt;();</span></span><br><span class="line">		Collection&lt;? extends Animal&gt; c10 = <span class="keyword">new</span> ArrayList&lt;Animal&gt;();</span><br><span class="line">		Collection&lt;? extends Animal&gt; c11 = <span class="keyword">new</span> ArrayList&lt;Dog&gt;();		</span><br><span class="line"></span><br><span class="line">		<span class="comment">// ? super E:向上限定，E极其父类</span></span><br><span class="line">		Collection&lt;? <span class="keyword">super</span> Animal&gt; c13 = <span class="keyword">new</span> ArrayList&lt;Object&gt;();</span><br><span class="line">		Collection&lt;? <span class="keyword">super</span> Animal&gt; c14 = <span class="keyword">new</span> ArrayList&lt;Animal&gt;();</span><br><span class="line">		<span class="comment">// Collection&lt;? super Animal&gt; c15 = new ArrayList&lt;Dog&gt;();</span></span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">Dog</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h3><p><strong>描述：</strong>一种简化的for循环结构。</p>
+<ul>
+<li>语法格式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(DataType Variable : Collection/Object)&#123;</span><br><span class="line">	Variable in Array/Collection.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h3><p>Arrays工具下一个函数：<br>static <t> List<t> asList(T… a) 返回由指定数组支持的固定大小的列表。</t></t></p>
+<ul>
+<li>代码实例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = Arrays.asList(&quot;hello&quot;, &quot;world&quot;);</span><br><span class="line">	// UnsupportedOperationException</span><br><span class="line">	// list.add(&quot;NewDay&quot;);</span><br><span class="line">	// UnsupportedOperationException</span><br><span class="line">	// list.remove(NewLife);</span><br><span class="line">	list.set(1, &quot;Test&quot;);</span><br><span class="line"></span><br><span class="line">	for (String s : list) &#123;</span><br><span class="line">		System.out.println(s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="集合嵌套遍历"><a href="#集合嵌套遍历" class="headerlink" title="集合嵌套遍历"></a>集合嵌套遍历</h3><ul>
+<li><p>实例一</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/*for example,二层嵌套*/</span><br><span class="line">public class CollectionCc &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// 最外层集合</span><br><span class="line"></span><br><span class="line">		ArrayList&lt;ArrayList&lt;Animal&gt;&gt; bigArrayList = new ArrayList&lt;ArrayList&lt;Animal&gt;&gt;();</span><br><span class="line">		//创建对应的所有对象，分别添加进组，再小组进大组。</span><br><span class="line">		ArrayList&lt;Animal&gt; firstArrayList = new ArrayList&lt;Student&gt;();	</span><br><span class="line">		bigArrayList.add(firstArrayList);</span><br><span class="line">	</span><br><span class="line">		ArrayList&lt;Animal&gt; secondArrayList = new ArrayList&lt;Student&gt;();</span><br><span class="line">		bigArrayList.add(secondArrayList);</span><br><span class="line">	</span><br><span class="line">		ArrayList&lt;Animal&gt; thirdArrayList = new ArrayList&lt;Student&gt;();</span><br><span class="line">		bigArrayList.add(thirdArrayList);</span><br><span class="line"></span><br><span class="line">		// 遍历集合</span><br><span class="line">		for (ArrayList&lt;Animal&gt; array : bigArrayList) &#123;</span><br><span class="line">			for (Student s : array) &#123;</span><br><span class="line">				System.out.println(s.getName() + &quot;---&quot; + s.getAge());</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实例二</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/*获取1-100随机数*/</span><br><span class="line">public static void main(String[] args) &#123;		</span><br><span class="line">		Random r = new Random();</span><br><span class="line">		</span><br><span class="line">		//泛型集合</span><br><span class="line">		ArrayList&lt;Integer&gt; arrayCc = new ArrayList&lt;Integer&gt;();		</span><br><span class="line">		int count = 0;</span><br><span class="line">		</span><br><span class="line">		while (count &lt; 10) &#123;			</span><br><span class="line">			int number = r.nextInt(20) + 1;			</span><br><span class="line">			</span><br><span class="line">			if(!arrayCc.contains(number))&#123;</span><br><span class="line">				//如果不存在:就添加，统计变量++。</span><br><span class="line">				arrayCc.add(number);</span><br><span class="line">				count++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;		</span><br><span class="line">		//增强for遍历.</span><br><span class="line">		for(Integer i : array)&#123;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(array);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实例三</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">/*for example*/</span><br><span class="line">/*获取键盘输入的不确定个数的最大值.*/</span><br><span class="line">public static void main(String[] args) &#123;		</span><br><span class="line">	Scanner sc = new Scanner(System.in);</span><br><span class="line"></span><br><span class="line">	// 数据不确定的情况下。只能是用集合存储，翻新保证程序的健壮性.</span><br><span class="line">	ArrayList&lt;Integer&gt; array = new ArrayList&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line">	// 设置结束符号，此处为0.</span><br><span class="line">	while (true) &#123;</span><br><span class="line">		System.out.println(&quot;请输入数据：&quot;);</span><br><span class="line">		int number = sc.nextInt();</span><br><span class="line">		if (number != 0) &#123;</span><br><span class="line">			array.add(number);</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	// 把集合转成数组</span><br><span class="line">	// public &lt;T&gt; T[] toArray(T[] a)</span><br><span class="line">	Integer[] i = new Integer[array.size()];</span><br><span class="line">	// Integer[] ii = array.toArray(i);</span><br><span class="line">	array.toArray(i);</span><br><span class="line"></span><br><span class="line">	// 对数组排序,public static void sort(Object[] a).</span><br><span class="line">	Arrays.sort(i);</span><br><span class="line"></span><br><span class="line">	// 获取该数组中的最大索引的值</span><br><span class="line">	System.out.println(&quot;数组是：&quot; + arrayToString(i) + &quot;,最大值是:&quot;</span><br><span class="line">			+ i[i.length - 1]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static String arrayToString(Integer[] i) &#123;</span><br><span class="line">		StringBuilder sb = new StringBuilder();</span><br><span class="line"></span><br><span class="line">		sb.append(&quot;[&quot;);</span><br><span class="line">		for (int x = 0; x &lt; i.length; x++) &#123;</span><br><span class="line">			if (x == i.length - 1) &#123;</span><br><span class="line">				sb.append(i[x]);</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				sb.append(i[x]).append(&quot;, &quot;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		sb.append(&quot;]&quot;);</span><br><span class="line"></span><br><span class="line">		return sb.toString();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -960,7 +553,9 @@ return sb.toString();
       
         <div class="post-tags">
           
-            <a href="/GaoMing_18000211.github.io/tags/List-泛型/" rel="tag"># List 泛型</a>
+            <a href="/GaoMing_18000211.github.io/tags/List/" rel="tag"># List</a>
+          
+            <a href="/GaoMing_18000211.github.io/tags/泛型/" rel="tag"># 泛型</a>
           
         </div>
       
@@ -979,8 +574,8 @@ return sb.toString();
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/GaoMing_18000211.github.io/2018/11/02/GitHub-List&泛型/" rel="prev" title="List&泛型">
-                List&泛型 <i class="fa fa-chevron-right"></i>
+              <a href="/GaoMing_18000211.github.io/2018/11/03/04_文件和目录（理解）/" rel="prev" title="04_文件和目录">
+                04_文件和目录 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1058,7 +653,7 @@ return sb.toString();
               
                 <a href="/GaoMing_18000211.github.io/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1080,7 +675,7 @@ return sb.toString();
               
               <div class="site-state-item site-state-tags">
                 <a href="/GaoMing_18000211.github.io/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1147,7 +742,7 @@ return sb.toString();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#List"><span class="nav-number">1.</span> <span class="nav-text">List</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#List"><span class="nav-number">1.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#list子类及其特性"><span class="nav-number">1.1.</span> <span class="nav-text">list子类及其特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.1.1.</span> <span class="nav-text">ArrayList:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vector"><span class="nav-number">1.1.2.</span> <span class="nav-text">Vector:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedList"><span class="nav-number">1.1.3.</span> <span class="nav-text">LinkedList:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合总结"><span class="nav-number">1.2.</span> <span class="nav-text">集合总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型"><span class="nav-number">1.3.</span> <span class="nav-text">泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增强for循环"><span class="nav-number">1.3.1.</span> <span class="nav-text">增强for循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可变参数"><span class="nav-number">1.3.2.</span> <span class="nav-text">可变参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合嵌套遍历"><span class="nav-number">1.3.3.</span> <span class="nav-text">集合嵌套遍历</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

@@ -94,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="file exception," />
+  <meta name="keywords" content="file exception,exception," />
 
 
 
@@ -105,21 +105,22 @@
 
 
 
-<meta name="description" content="exception描述：程序非正常的编译&amp;amp;运行情况，实际使用过程中可能会出现非正常使用或者是代码逻辑上的不严谨导致的额出错。异常的处理规则是，原则上是本级处理，但是无处理语句会见exception抛到上级，直到处理。最高级别是JVM，则抛出error。  异常的分类     异常的体系     异常的处理机制       exception与runexception  由分类的层次结构图可">
-<meta name="keywords" content="file exception">
+<meta name="description" content="exception描述：程序非正常的编译&amp;amp;运行情况，实际使用过程中可能会出现非正常使用或者是代码逻辑上的不严谨导致的额出错。异常的处理规则是，原则上是本级处理，但是无处理语句会见exception抛到上级，直到处理。最高级别是JVM，则抛出error。 异常知识 异常的分类     异常的体系     异常的处理机制       exception与runexception  由分类的层次">
+<meta name="keywords" content="file exception,exception">
 <meta property="og:type" content="article">
 <meta property="og:title" content="exception&amp;file">
 <meta property="og:url" content="http://yoursite.com/2018/11/08/exception&file/index.html">
 <meta property="og:site_name" content="GaoMing&#39;  Blog">
-<meta property="og:description" content="exception描述：程序非正常的编译&amp;amp;运行情况，实际使用过程中可能会出现非正常使用或者是代码逻辑上的不严谨导致的额出错。异常的处理规则是，原则上是本级处理，但是无处理语句会见exception抛到上级，直到处理。最高级别是JVM，则抛出error。  异常的分类     异常的体系     异常的处理机制       exception与runexception  由分类的层次结构图可">
+<meta property="og:description" content="exception描述：程序非正常的编译&amp;amp;运行情况，实际使用过程中可能会出现非正常使用或者是代码逻辑上的不严谨导致的额出错。异常的处理规则是，原则上是本级处理，但是无处理语句会见exception抛到上级，直到处理。最高级别是JVM，则抛出error。 异常知识 异常的分类     异常的体系     异常的处理机制       exception与runexception  由分类的层次">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/NBUUfEg.png">
 <meta property="og:image" content="https://i.imgur.com/zqOVp3H.png">
 <meta property="og:image" content="https://i.imgur.com/E6MpzFw.png">
-<meta property="og:updated_time" content="2018-11-25T14:33:48.825Z">
+<meta property="og:image" content="https://i.imgur.com/nhML0s4.png">
+<meta property="og:updated_time" content="2018-11-27T07:46:51.979Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="exception&amp;file">
-<meta name="twitter:description" content="exception描述：程序非正常的编译&amp;amp;运行情况，实际使用过程中可能会出现非正常使用或者是代码逻辑上的不严谨导致的额出错。异常的处理规则是，原则上是本级处理，但是无处理语句会见exception抛到上级，直到处理。最高级别是JVM，则抛出error。  异常的分类     异常的体系     异常的处理机制       exception与runexception  由分类的层次结构图可">
+<meta name="twitter:description" content="exception描述：程序非正常的编译&amp;amp;运行情况，实际使用过程中可能会出现非正常使用或者是代码逻辑上的不严谨导致的额出错。异常的处理规则是，原则上是本级处理，但是无处理语句会见exception抛到上级，直到处理。最高级别是JVM，则抛出error。 异常知识 异常的分类     异常的体系     异常的处理机制       exception与runexception  由分类的层次">
 <meta name="twitter:image" content="https://i.imgur.com/NBUUfEg.png">
 
 
@@ -443,7 +444,7 @@
 
       
         <h2 id="exception"><a href="#exception" class="headerlink" title="exception"></a>exception</h2><p>描述：程序非正常的编译&amp;运行情况，实际使用过程中可能会出现非正常使用或者是代码逻辑上的不严谨导致的额出错。异常的处理规则是，原则上是本级处理，但是无处理语句会见exception抛到上级，直到处理。最高级别是JVM，则抛出error。</p>
-<ul>
+<h3 id="异常知识"><a href="#异常知识" class="headerlink" title="异常知识"></a>异常知识</h3><ul>
 <li><p>异常的分类</p>
 <p>  <img src="https://i.imgur.com/NBUUfEg.png" alt=""></p>
 </li>
@@ -461,7 +462,7 @@
 <li>编译期间的错误是基本的语法错误，是必要进行处理的，是保证程序运行的前提。否则编译无法通过…</li>
 <li>运行期异常可以不处理，也可以处理。处理方式一般是抛给上一级，或者使用throw new exception().</li>
 <li><p>在代码块中经常会使用到throw与throws，它们的区别是一个前置是运行期间可能的错误，是可以不处理的，如:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public static int divide(int a, int b)&#123;</span><br><span class="line">	retuen a/b;	//此处考虑到b考虑为0，则需要throw异常。</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static int divide(int a, int b)&#123;</span><br><span class="line">	if(b!=0)</span><br><span class="line">		retuen a/b;	</span><br><span class="line">	else</span><br><span class="line">		throw new ArithmeticException();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">	retuen a/b;	<span class="comment">//此处考虑到b考虑为0，则需要throw异常。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(b!=<span class="number">0</span>)</span><br><span class="line">		retuen a/b;	</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> ArithmeticException();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -469,274 +470,142 @@
 <ul>
 <li>throw存在于一个函数，抛出的是一个异常对象，“throw new ArithmeticException();”说明这里有一个异常产生了，而throws可以抛出多个异常，说明的是有可能出错，跟的是类名。</li>
 <li><p>异常处理格式&amp;顺序</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">	try...catch...finally	//完全的标准异常处理格式.</span><br><span class="line">	try...catch...</span><br><span class="line">	try...catch...catch...</span><br><span class="line">	try...catch...catch...fianlly			</span><br><span class="line">	try...finally</span><br><span class="line">	```		</span><br><span class="line">- 代码实例</span><br><span class="line">	- try...catch...作为一个完整的格式，一旦catch则异常处理完成，不继续执行相关的部分。</span><br></pre></td></tr></table></figure>
-<pre><code>/**for example/
-eg:
-try{
-        ...
-    }catch(异常类名 变量名) {
-        ...
-        e.printStackTrace();//显示简约的异常信息.
-    }
-int a = 5, b = 0;
-    try {
-        System.out.println(a / b);
-    } catch (ArithmeticException ae) {
-        System.out.println(&quot;除数不能为0&quot;);
-    }
-    System.out.println(&quot;over&quot;);// 可以显示出over.
-</code></pre></li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>...<span class="keyword">catch</span>...<span class="keyword">finally</span>	<span class="comment">//完全的标准异常处理格式.</span></span><br><span class="line"><span class="keyword">try</span>...<span class="keyword">catch</span>...</span><br><span class="line"><span class="keyword">try</span>...<span class="keyword">catch</span>...<span class="keyword">catch</span>...</span><br><span class="line"><span class="keyword">try</span>...<span class="keyword">catch</span>...<span class="keyword">catch</span>...fianlly			</span><br><span class="line"><span class="keyword">try</span>...<span class="keyword">finally</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码实例</p>
+<ul>
+<li>try…catch…作为一个完整的格式，一旦catch则异常处理完成，不继续执行相关的部分。  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**for example/</span></span><br><span class="line"><span class="comment">eg:</span></span><br><span class="line"><span class="comment">try&#123;</span></span><br><span class="line"><span class="comment">		...</span></span><br><span class="line"><span class="comment">	&#125;catch(异常类名 变量名) &#123;</span></span><br><span class="line"><span class="comment">		...</span></span><br><span class="line"><span class="comment">		e.printStackTrace();//显示简约的异常信息.</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">int a = 5, b = 0;</span></span><br><span class="line"><span class="comment">	try &#123;</span></span><br><span class="line"><span class="comment">		System.out.println(a / b);</span></span><br><span class="line"><span class="comment">	&#125; catch (ArithmeticException ae) &#123;</span></span><br><span class="line"><span class="comment">		System.out.println("除数不能为0");</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">	System.out.println("over");// 可以显示出over.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	eg:</span></span><br><span class="line"><span class="comment">	try&#123;</span></span><br><span class="line"><span class="comment">			...</span></span><br><span class="line"><span class="comment">		&#125;catch(异常类名 变量名) &#123;</span></span><br><span class="line"><span class="comment">			...</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">		catch(异常类名 变量名) &#123;</span></span><br><span class="line"><span class="comment">			...</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">			int a = 10;</span></span><br><span class="line"><span class="comment">			int b = 0;</span></span><br><span class="line"><span class="comment">			int[] arr = &#123; 1, 2, 3 &#125;;</span></span><br><span class="line"><span class="comment">			try &#123;</span></span><br><span class="line"><span class="comment">				System.out.println(a / b);</span></span><br><span class="line"><span class="comment">				System.out.println(arr[3]);</span></span><br><span class="line"><span class="comment">				System.out.println("testOne");</span></span><br><span class="line"><span class="comment">			&#125; catch (ArithmeticException e) &#123;</span></span><br><span class="line"><span class="comment">				System.out.println("testTwo");</span></span><br><span class="line"><span class="comment">			&#125; catch (ArrayIndexOutOfBoundsException e) &#123;</span></span><br><span class="line"><span class="comment">				System.out.println("testThree");</span></span><br><span class="line"><span class="comment">			&#125; catch (Exception e) &#123;</span></span><br><span class="line"><span class="comment">				System.out.println("testFour");</span></span><br><span class="line"><span class="comment">			&#125;</span></span><br><span class="line"><span class="comment">			System.out.println("the last.");</span></span><br><span class="line"><span class="comment">			System.out.println("over.");</span></span><br><span class="line"><span class="comment">	/*执行结果：</span></span><br><span class="line"><span class="comment">	testTwo</span></span><br><span class="line"><span class="comment">	the last.</span></span><br><span class="line"><span class="comment">	over.</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">eg:</span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">		...</span><br><span class="line">		</span><br><span class="line">	&#125;<span class="keyword">catch</span>(异常类名 |异常类名 变量名) &#123;</span><br><span class="line">			...</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">	System.out.println(a / b);</span><br><span class="line">	System.out.println(arr[<span class="number">3</span>]);</span><br><span class="line">	&#125; <span class="keyword">catch</span> (ArithmeticException | ArrayIndexOutOfBoundsException e) &#123;</span><br><span class="line">		System.out.println(<span class="string">"testAa"</span>);</span><br><span class="line">		e.printStackTrace();<span class="comment">//显示简约的异常信息.</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"over."</span>);</span><br><span class="line"><span class="comment">/*执行结果：</span></span><br><span class="line"><span class="comment">testAa</span></span><br><span class="line"><span class="comment">over.</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<pre><code>        eg:
-        try{
-                ...
-            }catch(异常类名 变量名) {
-                ...
-            }
-            catch(异常类名 变量名) {
-                ...
-            }
-                int a = 10;
-                int b = 0;
-                int[] arr = { 1, 2, 3 };
-                try {
-                    System.out.println(a / b);
-                    System.out.println(arr[3]);
-                    System.out.println(&quot;testOne&quot;);
-                } catch (ArithmeticException e) {
-                    System.out.println(&quot;testTwo&quot;);
-                } catch (ArrayIndexOutOfBoundsException e) {
-                    System.out.println(&quot;testThree&quot;);
-                } catch (Exception e) {
-                    System.out.println(&quot;testFour&quot;);
+</li>
+<li><p>finally异常处理</p>
+<ul>
+<li>自定义异常<br>  继承自Exception或者RuntimeException,只需要提供无参构造和一个带参构造即可。  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">/*自定义异常抛出*/</span><br><span class="line">package TestMc;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">class AaException extends Exception &#123;</span><br><span class="line">	public AaException() &#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public AaException(String Message) &#123;</span><br><span class="line">		super(Message);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class AaCheck &#123;</span><br><span class="line">	public void check(int a) throws AaException &#123;</span><br><span class="line">		if (a &lt; 0 || a &gt; 5) &#123;</span><br><span class="line">			throw new AaException();</span><br><span class="line">		&#125; else</span><br><span class="line">			System.out.println(&quot;输入结果无误.&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class TestCc &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		System.out.println(&quot;Please input your grades:&quot;);</span><br><span class="line">		Scanner Cv = new Scanner(System.in);</span><br><span class="line">		int Bb = Cv.nextInt();</span><br><span class="line">		AaCheck Ba = new AaCheck();</span><br><span class="line">		try &#123;</span><br><span class="line">			Ba.check(Bb);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;Output Over.&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>继承异常的care<br>继承的子类异常限定范围应该比父类更加小，不能比父类的异常范围更大.<br>如：</p>
+<blockquote>
+<p>父的方法有异常抛出,子的重写方法在抛出异常的时候必须要小于等于父的异常。</p>
+<blockquote>
+<p>父的方法没有异常抛出,子的重写方法不能有异常抛出。</p>
+<blockquote>
+<p>父的方法抛出多个异常,子的重写方法必须比父少或者小。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h2 id="File"><a href="#File" class="headerlink" title="File"></a>File</h2><p>Java中对I/O操作的工具类，是用来操作文件的主要类。</p>
+<p>文件和目录路径名的抽象表示：<br>用户界面和操作系统使用依赖于系统的路径名字符串命名文件和目录。 这个类提供了一个抽象的，独立于系统的层次化路径名的视图。 </p>
+<ul>
+<li><p>构造方法</p>
+<ul>
+<li><p>该类的构造方法有四个，得到的都是对象类型数据，具体的使用如下：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">File(String pathname)	根据一个路径得到File对象。</span><br><span class="line">File(String parent, String child)	根据一个目录和一个子文件/目录得到File对象。</span><br><span class="line">File(File parent, String child)	根据一个父File对象和一个子文件/目录得到File对象。</span><br><span class="line">	</span><br><span class="line">/*for example*/</span><br><span class="line">File file = new File(&quot;e:\\demo\\a.txt&quot;);</span><br><span class="line">File file = new File(&quot;e:\\demo&quot;,&quot;a.txt&quot;);</span><br><span class="line">File file = new File(&quot;e:\\demo&quot;);</span><br><span class="line">		  File file2 = new File(file,&quot;a.txt&quot;);	</span><br><span class="line">	</span><br><span class="line">/*第一行==第二行==第三+第四行.*/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>File类文件的操作 </p>
+<ul>
+<li><p>创建功能</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/* 创建成功返回的true，否则false.*/</span><br><span class="line">public boolean createNewFile()	创建文件 如果存在这样的文件，就不创建了.</span><br><span class="line"></span><br><span class="line">/*以下两个只能创建文件夹，不能创建文件，就算是public boolean mkdir(“aa\\aa.txt”)也是创建的是aa.txt的文件夹.*/</span><br><span class="line">public boolean mkdir()	创建文件夹 如果存在这样的文件夹，就不创建了.</span><br><span class="line">public boolean mkdirs()	创建文件夹,如果父文件夹不存在，会帮你创建出来.</span><br><span class="line"></span><br><span class="line">/*for example*/</span><br><span class="line"></span><br><span class="line">File file = new File(&quot;e:\\demo&quot;); //在e盘目录下创建一个文件夹demo.</span><br><span class="line">System.out.println(&quot;mkdir:&quot; + file.mkdir());</span><br><span class="line"></span><br><span class="line">File file = new File(&quot;e:\\demos\\aa&quot;); //在e盘目录下创建一个文件夹demos\aa.</span><br><span class="line">System.out.println(&quot;mkdir:&quot; + file.mkdirs());</span><br><span class="line"></span><br><span class="line">File file = new File(&quot;e:\\demoss\\aa&quot;); //在e盘目录下创建一个文件夹demoss\aa.</span><br><span class="line">System.out.println(&quot;mkdir:&quot; + file.mkdir()); //无demoss创建失败.</span><br><span class="line">		</span><br><span class="line">File file2 = new File(&quot;e:\\demo\\a.txt&quot;);//在e盘目录demo下创建一个文件a.txt</span><br><span class="line">System.out.println(&quot;createNewFile:&quot; + file2.createNewFile());</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除功能</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> /*删除功能:public boolean delete()*/</span><br><span class="line"></span><br><span class="line">	如果你创建文件或者文件夹忘了写盘符路径，那么，默认在项目路径下。</span><br><span class="line"></span><br><span class="line">	Java中的删除直接从硬盘删除，不删除到回收站。</span><br><span class="line"></span><br><span class="line">	要删除一个文件夹，请注意该文件夹内不能包含文件或者文件夹，含有内容则无法删除。</span><br><span class="line">File file = new File(&quot;aaa\\bbb&quot;);</span><br><span class="line">File file2= new File(&quot;aaa&quot;);</span><br><span class="line">		System.out.println(&quot;delete:&quot; + file6.delete());</span><br><span class="line">		System.out.println(&quot;delete:&quot; + file7.delete());</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重命名功能</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public boolean renameTo(File dest)</span><br><span class="line">如果路径名相同，就是重命名，否则就是重命名&amp;&amp;剪切。 </span><br><span class="line">路径以盘符开始：绝对路径	如：c:\\a.txt</span><br><span class="line">路径不以盘符开始：相对路径	如：a.txt，默认本位置为项目根目录。</span><br><span class="line"></span><br><span class="line">/*for example*/</span><br><span class="line">File file2 = new File(&quot;E:\\testCc.txt&quot;);</span><br><span class="line">File newFile2 = new File(&quot;C:\\testCa.jpg&quot;);</span><br><span class="line">System.out.println(&quot;renameTo:&quot; + file2.renameTo(newFile2));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断功能</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/*for example*/</span><br><span class="line"></span><br><span class="line">public boolean isDirectory()	判断是否是目录</span><br><span class="line">public boolean isFile()		判断是否是文件</span><br><span class="line">public boolean exists()		判断是否存在</span><br><span class="line">public boolean canRead()	判断是否可读</span><br><span class="line">public boolean canWrite()	判断是否可写</span><br><span class="line">public boolean isHidden()	判断是否隐藏</span><br><span class="line"></span><br><span class="line">public class FileTest &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		File file = new File(&quot;testCc.txt&quot;);</span><br><span class="line"></span><br><span class="line">		System.out.println(&quot;isDirectory:&quot; + file.isDirectory());// false</span><br><span class="line">		System.out.println(&quot;isFile:&quot; + file.isFile());// true</span><br><span class="line">		System.out.println(&quot;exists:&quot; + file.exists());// true</span><br><span class="line">		System.out.println(&quot;canRead:&quot; + file.canRead());// true</span><br><span class="line">		System.out.println(&quot;canWrite:&quot; + file.canWrite());// true</span><br><span class="line">		System.out.println(&quot;isHidden:&quot; + file.isHidden());// false</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取功能</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/*for example*/</span><br><span class="line">public String getAbsolutePath()		获取绝对路径</span><br><span class="line">public String getPath()		获取相对路径</span><br><span class="line">public String getName()		获取名称</span><br><span class="line">public long length()		获取长度。字节数</span><br><span class="line">public long lastModified()	获取最后一次的修改时间，毫秒值，初试时间0为1970-01-01:00:00。</span><br><span class="line"></span><br><span class="line">public class FileDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// 创建文件对象</span><br><span class="line">		File file = new File(&quot;demo\\test.txt&quot;);</span><br><span class="line"></span><br><span class="line">		System.out.println(&quot;getAbsolutePath:&quot; + file.getAbsolutePath());</span><br><span class="line">		System.out.println(&quot;getPath:&quot; + file.getPath());</span><br><span class="line">		System.out.println(&quot;getName:&quot; + file.getName());</span><br><span class="line">		System.out.println(&quot;length:&quot; + file.length());</span><br><span class="line">		System.out.println(&quot;lastModified:&quot; + file.lastModified());</span><br><span class="line">		</span><br><span class="line">		Date d = new Date();</span><br><span class="line">		SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span><br><span class="line">		String s = sdf.format(d);</span><br><span class="line">		System.out.println(s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取功能</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public String[] list()	获取指定目录下的所有文件&amp;&amp;文件夹的名称，返回一个对应的String数组。</span><br><span class="line">public File[] listFiles()	获取指定目录下的所有文件&amp;&amp;文件夹的File对象数组。</span><br><span class="line"></span><br><span class="line">/*for example*/</span><br><span class="line"></span><br><span class="line">/*获取对应文件夹下的文件名称.*/</span><br><span class="line">		File file = new File(&quot;C:\\&quot;);</span><br><span class="line"></span><br><span class="line">		//public String[] list()</span><br><span class="line">		String[] strArray = file.list();</span><br><span class="line">		for (String s : strArray) &#123;</span><br><span class="line">			System.out.println(s);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;----分----割----线----&quot;);</span><br><span class="line"></span><br><span class="line">		//public File[] listFiles()+getName()返回名字.</span><br><span class="line">		File[] fileArray = file.listFiles();</span><br><span class="line">		for (File f : fileArray) &#123;</span><br><span class="line">			System.out.println(f.getName());</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>过滤功能</p>
+<blockquote>
+<p>描述：获取指定格式文件名字，并且输出。</p>
+<blockquote>
+<p>接口：文件名称过滤器:FilenameFilter借口。</p>
+<blockquote>
+<p>函数如下：        </p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public String[] list(FilenameFilter filter)</span><br><span class="line">public File[] listFiles(FilenameFilter filter)</span><br></pre></td></tr></table></figure>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+<pre><code>/*获取ttf扩展名的文件*/--&quot;C:\\Windows\\Boot\\Fonts&quot;为测试文件路径.
+
+/*for example----普通for循环结构实现.*/
+
+import java.io.File;
+public class FileTest {
+    public static void main(String[] args) {
+
+        File file = new File(”C:\\Windows\\Boot\\Fonts“);    
+        File[] fileArray = file.listFiles();
+
+        for (File f : fileArray) {            
+            if (f.isFile()) {            
+                if (f.getName().endsWith(&quot;.ttf&quot;)) {            
+                    System.out.println(f.getName());
                 }
-                System.out.println(&quot;the last.&quot;);
-                System.out.println(&quot;over.&quot;);
-        /*执行结果：
-        testTwo
-        the last.
-        over.
-        */
-
-
-    eg:
-    try{
-            ...
-
-        }catch(异常类名 |异常类名 变量名) {
-                ...
-        }
-
-    try{
-        System.out.println(a / b);
-        System.out.println(arr[3]);
-        } catch (ArithmeticException | ArrayIndexOutOfBoundsException e) {
-            System.out.println(&quot;testAa&quot;);
-            e.printStackTrace();//显示简约的异常信息.
-        }
-
-            System.out.println(&quot;over.&quot;);
-    /*执行结果：
-    testAa
-    over.
-    */
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- finally异常处理</span><br><span class="line">	- 自定义异常</span><br><span class="line">		继承自Exception或者RuntimeException,只需要提供无参构造和一个带参构造即可。</span><br></pre></td></tr></table></figure>
-
-    /*自定义异常抛出*/
-    package TestMc;
-    import java.util.Scanner;
-    class AaException extends Exception {
-        public AaException() {
-        }
-
-        public AaException(String Message) {
-            super(Message);
-        }
-    }
-    class AaCheck {
-        public void check(int a) throws AaException {
-            if (a &lt; 0 || a &gt; 5) {
-                throw new AaException();
-            } else
-                System.out.println(&quot;输入结果无误.&quot;);
-        }
-    }
-    class TestCc {
-        public static void main(String[] args) {
-            System.out.println(&quot;Please input your grades:&quot;);
-            Scanner Cv = new Scanner(System.in);
-            int Bb = Cv.nextInt();
-            AaCheck Ba = new AaCheck();
-            try {
-                Ba.check(Bb);
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-            System.out.println(&quot;Output Over.&quot;);
         }
     }
+}                        
 
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">- 继承异常的care</span><br><span class="line">继承的子类异常限定范围应该比父类更加小，不能比父类的异常范围更大.</span><br><span class="line">如：</span><br><span class="line">	&gt;父的方法有异常抛出,子的重写方法在抛出异常的时候必须要小于等于父的异常。</span><br><span class="line">	&gt;&gt;父的方法没有异常抛出,子的重写方法不能有异常抛出。</span><br><span class="line">	&gt;&gt;&gt;父的方法抛出多个异常,子的重写方法必须比父少或者小。</span><br><span class="line"></span><br><span class="line">## File</span><br><span class="line">Java中对I/O操作的工具类，是用来操作文件的主要类。</span><br><span class="line"></span><br><span class="line">文件和目录路径名的抽象表示：</span><br><span class="line">用户界面和操作系统使用依赖于系统的路径名字符串命名文件和目录。 这个类提供了一个抽象的，独立于系统的层次化路径名的视图。 </span><br><span class="line">- 构造方法</span><br><span class="line">	- 该类的构造方法有四个，得到的都是对象类型数据，具体的使用如下：</span><br></pre></td></tr></table></figure>
+/*for example----文件过滤器实现*/
+import java.io.File;
+import java.io.FilenameFilter;
 
-    File(String pathname)    根据一个路径得到File对象。
-    File(String parent, String child)    根据一个目录和一个子文件/目录得到File对象。
-    File(File parent, String child)    根据一个父File对象和一个子文件/目录得到File对象。
+public class FileTest {
+    public static void main(String[] args) {
 
-    /*for example*/
-    File file = new File(&quot;e:\\demo\\a.txt&quot;);
-    File file = new File(&quot;e:\\demo&quot;,&quot;a.txt&quot;);
-    File file = new File(&quot;e:\\demo&quot;);
-              File file2 = new File(file,&quot;a.txt&quot;);    
+        File file = new File(&quot;C:\\Windows\\Boot\\Fonts&quot;);
 
-    /*第一行==第二行==第三+第四行.*/    
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- File类文件的操作 </span><br><span class="line">	- 创建功能</span><br></pre></td></tr></table></figure>
+        String[] strArray = file.list(new FilenameFilter() {
+            /*匿名类的使用。*/
+            @Override
+            public boolean accept(File dir, String name) {
 
-    /* 创建成功返回的true，否则false.*/
-    public boolean createNewFile()    创建文件 如果存在这样的文件，就不创建了.
+                // return false，表示不添加;
+                // return true,表示添加;
 
-    /*以下两个只能创建文件夹，不能创建文件，就算是public boolean mkdir(“aa\\aa.txt”)也是创建的是aa.txt的文件夹.*/
-    public boolean mkdir()    创建文件夹 如果存在这样的文件夹，就不创建了.
-    public boolean mkdirs()    创建文件夹,如果父文件夹不存在，会帮你创建出来.
+                return new File(dir, name).isFile() &amp;&amp; name.endsWith(&quot;.ttf&quot;);
+            }
+        });
 
-    /*for example*/
-
-    File file = new File(&quot;e:\\demo&quot;); //在e盘目录下创建一个文件夹demo.
-    System.out.println(&quot;mkdir:&quot; + file.mkdir());
-
-    File file = new File(&quot;e:\\demos\\aa&quot;); //在e盘目录下创建一个文件夹demos\aa.
-    System.out.println(&quot;mkdir:&quot; + file.mkdirs());
-
-    File file = new File(&quot;e:\\demoss\\aa&quot;); //在e盘目录下创建一个文件夹demoss\aa.
-    System.out.println(&quot;mkdir:&quot; + file.mkdir()); //无demoss创建失败.
-
-    File file2 = new File(&quot;e:\\demo\\a.txt&quot;);//在e盘目录demo下创建一个文件a.txt
-    System.out.println(&quot;createNewFile:&quot; + file2.createNewFile());
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 删除功能</span><br></pre></td></tr></table></figure>
-
-     /*删除功能:public boolean delete()*/
-
-        如果你创建文件或者文件夹忘了写盘符路径，那么，默认在项目路径下。
-
-        Java中的删除直接从硬盘删除，不删除到回收站。
-
-        要删除一个文件夹，请注意该文件夹内不能包含文件或者文件夹，含有内容则无法删除。
-    File file = new File(&quot;aaa\\bbb&quot;);
-    File file2= new File(&quot;aaa&quot;);
-            System.out.println(&quot;delete:&quot; + file6.delete());
-            System.out.println(&quot;delete:&quot; + file7.delete());
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 重命名功能</span><br></pre></td></tr></table></figure>
-
-    public boolean renameTo(File dest)
-    如果路径名相同，就是重命名，否则就是重命名&amp;&amp;剪切。 
-    路径以盘符开始：绝对路径    如：c:\\a.txt
-    路径不以盘符开始：相对路径    如：a.txt，默认本位置为项目根目录。
-
-    /*for example*/
-    File file2 = new File(&quot;E:\\testCc.txt&quot;);
-    File newFile2 = new File(&quot;C:\\testCa.jpg&quot;);
-    System.out.println(&quot;renameTo:&quot; + file2.renameTo(newFile2));
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 判断功能</span><br></pre></td></tr></table></figure>
-
-    /*for example*/
-
-    public boolean isDirectory()    判断是否是目录
-    public boolean isFile()        判断是否是文件
-    public boolean exists()        判断是否存在
-    public boolean canRead()    判断是否可读
-    public boolean canWrite()    判断是否可写
-    public boolean isHidden()    判断是否隐藏
-
-    public class FileTest {
-        public static void main(String[] args) {
-
-            File file = new File(&quot;testCc.txt&quot;);
-
-            System.out.println(&quot;isDirectory:&quot; + file.isDirectory());// false
-            System.out.println(&quot;isFile:&quot; + file.isFile());// true
-            System.out.println(&quot;exists:&quot; + file.exists());// true
-            System.out.println(&quot;canRead:&quot; + file.canRead());// true
-            System.out.println(&quot;canWrite:&quot; + file.canWrite());// true
-            System.out.println(&quot;isHidden:&quot; + file.isHidden());// false
-        }
-    }
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 获取功能</span><br></pre></td></tr></table></figure>
-
-    /*for example*/
-    public String getAbsolutePath()        获取绝对路径
-    public String getPath()        获取相对路径
-    public String getName()        获取名称
-    public long length()        获取长度。字节数
-    public long lastModified()    获取最后一次的修改时间，毫秒值，初试时间0为1970-01-01:00:00。
-
-    public class FileDemo {
-        public static void main(String[] args) {
-            // 创建文件对象
-            File file = new File(&quot;demo\\test.txt&quot;);
-
-            System.out.println(&quot;getAbsolutePath:&quot; + file.getAbsolutePath());
-            System.out.println(&quot;getPath:&quot; + file.getPath());
-            System.out.println(&quot;getName:&quot; + file.getName());
-            System.out.println(&quot;length:&quot; + file.length());
-            System.out.println(&quot;lastModified:&quot; + file.lastModified());
-
-            Date d = new Date();
-            SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
-            String s = sdf.format(d);
+        // 遍历
+        for (String s : strArray) {
             System.out.println(s);
         }
     }
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 获取功能</span><br></pre></td></tr></table></figure>
-
-    public String[] list()    获取指定目录下的所有文件&amp;&amp;文件夹的名称，返回一个对应的String数组。
-    public File[] listFiles()    获取指定目录下的所有文件&amp;&amp;文件夹的File对象数组。
-
-    /*for example*/
-
-    /*获取对应文件夹下的文件名称.*/
-            File file = new File(&quot;C:\\&quot;);
-
-            //public String[] list()
-            String[] strArray = file.list();
-            for (String s : strArray) {
-                System.out.println(s);
-            }
-            System.out.println(&quot;----分----割----线----&quot;);
-
-            //public File[] listFiles()+getName()返回名字.
-            File[] fileArray = file.listFiles();
-            for (File f : fileArray) {
-                System.out.println(f.getName());
-            }
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 过滤功能</span><br><span class="line">	&gt;描述：获取指定格式文件名字，并且输出。</span><br><span class="line">	&gt;&gt;接口：文件名称过滤器:FilenameFilter借口。</span><br><span class="line">	&gt;&gt;&gt;函数如下：</span><br></pre></td></tr></table></figure>
-
-    public String[] list(FilenameFilter filter)
-    public File[] listFiles(FilenameFilter filter)
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">		&gt;&gt;			</span><br><span class="line">		</span><br><span class="line">			/*获取ttf扩展名的文件*/--&quot;C:\\Windows\\Boot\\Fonts&quot;为测试文件路径.</span><br><span class="line">			</span><br><span class="line">			/*for example----普通for循环结构实现.*/</span><br><span class="line">			</span><br><span class="line">			import java.io.File;</span><br><span class="line">			public class FileTest &#123;</span><br><span class="line">				public static void main(String[] args) &#123;</span><br><span class="line">					</span><br><span class="line">					File file = new File(”C:\\Windows\\Boot\\Fonts“);	</span><br><span class="line">					File[] fileArray = file.listFiles();</span><br><span class="line">				</span><br><span class="line">					for (File f : fileArray) &#123;			</span><br><span class="line">						if (f.isFile()) &#123;			</span><br><span class="line">							if (f.getName().endsWith(&quot;.ttf&quot;)) &#123;			</span><br><span class="line">								System.out.println(f.getName());</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;						</span><br><span class="line">			</span><br><span class="line">			/*for example----文件过滤器实现*/</span><br><span class="line">			import java.io.File;</span><br><span class="line">			import java.io.FilenameFilter;</span><br><span class="line">			</span><br><span class="line">			public class FileTest &#123;</span><br><span class="line">				public static void main(String[] args) &#123;</span><br><span class="line">					</span><br><span class="line">					File file = new File(&quot;C:\\Windows\\Boot\\Fonts&quot;);</span><br><span class="line">			</span><br><span class="line">					String[] strArray = file.list(new FilenameFilter() &#123;</span><br><span class="line">						/*匿名类的使用。*/</span><br><span class="line">						@Override</span><br><span class="line">						public boolean accept(File dir, String name) &#123;</span><br><span class="line">			</span><br><span class="line">							// return false，表示不添加;</span><br><span class="line">							// return true,表示添加;</span><br><span class="line">							</span><br><span class="line">							return new File(dir, name).isFile() &amp;&amp; name.endsWith(&quot;.ttf&quot;);</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;);</span><br><span class="line">			</span><br><span class="line">					// 遍历</span><br><span class="line">					for (String s : strArray) &#123;</span><br><span class="line">						System.out.println(s);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">- 批量重命名</span><br><span class="line">	- 源文件：</span><br><span class="line">	- 目标文件：</span><br><span class="line">	- </span><br><span class="line">	![](https://i.imgur.com/nhML0s4.png)</span><br><span class="line"></span><br><span class="line">	&gt;&gt;</span><br></pre></td></tr></table></figure>
-
-import java.io.File;
-
-public class FileDemo {
-    public static void main(String[] args) {
-
-        File srcFolder = new File(&quot;E:\\TestCc&quot;);
-
-        File[] fileArray = srcFolder.listFiles();
-
-        for (File file : fileArray) {        
-
-            int index = name.indexOf(&quot;_&quot;);
-            String numberString = name.substring(index + 1, index + 4);        
-            int endIndex = name.lastIndexOf(&apos;_&apos;);
-            String nameString = name.substring(endIndex);
-            String newName = numberString.concat(nameString);
-            File newFile = new File(srcFolder, newName);        
-            file.renameTo(newFile);
-        }
-    }
 }
+</code></pre></li>
+</ul>
+</li>
+<li><p>批量重命名</p>
+<ul>
+<li>源文件：</li>
+<li>目标文件：</li>
+<li><p><img src="https://i.imgur.com/nhML0s4.png" alt=""></p>
+<blockquote>
+<blockquote>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import java.io.File;</span><br><span class="line"></span><br><span class="line">public class FileDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		File srcFolder = new File(&quot;E:\\TestCc&quot;);</span><br><span class="line">	</span><br><span class="line">		File[] fileArray = srcFolder.listFiles();</span><br><span class="line">	</span><br><span class="line">		for (File file : fileArray) &#123;		</span><br><span class="line"></span><br><span class="line">			int index = name.indexOf(&quot;_&quot;);</span><br><span class="line">			String numberString = name.substring(index + 1, index + 4);		</span><br><span class="line">			int endIndex = name.lastIndexOf(&apos;_&apos;);</span><br><span class="line">			String nameString = name.substring(endIndex);</span><br><span class="line">			String newName = numberString.concat(nameString);</span><br><span class="line">			File newFile = new File(srcFolder, newName);		</span><br><span class="line">			file.renameTo(newFile);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></blockquote>
+</li>
+</ul>
+</li>
+</ul>
 
-```
-</code></pre>
       
     </div>
     
@@ -754,6 +623,8 @@ public class FileDemo {
         <div class="post-tags">
           
             <a href="/GaoMing_18000211.github.io/tags/file-exception/" rel="tag"># file exception</a>
+          
+            <a href="/GaoMing_18000211.github.io/tags/exception/" rel="tag"># exception</a>
           
         </div>
       
@@ -855,7 +726,7 @@ public class FileDemo {
               
                 <a href="/GaoMing_18000211.github.io/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -877,7 +748,7 @@ public class FileDemo {
               
               <div class="site-state-item site-state-tags">
                 <a href="/GaoMing_18000211.github.io/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -944,7 +815,7 @@ public class FileDemo {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#exception"><span class="nav-number">1.</span> <span class="nav-text">exception</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#exception"><span class="nav-number">1.</span> <span class="nav-text">exception</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#异常知识"><span class="nav-number">1.1.</span> <span class="nav-text">异常知识</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#File"><span class="nav-number">2.</span> <span class="nav-text">File</span></a></li></ol></div>
             
 
           </div>
