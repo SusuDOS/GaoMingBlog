@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/GaoMing_18000211.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/GaoMing_18000211.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/GaoMing_18000211.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/GaoMing_18000211.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/GaoMing_18000211.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/GaoMing_18000211.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/GaoMing_18000211.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Vim,Vi,Vi必备操作," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="vi 编辑器内容组成 vi 说明 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令行图解  vi 简介vi 学习的必要性 要对远程服务器进行相关的配置文件的编辑，在无法使用图形界面的情况下操作导致学会使用vi/vim的必要性，这一点被视为必须学会使用vi/vim的最重要原因。   我想大多数情况下最好还是将文件下载下来修改完成，确定无误之后再提交可能是最好的方式，不然一条忘记判空 的 r">
+<meta name="keywords" content="Vim,Vi,Vi必备操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vi编辑器必备">
+<meta property="og:url" content="http://yoursite.com/2018/12/06/Vi编辑器基本操作/index.html">
+<meta property="og:site_name" content="GaoMing&#39;  Blog">
+<meta property="og:description" content="vi 编辑器内容组成 vi 说明 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令行图解  vi 简介vi 学习的必要性 要对远程服务器进行相关的配置文件的编辑，在无法使用图形界面的情况下操作导致学会使用vi/vim的必要性，这一点被视为必须学会使用vi/vim的最重要原因。   我想大多数情况下最好还是将文件下载下来修改完成，确定无误之后再提交可能是最好的方式，不然一条忘记判空 的 r">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/jvqcIaq.png">
+<meta property="og:image" content="https://i.imgur.com/u979vwn.png">
+<meta property="og:image" content="https://i.imgur.com/Jhd9Lj6.png">
+<meta property="og:image" content="https://i.imgur.com/kFMvNRh.png">
+<meta property="og:image" content="https://i.imgur.com/71ebhyp.png">
+<meta property="og:image" content="https://i.imgur.com/zp4nn0E.png">
+<meta property="og:image" content="https://i.imgur.com/EktUOQt.png">
+<meta property="og:image" content="https://i.imgur.com/N26ub4X.png">
+<meta property="og:image" content="https://i.imgur.com/jglYpwe.png">
+<meta property="og:image" content="https://i.imgur.com/zv7aNgB.png">
+<meta property="og:image" content="https://i.imgur.com/nDXTx5g.png">
+<meta property="og:image" content="https://i.imgur.com/EB5EdT2.png">
+<meta property="og:image" content="https://i.imgur.com/lB6yeYo.png">
+<meta property="og:image" content="https://i.imgur.com/KhLDNrW.png">
+<meta property="og:image" content="https://i.imgur.com/T2jMzFZ.png">
+<meta property="og:image" content="https://i.imgur.com/6d9lCNC.png">
+<meta property="og:image" content="https://i.imgur.com/dqGOxJx.png">
+<meta property="og:image" content="https://i.imgur.com/W4AlK1B.png">
+<meta property="og:image" content="https://i.imgur.com/s7C72VK.png">
+<meta property="og:image" content="https://i.imgur.com/9eoByNV.png">
+<meta property="og:image" content="https://i.imgur.com/PQKSHdy.png">
+<meta property="og:image" content="https://i.imgur.com/xOIZ4qm.png">
+<meta property="og:updated_time" content="2018-12-09T15:08:09.172Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vi编辑器必备">
+<meta name="twitter:description" content="vi 编辑器内容组成 vi 说明 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令行图解  vi 简介vi 学习的必要性 要对远程服务器进行相关的配置文件的编辑，在无法使用图形界面的情况下操作导致学会使用vi/vim的必要性，这一点被视为必须学会使用vi/vim的最重要原因。   我想大多数情况下最好还是将文件下载下来修改完成，确定无误之后再提交可能是最好的方式，不然一条忘记判空 的 r">
+<meta name="twitter:image" content="https://i.imgur.com/jvqcIaq.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/GaoMing_18000211.github.io/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":15,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/06/Vi编辑器基本操作/"/>
+
+
+
+
+
+  <title>Vi编辑器必备 | GaoMing'  Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  
+  	<script type="text/javascript"
+	color="0,0,0" opacity='0.7' zIndex="-1" count="100"
+	src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/GaoMing_18000211.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">GaoMing'  Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">主页简介</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/GaoMing_18000211.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/GaoMing_18000211.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/GaoMing_18000211.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-books">
+          <a href="/GaoMing_18000211.github.io/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-films">
+          <a href="/GaoMing_18000211.github.io/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/GaoMing_18000211.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/GaoMing_18000211.github.io/2018/12/06/Vi编辑器基本操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CS_GaoMing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/GaoMing_18000211.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GaoMing'  Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Vi编辑器必备</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-06T01:35:49+08:00">
+                2018-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/GaoMing_18000211.github.io/categories/Linux基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/GaoMing_18000211.github.io/2018/12/06/Vi编辑器基本操作/" class="leancloud_visitors" data-flag-title="Vi编辑器必备">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="vi-编辑器"><a href="#vi-编辑器" class="headerlink" title="vi 编辑器"></a>vi 编辑器</h1><h2 id="内容组成"><a href="#内容组成" class="headerlink" title="内容组成"></a>内容组成</h2><ul>
+<li><code>vi</code> 说明</li>
+<li>打开和新建文件</li>
+<li>三种工作模式</li>
+<li>常用命令</li>
+<li>分屏命令</li>
+<li>常用命令行图解</li>
+</ul>
+<h2 id="vi-简介"><a href="#vi-简介" class="headerlink" title="vi 简介"></a><code>vi</code> 简介</h2><h3 id="vi-学习的必要性"><a href="#vi-学习的必要性" class="headerlink" title="vi 学习的必要性"></a><code>vi</code> 学习的必要性</h3><ul>
+<li>要对远程服务器进行相关的配置文件的编辑，在无法使用图形界面的情况下操作导致学会使用vi/vim的必要性，这一点被视为必须学会使用vi/vim的最重要原因。</li>
+</ul>
+<ul>
+<li>我想大多数情况下最好还是将文件下载下来修改完成，确定无误之后再提交可能是最好的方式，不然一条忘记判空 的 <code>rm -rf(xxx==false)</code> 可能导致令人帅歪歪的结果。</li>
+</ul>
+<ul>
+<li><p>考虑到windows与linux即使在回车换行上都存在着差异，所以更加准确的最好使用服务器端的环境进行文件的编辑可以避免运行的异常。</p>
+</li>
+<li><font color="blue">在没有图形界面的环境下，要编辑文件，<code>vi</code> 是最佳选择，理由是系统自带，无需安装其他的插件/是软件！</font>
+
+</li>
+</ul>
+<h3 id="vi"><a href="#vi" class="headerlink" title="vi"></a>vi</h3><ul>
+<li><code>vi</code> 是 <code>Visual interface</code> 的简称，是 <code>Linux</code> 中系统自带的一块的文本编辑器。</li>
+<li><p>键盘有效键位区域-红色标记部分。<br><img src="https://i.imgur.com/jvqcIaq.png" alt=""></p>
+</li>
+<li><p><code>vi</code> 的特点：</p>
+<ul>
+<li>没有图形编辑器界面下的文件，新建等选项，所以这是一款完全无指导意识的文件编辑器，要么 <code>会</code> /要么 <code>不会</code> 。</li>
+<li>不能对字体、段落进行排版，比如设置字体大小，段落换行，像自带的python，缩进决定程序逻辑的层次结构。</li>
+<li>值得恭喜的是概况文件编辑器，不能通过点击鼠标定位到具体位置。  </li>
+</ul>
+</li>
+</ul>
+<h4 id="vim"><a href="#vim" class="headerlink" title="vim"></a><code>vim</code></h4><ul>
+<li><p>可以视为vim是对vi友好型的改进，<em>vim = vi improved</em>。</p>
+</li>
+<li><p><code>vim</code> 是从 <code>vi</code> 发展出来的一个文本编辑器，支持 <strong>代码补全</strong>、<strong>编译</strong> 及 <strong>错误跳转</strong> 等方便编程的功能特别丰富，在程序员中被广泛使用，被称为 <strong>编辑器之神</strong></p>
+</li>
+<li><p>但是我最想表达的是： <code>懵逼，一直懵逼，全程懵逼（我在哪儿，我在干什么，这特么是什么鬼玩意，我要怎么退出…</code>。</p>
+</li>
+</ul>
+<ul>
+<li><font color="red">导致的结果是，这款牛逼的编辑器，需要极多的快捷键-包括但不限于组合键，快捷命令需要记忆！</font>
+
+</li>
+</ul>
+<h4 id="查询命令位置"><a href="#查询命令位置" class="headerlink" title="查询命令位置"></a>查询命令位置</h4><ul>
+<li>在很多 <code>Linux</code> 发行版中直接把 <code>vi</code> 做成 <code>vim</code> 的软连接，比如执行 <code>vi test</code>， 可能调用的是vim，vim初次进入编辑有简单的快捷键提示。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找 vi 的运行文件.</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">which</span> vi</span><br><span class="line">ls -l /usr/bin/vi</span><br><span class="line">ls -l /etc/alternatives/vi</span><br><span class="line">ls -l /usr/bin/vim.basic</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找 vim 的运行文件.</span></span><br><span class="line"><span class="built_in">which</span> vim</span><br><span class="line">ls -l /usr/bin/vim</span><br><span class="line">ls -l /etc/alternatives/vim</span><br><span class="line">ls -l /usr/bin/vim.basic</span><br></pre></td></tr></table></figure>
+<h2 id="vi-vim文件操作"><a href="#vi-vim文件操作" class="headerlink" title="vi/vim文件操作"></a>vi/vim文件操作</h2><h3 id="文件打开-创建"><a href="#文件打开-创建" class="headerlink" title="文件打开/创建"></a>文件打开/创建</h3><ul>
+<li>在终端中输入 <code>vi</code> <strong>在后面跟上文件名</strong> 即可。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># for example.</span></span><br><span class="line"><span class="comment"># 当前目录下创建Test.py文件，若该文件存在则打开该文件。</span></span><br><span class="line">vi Test.py</span><br></pre></td></tr></table></figure>
+<h3 id="打开文件并且定位行"><a href="#打开文件并且定位行" class="headerlink" title="打开文件并且定位行"></a>打开文件并且定位行</h3><ul>
+<li>格式：<code>vi Test.py + number</code> 。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开Test.py，并且光标移动到10行。</span></span><br><span class="line">vi Test.py + 10</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>提示：如果只带上 <code>+</code> 而不指定行号，会直接定位到文件末尾。</p>
+</blockquote>
+<h3 id="异常关闭文件"><a href="#异常关闭文件" class="headerlink" title="异常关闭文件"></a>异常关闭文件</h3><ul>
+<li>如果 <code>vi</code> 异常退出，在磁盘上会保存Test.py.swap。</li>
+<li>vi Test.py打开后会有文件提示，按下字母 <code>d</code> 可以将其删除。</li>
+</ul>
+<blockquote>
+<p>提示：按下键盘时，注意关闭输入法。</p>
+</blockquote>
+<h2 id="三种工作模式"><a href="#三种工作模式" class="headerlink" title="三种工作模式"></a>三种工作模式</h2><ul>
+<li><p><code>vi</code> 有三种基本工作模式：</p>
+<ol>
+<li><strong>命令模式</strong><ul>
+<li><strong>打开文件首先进入命令模式</strong>，是使用 <code>vi</code> 的 <strong>入口</strong>，可以理解为预览模式。       </li>
+</ul>
+</li>
+<li><strong>末行模式</strong> —— 执行 <strong>保存</strong>、<strong>退出</strong> 等操作 <ul>
+<li>要退出 <code>vi</code> 返回到控制台，需要在末行模式下输入命令</li>
+<li><strong>末行模式</strong> 是 <code>vi</code> 的 <strong>出口</strong></li>
+</ul>
+</li>
+<li><strong>编辑模式</strong> —— 正常的编辑文字。</li>
+<li>切换方式：编辑模式-&gt;按键esc可以切换到命令模式-&gt;命令模式输入:切换到末行模式-&gt;esc到命令行模式-&gt;按键i/I/a/A-&gt;编辑器模式。</li>
+<li><font color="blue">记忆方式：任何模式下按 <code>esc</code> 到 <code>命令行</code> 模式。以此为中转，<code>i</code> 编辑；或者是 <code>:</code> 末行模式</font>。</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>提示：在 <code>Touch Bar</code> 的 Mac 电脑上 ，按 <code>ESC</code> 不方便，可以使用 <code>CTRL + [</code> 替代。</p>
+</blockquote>
+<h3 id="末行模式命令"><a href="#末行模式命令" class="headerlink" title="末行模式命令"></a>末行模式命令</h3><ul>
+<li><img src="https://i.imgur.com/u979vwn.png" alt=""><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 按esc进入命令行模式，：切换到末行模式，x保存并且退出。</span></span><br><span class="line">:x</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="命令学习"><a href="#命令学习" class="headerlink" title="命令学习"></a>命令学习</h3><ol start="0">
+<li>重复次数<ul>
+<li>在命令模式下，<strong>先输入一个数字</strong>，<strong>再跟上一个命令</strong>，可以让该命令 <strong>重复执行指定次数</strong> </li>
+</ul>
+</li>
+<li>移动和选择（<strong>多练</strong>）<ul>
+<li><code>vi</code> 之所以快，关键在于 <strong>能够快速定位到要编辑的代码行</strong></li>
+<li><strong>移动命令</strong> 能够 和 <strong>编辑操作</strong> 命令 <strong>组合使用</strong></li>
+</ul>
+</li>
+<li>编辑操作<ul>
+<li><strong>删除</strong>、<strong>复制</strong>、<strong>粘贴</strong>、<strong>替换</strong>、<strong>缩排</strong></li>
+</ul>
+</li>
+<li>撤销和重复</li>
+<li>查找替换</li>
+<li>编辑</li>
+</ol>
+<h4 id="温馨提示"><a href="#温馨提示" class="headerlink" title="温馨提示"></a>温馨提示</h4><ol>
+<li><code>vi</code> 的命令较多，记忆很多的命令行只会是忘记的更多而已，先掌握基础的即可，熟练使用之后可以看手册，效果更好。</li>
+<li>linux操作系统下注意输入法的切换问题。</li>
+</ol>
+<h3 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h3><font color="red">前提条件，在命令行模式之下，或者叫做预览模式之下进行的光标移动！</font>
+
+<h4 id="光标上、下、左、右移动"><a href="#光标上、下、左、右移动" class="headerlink" title="光标上、下、左、右移动"></a>光标上、下、左、右移动</h4><p><img src="https://i.imgur.com/Jhd9Lj6.png" alt=""></p>
+<h4 id="光标行内移动"><a href="#光标行内移动" class="headerlink" title="光标行内移动"></a>光标行内移动</h4><p><img src="https://i.imgur.com/kFMvNRh.png" alt=""></p>
+<ul>
+<li>0是数字 <code>0</code> ，不是字母 <code>O</code> ！</li>
+</ul>
+<h4 id="行数移动"><a href="#行数移动" class="headerlink" title="行数移动"></a>行数移动</h4><p><img src="https://i.imgur.com/71ebhyp.png" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 比如我要移动要16行，命令行模式之下。</span></span><br><span class="line">16gg</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种方式.</span></span><br><span class="line">16G</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第三种方式，`:` 切换到末行模式！</span></span><br><span class="line">:16</span><br></pre></td></tr></table></figure>
+<h4 id="屏幕移动"><a href="#屏幕移动" class="headerlink" title="屏幕移动"></a>屏幕移动</h4><p><img src="https://i.imgur.com/zp4nn0E.png" alt=""></p>
+<ul>
+<li><font color="blue">翻页之后默认定位到页的首行行首</font>。</li>
+</ul>
+<h3 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h3><h4 id="段落移动"><a href="#段落移动" class="headerlink" title="段落移动"></a>段落移动</h4><ul>
+<li><code>vi</code> 中使用 <code>空行</code> 来区分段落.</li>
+<li><p>在程序开发时，同一代码块是没有空行的，所以文件的缩进，空行都是有要求的，不要<strong>瞎几把</strong>换行。</p>
+<p><img src="https://i.imgur.com/EktUOQt.png" alt=""></p>
+</li>
+</ul>
+<h4 id="括号切换"><a href="#括号切换" class="headerlink" title="括号切换"></a>括号切换</h4><ul>
+<li>在coding中，<code>()</code>、<code>[]</code>、<code>{}</code> 都是成对出现的。</li>
+<li>在命令行模式下可以通过 <code>%</code> 跳转到该行的括号位置。</li>
+</ul>
+<h4 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h4><ul>
+<li>若要对跳转到其他部分，但是又希望待会儿快速跳转回来而不是一行一行的判断到之前的行位置，可以通过添加标记的方式快速回到某行的具体位置。</li>
+<li><img src="https://i.imgur.com/N26ub4X.png" alt=""></li>
+<li>如：在命令行模式之下输入 <code>ma</code> ，跳转到其他位置后在命令行模式之下可以通过 <code></code>a` 快速跳转回来。</li>
+</ul>
+<h3 id="选中文本"><a href="#选中文本" class="headerlink" title="选中文本"></a>选中文本</h3><ul>
+<li>复制文本需要对说复制的文本内容进行选中，再进行复制粘贴等操作。</li>
+<li>在 <code>vi</code> 中要选择文本，需要先使用 <code>Visual</code> 命令切换到 <strong>可视模式</strong>。</li>
+<li>如下三种方式：</li>
+</ul>
+<p><img src="https://i.imgur.com/jglYpwe.png" alt=""></p>
+<ul>
+<li><p>按 <code>ESC</code> 可以放弃选中，返回到 <strong>命令模式</strong>。</p>
+</li>
+<li><p><strong>可视模式</strong>下，可以和光标移动连用，例如：<code>ggVG</code> 能够选中所有内容。gg是行首行首，G是末行行末！</p>
+</li>
+</ul>
+<h3 id="撤销和恢复撤销"><a href="#撤销和恢复撤销" class="headerlink" title="撤销和恢复撤销"></a>撤销和恢复撤销</h3><ul>
+<li>后悔对操作的执行，回退操作叫做撤销，只能单方向，可以一直回撤到最初状态；若又想取消做的撤销操作叫做恢复撤销。</li>
+</ul>
+<p><img src="https://i.imgur.com/zv7aNgB.png" alt=""></p>
+<h3 id="删除文本"><a href="#删除文本" class="headerlink" title="删除文本"></a>删除文本</h3><p><img src="https://i.imgur.com/nDXTx5g.png" alt=""></p>
+<blockquote>
+<p>提示：如果使用 <strong>可视模式</strong> 已经选中了一段文本，那么无论使用 <code>d</code> 还是 <code>x</code>，都可以删除选中文本。</p>
+<blockquote>
+<p>注意删除/剪切针对的是在vi下，自己独有的缓冲区保存，不是将剪切/删除的内容保存在剪贴板。</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>删除命令可以和光标移动命令连用，以下是常见的组合命令：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* dw        <span class="comment"># 从光标位置删除到单词末尾.</span></span><br><span class="line">* d0        <span class="comment"># 从光标位置删除到一行的起始位置.</span></span><br><span class="line">* d&#125;        <span class="comment"># 从光标位置删除到段落结尾.</span></span><br><span class="line">* ndd       <span class="comment"># 从光标位置向下连续删除 n 行.</span></span><br><span class="line">* d代码行G   <span class="comment"># 从光标所在行 删除到 指定代码行 之间的所有代码.</span></span><br><span class="line">* d<span class="string">'a       # 从光标所在行 删除到 标记a 之间的所有代码.</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="复制、粘贴"><a href="#复制、粘贴" class="headerlink" title="复制、粘贴"></a>复制、粘贴</h3><ul>
+<li>命令行一览</li>
+</ul>
+<p><img src="https://i.imgur.com/EB5EdT2.png" alt=""></p>
+<font color="0xbf"><strong>提示:</strong></font>
+
+<ul>
+<li>命令 <code>d</code>、<code>x</code> 类似于图形界面的 <strong>剪切操作</strong> —— <code>CTRL + X</code></li>
+<li>命令 <code>y</code> 类似于图形界面的 <strong>复制操作</strong> —— <code>CTRL + C</code></li>
+<li>命令 <code>p</code> 类似于图形界面的 <strong>粘贴操作</strong> —— <code>CTRL + V</code></li>
+<li><code>vi</code> 中的缓冲区类似于剪贴板可以替换。</li>
+</ul>
+<font color="red"><strong>再次温馨提示：</strong></font>
+
+<ul>
+<li><code>vi</code> 中的 <strong>文本缓冲区</strong> 和系统的 <strong>剪贴板</strong> 不是同一个！</li>
+<li>所以在其他软件中使用 <code>CTRL + C</code> 复制的内容，不能在 <code>vi</code> 中通过 <code>P</code> 命令粘贴</li>
+<li>可以在 <strong>编辑模式</strong> 下使用 <strong>鼠标右键粘贴</strong>！</li>
+</ul>
+<h3 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h3><p><img src="https://i.imgur.com/lB6yeYo.png" alt=""></p>
+<ul>
+<li><code>R</code> 命令可以进入 <strong>替换模式</strong>，替换完成后，按下 <code>ESC</code> 可以回到 <strong>命令模式</strong>！</li>
+<li><strong>替换命令</strong> 的作用就是不用进入 <strong>编辑模式</strong>，对文件进行 <strong>轻量级的修改</strong>！</li>
+<li>建议使用r的替换操作，比如修改Test的T为t，可以将光标移动到T，按r再按T。</li>
+</ul>
+<h3 id="缩排和重复执行"><a href="#缩排和重复执行" class="headerlink" title="缩排和重复执行"></a>缩排和重复执行</h3><p><img src="https://i.imgur.com/KhLDNrW.png" alt=""></p>
+<ul>
+<li>重复命令的使用包括但是不限于复制粘贴等，而是可以重复所有的命令的。</li>
+</ul>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><h4 id="常规查找"><a href="#常规查找" class="headerlink" title="常规查找"></a>常规查找</h4><p><img src="https://i.imgur.com/T2jMzFZ.png" alt=""></p>
+<ul>
+<li>查找到指定内容之后，使用 <code>Next</code> 查找下一个出现的位置：<ul>
+<li><code>n</code>: 查找下一个。</li>
+<li><code>N</code>: 查找上一个。</li>
+</ul>
+</li>
+<li>如果不想看到高亮显示，可以随便查找一个文件中不存在的内容即可！</li>
+</ul>
+<h4 id="单词快速匹配"><a href="#单词快速匹配" class="headerlink" title="单词快速匹配"></a>单词快速匹配</h4><ul>
+<li>通过单词快速匹配，可以快速看到这个单词在其他什么位置使用过。比如函数名称的查找…</li>
+</ul>
+<p><img src="https://i.imgur.com/6d9lCNC.png" alt=""></p>
+<h3 id="查找并替换"><a href="#查找并替换" class="headerlink" title="查找并替换"></a>查找并替换</h3><ul>
+<li>在 <code>vi</code> 中查找和替换命令需要切换到末行模式下执行。</li>
+<li>基本命令格式：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s///g</span><br></pre></td></tr></table></figure>
+<h4 id="全局替换"><a href="#全局替换" class="headerlink" title="全局替换"></a>全局替换</h4><ul>
+<li><strong>一次性</strong>替换文件中的 <strong>所有出现的旧文本</strong></li>
+<li>命令格式如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s/旧文本/新文本/g</span><br></pre></td></tr></table></figure>
+<h4 id="可视区域替换"><a href="#可视区域替换" class="headerlink" title="可视区域替换"></a>可视区域替换</h4><ul>
+<li><strong>先选中</strong> 要替换文字的 <strong>范围</strong></li>
+<li>命令格式如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:s/旧文本/新文本/g</span><br></pre></td></tr></table></figure>
+<h4 id="确认替换"><a href="#确认替换" class="headerlink" title="确认替换"></a>确认替换</h4><ul>
+<li>如果把末尾的 <code>g</code> 改成 <code>gc</code> 在替换的时候，会有提示！<strong>推荐使用！</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s/旧文本/新文本/gc</span><br></pre></td></tr></table></figure>
+<ol>
+<li><code>y</code> - <code>yes</code> 替换</li>
+<li><code>n</code> - <code>no</code> 不替换</li>
+<li><code>a</code> - <code>all</code> 替换所有</li>
+<li><code>q</code> - <code>quit</code> 退出替换</li>
+<li><code>l</code> - <code>last</code> 最后一个，并把光标移动到行首</li>
+<li><code>^E</code> 向下滚屏</li>
+<li><code>^Y</code> 向上滚屏</li>
+</ol>
+<h3 id="插入命令"><a href="#插入命令" class="headerlink" title="插入命令"></a>插入命令</h3><ul>
+<li>在 <code>vi</code> 中进入编辑模式方式有以下几种：</li>
+</ul>
+<p><img src="https://i.imgur.com/dqGOxJx.png" alt=""></p>
+<h2 id="代码重复与代码注释"><a href="#代码重复与代码注释" class="headerlink" title="代码重复与代码注释"></a>代码重复与代码注释</h2><ul>
+<li>移动到要添加注释的 第 1 行代码，按 ^ 来到行首</li>
+<li>按 CTRL + v 进入 <code>可视块</code> 模式，V进入的是行模式！</li>
+<li>使用 j 向下连续选中要添加的代码行</li>
+<li>输入 I 进入 编辑模式，并在 行首插入，注意：一定要使用 I，行首。</li>
+<li>输入 # 也就是注释符号</li>
+<li>按下 ESC 返回到 命令模式，返回之后 vi 会在之前选中的每一行代码 前 插入 #</li>
+</ul>
+<p><strong>简而言之就是：</strong></p>
+<p><font color="blue">选中行-&gt;行首插入#（可视化行模式可能比可视化块模式此时更有益处）-&gt;esc返回</font>。</p>
+<h2 id="分屏命令"><a href="#分屏命令" class="headerlink" title="分屏命令"></a>分屏命令</h2><ul>
+<li>属于 <code>vi</code> 的高级命令 —— 可以 <strong>同时编辑和查看多个文件</strong></li>
+</ul>
+<h3 id="末行命令扩展"><a href="#末行命令扩展" class="headerlink" title="末行命令扩展"></a>末行命令扩展</h3><p><img src="https://i.imgur.com/W4AlK1B.png" alt=""></p>
+<h3 id="分屏命令-1"><a href="#分屏命令-1" class="headerlink" title="分屏命令"></a>分屏命令</h3><ul>
+<li>使用 <strong>分屏命令</strong>，可以 <strong>同时编辑和查看多个文件</strong>！</li>
+</ul>
+<p><img src="https://i.imgur.com/s7C72VK.png" alt=""></p>
+<h4 id="切换分屏窗口"><a href="#切换分屏窗口" class="headerlink" title="切换分屏窗口"></a>切换分屏窗口</h4><blockquote>
+<p>分屏窗口都是基于 <code>CTRL + W</code> 这个快捷键的，<code>w</code> 对应的英文单词是 <code>window</code>，切换之后才能继续使用下面的命令行。</p>
+</blockquote>
+<p><img src="https://i.imgur.com/9eoByNV.png" alt=""></p>
+<h4 id="调整窗口大小"><a href="#调整窗口大小" class="headerlink" title="调整窗口大小"></a>调整窗口大小</h4><blockquote>
+<p>分屏窗口都是基于 <code>CTRL + W</code> 这个快捷键的，<code>w</code> 对应的英文单词是 <code>window</code>。</p>
+</blockquote>
+<p><img src="https://i.imgur.com/PQKSHdy.png" alt=""></p>
+<blockquote>
+<p>调整窗口宽高的命令可以和数字连用，例如：<code>5 CTRL + W +</code> 连续 5 次增加高度</p>
+</blockquote>
+<h2 id="命令行图解"><a href="#命令行图解" class="headerlink" title="命令行图解"></a>命令行图解</h2><p><img src="https://i.imgur.com/xOIZ4qm.png" alt="图片转自网络！！！"></p>
+<h3 id="vimrc"><a href="#vimrc" class="headerlink" title="vimrc"></a>vimrc</h3><ul>
+<li><code>vimrc</code> 是 <code>vim</code> 的配置文件，可以设置 vim 的配置，包括：<strong>热键</strong>、<strong>配色</strong>、<strong>语法高亮</strong>、<strong>插件</strong> 等</li>
+<li><code>Linux</code> 中 <code>vimrc</code> 有两个位置，用户主目录下的配置文件优先级更高。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/vim/vimrc</span><br><span class="line">~/.vimrc</span><br></pre></td></tr></table></figure>
+<ul>
+<li>常用的插件有：<ul>
+<li>代码补全</li>
+<li>代码折叠</li>
+<li>搜索</li>
+<li>Git 集成</li>
+<li>……</li>
+</ul>
+</li>
+<li>网上有很多高手已经配置好的针对 <code>python</code> 开发的 <code>vimrc</code> 文件，可以下载过来直接使用，或者等大家多 <code>Linux</code> 比较熟悉后，再行学习！</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/GaoMing_18000211.github.io/tags/Vim/" rel="tag"># Vim</a>
+          
+            <a href="/GaoMing_18000211.github.io/tags/Vi/" rel="tag"># Vi</a>
+          
+            <a href="/GaoMing_18000211.github.io/tags/Vi必备操作/" rel="tag"># Vi必备操作</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/GaoMing_18000211.github.io/2018/12/05/PyCharm在linux下的安装/" rel="next" title="PyCharm在linux下的安装">
+                <i class="fa fa-chevron-left"></i> PyCharm在linux下的安装
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/GaoMing_18000211.github.io/2018/12/12/Python3_String方法/" rel="prev" title="Python3_String方法">
+                Python3_String方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">CS_GaoMing</p>
+              <p class="site-description motion-element" itemprop="description">在这里记录我的人生&学习！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/GaoMing_18000211.github.io/archives/">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/GaoMing_18000211.github.io/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/GaoMing_18000211.github.io/tags/index.html">
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/SusuDOS/GaoMing_18000211.github.io" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:WD329416525@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.baidu.com/" title="友情链接： 百度一下，你就知道!" target="_blank">友情链接： 百度一下，你就知道!</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://cn.bing.com/?FORM=BEHPTB&ensearch=1" title="友情链接： 微软Bing搜索 - 国际版" target="_blank">友情链接： 微软Bing搜索 - 国际版</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vi-编辑器"><span class="nav-number">1.</span> <span class="nav-text">vi 编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内容组成"><span class="nav-number">1.1.</span> <span class="nav-text">内容组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vi-简介"><span class="nav-number">1.2.</span> <span class="nav-text">vi 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vi-学习的必要性"><span class="nav-number">1.2.1.</span> <span class="nav-text">vi 学习的必要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vi"><span class="nav-number">1.2.2.</span> <span class="nav-text">vi</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vim"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">vim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询命令位置"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">查询命令位置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vi-vim文件操作"><span class="nav-number">1.3.</span> <span class="nav-text">vi/vim文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件打开-创建"><span class="nav-number">1.3.1.</span> <span class="nav-text">文件打开/创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开文件并且定位行"><span class="nav-number">1.3.2.</span> <span class="nav-text">打开文件并且定位行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常关闭文件"><span class="nav-number">1.3.3.</span> <span class="nav-text">异常关闭文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三种工作模式"><span class="nav-number">1.4.</span> <span class="nav-text">三种工作模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#末行模式命令"><span class="nav-number">1.4.1.</span> <span class="nav-text">末行模式命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">1.5.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令学习"><span class="nav-number">1.5.1.</span> <span class="nav-text">命令学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#温馨提示"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">温馨提示</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光标移动"><span class="nav-number">1.5.2.</span> <span class="nav-text">光标移动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#光标上、下、左、右移动"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">光标上、下、左、右移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#光标行内移动"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">光标行内移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#行数移动"><span class="nav-number">1.5.2.3.</span> <span class="nav-text">行数移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#屏幕移动"><span class="nav-number">1.5.2.4.</span> <span class="nav-text">屏幕移动</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动"><span class="nav-number">1.5.3.</span> <span class="nav-text">移动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#段落移动"><span class="nav-number">1.5.3.1.</span> <span class="nav-text">段落移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#括号切换"><span class="nav-number">1.5.3.2.</span> <span class="nav-text">括号切换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标记"><span class="nav-number">1.5.3.3.</span> <span class="nav-text">标记</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选中文本"><span class="nav-number">1.5.4.</span> <span class="nav-text">选中文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销和恢复撤销"><span class="nav-number">1.5.5.</span> <span class="nav-text">撤销和恢复撤销</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除文本"><span class="nav-number">1.5.6.</span> <span class="nav-text">删除文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制、粘贴"><span class="nav-number">1.5.7.</span> <span class="nav-text">复制、粘贴</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换"><span class="nav-number">1.5.8.</span> <span class="nav-text">替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缩排和重复执行"><span class="nav-number">1.5.9.</span> <span class="nav-text">缩排和重复执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找"><span class="nav-number">1.5.10.</span> <span class="nav-text">查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常规查找"><span class="nav-number">1.5.10.1.</span> <span class="nav-text">常规查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单词快速匹配"><span class="nav-number">1.5.10.2.</span> <span class="nav-text">单词快速匹配</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找并替换"><span class="nav-number">1.5.11.</span> <span class="nav-text">查找并替换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局替换"><span class="nav-number">1.5.11.1.</span> <span class="nav-text">全局替换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可视区域替换"><span class="nav-number">1.5.11.2.</span> <span class="nav-text">可视区域替换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#确认替换"><span class="nav-number">1.5.11.3.</span> <span class="nav-text">确认替换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入命令"><span class="nav-number">1.5.12.</span> <span class="nav-text">插入命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码重复与代码注释"><span class="nav-number">1.6.</span> <span class="nav-text">代码重复与代码注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分屏命令"><span class="nav-number">1.7.</span> <span class="nav-text">分屏命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#末行命令扩展"><span class="nav-number">1.7.1.</span> <span class="nav-text">末行命令扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分屏命令-1"><span class="nav-number">1.7.2.</span> <span class="nav-text">分屏命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#切换分屏窗口"><span class="nav-number">1.7.2.1.</span> <span class="nav-text">切换分屏窗口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调整窗口大小"><span class="nav-number">1.7.2.2.</span> <span class="nav-text">调整窗口大小</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行图解"><span class="nav-number">1.8.</span> <span class="nav-text">命令行图解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vimrc"><span class="nav-number">1.8.1.</span> <span class="nav-text">vimrc</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CS_GaoMing</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/GaoMing_18000211.github.io/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("KLxNLWbLaIRMIzmVAFzVQtVO-gzGzoHsz", "7OrQVy3Sq37h0CqHuUqxeut2");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+ 
+</body>
+</html>
