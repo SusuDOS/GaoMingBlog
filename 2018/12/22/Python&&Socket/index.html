@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/GaoMing_18000211.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/GaoMing_18000211.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/GaoMing_18000211.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/GaoMing_18000211.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/GaoMing_18000211.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/GaoMing_18000211.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/GaoMing_18000211.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python&&Socket,SecureCRT," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Linux &amp;amp;&amp;amp; Windows &amp;amp;&amp;amp; SocketSecureCRT使用 SecureCRT算是一个比较经典的”付费”的SSH工具，个人推荐的理由是，语法相对简单，破解简单。 具体的使用方法为： ssh命令行使用，请自己熟悉学会使用linux的常用命令行. 主要是sftp：安全文件传输协议的使用。  安装&amp;amp;&amp;amp;破解secureCRT，自行百度。htt">
+<meta name="keywords" content="Python&amp;&amp;Socket,SecureCRT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python&amp;&amp;Socket">
+<meta property="og:url" content="http://yoursite.com/2018/12/22/Python&&Socket/index.html">
+<meta property="og:site_name" content="GaoMing&#39;  Blog">
+<meta property="og:description" content="Linux &amp;amp;&amp;amp; Windows &amp;amp;&amp;amp; SocketSecureCRT使用 SecureCRT算是一个比较经典的”付费”的SSH工具，个人推荐的理由是，语法相对简单，破解简单。 具体的使用方法为： ssh命令行使用，请自己熟悉学会使用linux的常用命令行. 主要是sftp：安全文件传输协议的使用。  安装&amp;amp;&amp;amp;破解secureCRT，自行百度。htt">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-21T13:10:05.798Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python&amp;&amp;Socket">
+<meta name="twitter:description" content="Linux &amp;amp;&amp;amp; Windows &amp;amp;&amp;amp; SocketSecureCRT使用 SecureCRT算是一个比较经典的”付费”的SSH工具，个人推荐的理由是，语法相对简单，破解简单。 具体的使用方法为： ssh命令行使用，请自己熟悉学会使用linux的常用命令行. 主要是sftp：安全文件传输协议的使用。  安装&amp;amp;&amp;amp;破解secureCRT，自行百度。htt">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/GaoMing_18000211.github.io/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":15,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/22/Python&&Socket/"/>
+
+
+
+
+
+  <title>Python&&Socket | GaoMing'  Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  
+  	<script type="text/javascript"
+	color="0,0,0" opacity='0.7' zIndex="-1" count="100"
+	src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/GaoMing_18000211.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">GaoMing'  Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">主页简介</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/GaoMing_18000211.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/GaoMing_18000211.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/GaoMing_18000211.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-books">
+          <a href="/GaoMing_18000211.github.io/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-films">
+          <a href="/GaoMing_18000211.github.io/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/GaoMing_18000211.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/GaoMing_18000211.github.io/2018/12/22/Python&&Socket/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CS_GaoMing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/GaoMing_18000211.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GaoMing'  Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python&&Socket</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-22T05:08:24+08:00">
+                2018-12-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/GaoMing_18000211.github.io/categories/Python基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/GaoMing_18000211.github.io/2018/12/22/Python&&Socket/" class="leancloud_visitors" data-flag-title="Python&&Socket">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Linux-amp-amp-Windows-amp-amp-Socket"><a href="#Linux-amp-amp-Windows-amp-amp-Socket" class="headerlink" title="Linux &amp;&amp; Windows &amp;&amp; Socket"></a>Linux &amp;&amp; Windows &amp;&amp; Socket</h1><h2 id="SecureCRT使用"><a href="#SecureCRT使用" class="headerlink" title="SecureCRT使用"></a>SecureCRT使用</h2><ul>
+<li>SecureCRT算是一个比较经典的”付费”的SSH工具，个人推荐的理由是，语法相对简单，破解简单。</li>
+<li>具体的使用方法为：</li>
+<li>ssh命令行使用，请自己熟悉学会使用linux的常用命令行.</li>
+<li><p>主要是sftp：安全文件传输协议的使用。</p>
+<ul>
+<li>安装&amp;&amp;破解secureCRT，自行百度。<a href="http://www.onlinedown.net/soft/4768.htm" title="http://www.onlinedown.net/soft/4768.htm" target="_blank" rel="noopener">http://www.onlinedown.net/soft/4768.htm</a></li>
+<li>配置使用，请看百度。<a href="https://jingyan.baidu.com/article/9158e00011d085a255122866.html" title="https://jingyan.baidu.com/article/9158e00011d085a255122866.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/9158e00011d085a255122866.html</a></li>
+<li><p>sftp的使用-上传文件夹-put函数.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第一步文件夹位置定位，查看当前处于 上传到服务器 文件夹位置。</span></span><br><span class="line"><span class="built_in">pwd</span></span><br><span class="line"><span class="comment"># 第二步文件夹位置定位，查看当前处于 本地客户端 文件夹位置。</span></span><br><span class="line">lpwd</span><br><span class="line"><span class="comment"># 我要将本地客户端E:\new_temp下面的所有文件上传到服务器的/home/up_temp/socket文件夹下.</span></span><br><span class="line">put E:\new_temp /home/up_temp/socket <span class="comment"># 注意方向，这样写是不对的。</span></span><br><span class="line">put E:/new_temp /home/up_temp/socket <span class="comment"># 应该这样写。</span></span><br><span class="line"><span class="comment"># 或者直接设置文件目录</span></span><br><span class="line"><span class="built_in">cd</span> /home/up_temp/socket</span><br><span class="line">lcd E:/new_temp <span class="comment"># 若没有该文件夹.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以</span></span><br><span class="line">lcd E:/</span><br><span class="line"><span class="comment"># 再</span></span><br><span class="line">lmkdir new_temp</span><br><span class="line"></span><br><span class="line">put ./* .</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sftp的使用-下载文件夹-get.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 配置文件方式如上.</span><br><span class="line"># 将对应服务器的文件复制到当前文件夹.</span><br><span class="line">get ./* .</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<font color="blue">所有的linux命令行，前面多添<code>l</code>,如：<code>mkdir</code>-&gt;<code>lmkdir</code>,就成了在本地文件夹位置创建文件，<code>lpwd</code>可以查看所处的本地文件位置。</font>
+
+<h2 id="Python-amp-amp-Socket"><a href="#Python-amp-amp-Socket" class="headerlink" title="Python &amp;&amp; Socket"></a>Python &amp;&amp; Socket</h2><p>这文章该部分的主要目的是介绍Socket的使用，具体的可以参看网页链接：<a href="http://www.runoob.com/python3/python3-socket.html" title="http://www.runoob.com/python3/python3-socket.html" target="_blank" rel="noopener">http://www.runoob.com/python3/python3-socket.html</a></p>
+<h3 id="面向连接"><a href="#面向连接" class="headerlink" title="面向连接"></a>面向连接</h3><p><code>Connection－oriented</code> 面向连接：一种网络协议,依赖发送方和接收器之间的显示通信和阻塞以管理双方的数据传输。网络系统需要在两台计算机之间发送数据之前先建立连接的一种特性。面向连接网络类似于电话系统，在开始通信前必须先进行一次呼叫和应答。</p>
+<p>Python网络编程中主要使用的面向连接的协议是TCP传输协议，如果一种服务具有下列特征，就认为它是面向连接的：</p>
+<blockquote>
+<p>1、建立一条虚电路，经典的三次握手问题。</p>
+</blockquote>
+<blockquote>
+<p>2、使用排序</p>
+</blockquote>
+<blockquote>
+<p>3、使用确认.</p>
+</blockquote>
+<blockquote>
+<p>4、使用流量控制。流量控制的类型有：缓冲、窗口机制(也称窗口滑动机制，可以回滚.)和拥堵避免。</p>
+</blockquote>
+<p>描述：面向连接的服务就是通信双方在通信时,要事先建立一条通信线路,其过程有建立连接、使用连接和释放连接三个过程。</p>
+<ul>
+<li><p>低级别的网络服务支持基本的 <code>Socket</code>，它提供了标准的 <code>BSD Sockets API</code>，可以访问底层操作系统Socket接口的全部方法。</p>
+</li>
+<li><p>高级别的网络服务模块 <code>SocketServer</code>， 它提供了服务器中心类，可以简化网络服务器的开发。</p>
+</li>
+</ul>
+<p>Socket又称”套接字”，应用程序通常通过”套接字”向网络发出请求或者应答网络请求，使主机间或者一台计算机上的进程间可以通讯，可以理解为：正如F=ma,在经典力学中，是连接速度与力的桥梁；而套接字就是连接计算机的桥梁。</p>
+<ul>
+<li><p>socket()函数的标准语法格式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">socket.socket([family[, type[, proto]]])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>参数释义：</p>
+<ul>
+<li>family: 套接字家族可以使AF_UNIX或者AF_INET.</li>
+<li>type: 套接字类型可以根据是面向连接的还是非连接分为SOCK_STREAM或SOCK_DGRAM</li>
+<li>protocol: 一般不填默认为0.</li>
+</ul>
+</li>
+<li><font color="blue">所以经典的socket函数只使用前面两个参数。</font>
+</li>
+<li><p>服务为多客户服务-由客户端决定退出.</p>
+<ul>
+<li><p>服务器端代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tcp_socket 服务器端</span></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""服务器端-循环结构"""</span></span><br><span class="line">    tcp_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">    <span class="comment"># 默认为空的ip&lt;=&gt;本地ip，端口必须绑定。</span></span><br><span class="line">    tcp_server_socket.bind((<span class="string">""</span>, <span class="number">10500</span>))</span><br><span class="line">    <span class="comment"># 写是128，但是可以改为其他数值，比如：10，影响最大连接客户端数量，但是影响</span></span><br><span class="line">    <span class="comment"># 实际上并不大，不是意味着写100W就可以支持连接100W客户端，本质上取决于系统&amp;底层。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 该处为侦听，未建立连接.</span></span><br><span class="line">    tcp_server_socket.listen(<span class="number">128</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="comment"># 第一次会话：连接建立.</span></span><br><span class="line">        new_client_socket, client_addr = tcp_server_socket.accept()</span><br><span class="line">        print(<span class="string">"client info：%s"</span> % str(client_addr))</span><br><span class="line">        <span class="comment"># 连接建立完成，开始接受请求：这是第一条请求...</span></span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">            <span class="comment"># 阻塞式侦听，可以判断客户端是否已经自我断开/终止，若断开recv_data=None.</span></span><br><span class="line">            recv_data = new_client_socket.recv(<span class="number">1024</span>)</span><br><span class="line">            <span class="comment"># windows系统默认，"gbk";linux/Unix改为"utf-8".</span></span><br><span class="line">            <span class="keyword">if</span> recv_data:</span><br><span class="line">                <span class="comment"># 第二次握手，通知客户端：我-服务器 接受并且处理好你的数据了。</span></span><br><span class="line">                new_client_socket.send(<span class="string">"ok, Processing Request Completion！"</span>.encode(<span class="string">"gbk"</span>))</span><br><span class="line">                print(<span class="string">"Require from client is:%s"</span> % recv_data.decode(<span class="string">"gbk"</span>))</span><br><span class="line"></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment"># 为空，此时终止该客户端的请求，为下一个客户服务。</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 第三次握手，需要等客户端确认收到了我-服务器发的通知；</span></span><br><span class="line">            <span class="comment"># 此时才是完整的结束服务，但此处没有，应该是可以使用是否解阻塞判断的。</span></span><br><span class="line">            <span class="comment"># 关闭accept返回的套接字，服务完毕.</span></span><br><span class="line">        new_client_socket.close()</span><br><span class="line">        print(<span class="string">"service complete..."</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 关闭 监听套接字，不再为一切客户端服务，等价于服务器关闭...</span></span><br><span class="line">    tcp_server_socket.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>客户端代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tcp_socket 客户端</span></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># &gt;1. 创建套接字</span></span><br><span class="line">    tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># &gt;2. 绑定自身端口，链接链接服务器的11500端口.</span></span><br><span class="line">    <span class="comment"># tcp_socket.bind(("", 11500)),注释后系统分配.</span></span><br><span class="line">    target_addr = (<span class="string">"127.0.0.1"</span>, <span class="number">10500</span>)</span><br><span class="line">    tcp_socket.connect(target_addr)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="comment"># &gt;3. 发送数据/接收数据</span></span><br><span class="line">        send_data = input(<span class="string">"Please your require:"</span>)</span><br><span class="line">        tcp_socket.send(send_data.encode(<span class="string">"gbk"</span>))</span><br><span class="line">        <span class="comment"># &gt;4. 接收服务器的确认数据，由于连接是否操作系统会自动分配端口，本地端口可以接受数据。</span></span><br><span class="line">        recv_data = tcp_socket.recv(<span class="number">1024</span>)</span><br><span class="line">        print(<span class="string">"The corresponding contents of the server are:%s"</span> % recv_data.decode(<span class="string">"gbk"</span>))</span><br><span class="line">        <span class="keyword">if</span> send_data == <span class="string">"exit"</span> <span class="keyword">or</span> send_data == <span class="string">"exit()"</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 4. 关闭套接字</span></span><br><span class="line">    tcp_socket.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>文件的下载or复制</p>
+<ul>
+<li><p>服务器端代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># download_server.</span></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">send_file_client</span><span class="params">(new_client_socket, client_addr)</span>:</span></span><br><span class="line">    <span class="comment"># The first data to be retrieved is the file name.</span></span><br><span class="line">    file_name = new_client_socket.recv(<span class="number">1024</span>).decode(<span class="string">"gbk"</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"client info:%s, client require file：%s"</span> % (str(client_addr), file_name))</span><br><span class="line">    file_content = <span class="keyword">None</span></span><br><span class="line">    <span class="comment"># file_conte 若文件过大，需要分拆怎么办？</span></span><br><span class="line">    <span class="comment"># 若接收端的一次性接入小于分割文件的片段会造成文件丢失.</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        f = open(file_name, <span class="string">"rb"</span>)</span><br><span class="line">        file_content = f.read()</span><br><span class="line">        f.close()</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> result:</span><br><span class="line">        print(<span class="string">"file not found:%s"</span> % file_name)</span><br><span class="line">    <span class="keyword">if</span> file_content:</span><br><span class="line">        new_client_socket.send(file_content)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 等价于服务器启动,配置监听端口.</span></span><br><span class="line">    tcp_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">    tcp_server_socket.bind((<span class="string">""</span>, <span class="number">11500</span>))</span><br><span class="line">    tcp_server_socket.listen(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 启动后一直为客户端提供服务.</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="comment"># 建立连接通道.</span></span><br><span class="line">        new_client_socket, client_addr = tcp_server_socket.accept()</span><br><span class="line">        <span class="comment"># 读取本地的数据.</span></span><br><span class="line">        send_file_client(new_client_socket, client_addr)</span><br><span class="line">        <span class="comment"># 服务完成，断开连接.</span></span><br><span class="line">        new_client_socket.close()</span><br><span class="line">    tcp_server_socket.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>客户端代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># download_client</span></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># &gt; 1. 创建套接字</span></span><br><span class="line">    tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">    <span class="comment"># &gt; 2. 连接服务器</span></span><br><span class="line">    tcp_socket.connect((<span class="string">"127.0.0.1"</span>, <span class="number">11500</span>))</span><br><span class="line">    <span class="comment"># &gt;3. 上传文件名字</span></span><br><span class="line">    download_file_name = input(<span class="string">"file_name:"</span>)</span><br><span class="line">    <span class="comment"># linux/unix使用"utf-8"</span></span><br><span class="line">    tcp_socket.send(download_file_name.encode(<span class="string">"gbk"</span>))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 4. 接收块数据,字节。</span></span><br><span class="line">    recv_data = tcp_socket.recv(<span class="number">6000</span>)</span><br><span class="line">    <span class="comment"># 判断第一块数据的存在来判断是否开始创建文件名并且开始下载.</span></span><br><span class="line">    <span class="keyword">if</span> recv_data:</span><br><span class="line">        <span class="comment"># 使用with不需要使用f.close关闭.</span></span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">"copy-"</span> + download_file_name, <span class="string">"wb+"</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(recv_data)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 5. 关闭套接字</span></span><br><span class="line">    tcp_socket.close()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 局限性：</span></span><br><span class="line">    <span class="comment"># &gt; 1.若文件大小大于6000字节,会出问题.</span></span><br><span class="line">    <span class="comment"># &gt; 2.仅仅一次,若分割的片段，需要二次下载则没有办法.</span></span><br><span class="line">    <span class="comment"># &gt; 3.所以这设置大一点来解决，然后显然是一个致命的缺陷。</span></span><br><span class="line">    <span class="comment"># &gt; 4. 文件没有找到不会提示,若强加提示则兼容性极差.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="非连接"><a href="#非连接" class="headerlink" title="非连接"></a>非连接</h3><p>面向非连接，是指在正式通信前不必与对方先建立连接，不管对方状态就直接发送。UDP协议是面向非连接的协议，没有建立连接的过程。正因为UDP协议没有连接的过程，所以它的通信效果高；但也正因为如此，它的可靠性不如TCP协议高，传送数据松达与否发送端不会重发。</p>
+<p>经典的比如：直播/直播间，当然可能直播间不一定是采用非面向连接，这里表达的是：发送端按照自己的发送进程走，不会管数据的实际传输情况，所以容易被窃取和丢包。</p>
+<ul>
+<li><p>非连接与上述使用相同的函数，但是有不同的参数，以及数据传输流程：</p>
+<ul>
+<li>创建套接字</li>
+<li>发送数据包</li>
+<li>关闭套接字</li>
+</ul>
+</li>
+<li><p>比如：创建简单的网络通信：</p>
+<ul>
+<li><p>接收端代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># this is client and server UDP_socket.</span></span><br><span class="line"><span class="comment"># this is client-receive</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line"><span class="comment"># 循环接受数据，知道客户端发送退出，标识！</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">	 <span class="comment"># 对于参数可以这样理解：网络协议=ipv4 net，D=dynamic，动态是不稳定的。</span></span><br><span class="line">    udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line">    client_addr = (<span class="string">""</span>, <span class="number">15000</span>)</span><br><span class="line">    <span class="comment"># 绑定接收端口，否则报错.</span></span><br><span class="line">    udp_socket.bind(client_addr)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        udp_test = udp_socket.recvfrom(<span class="number">1024</span>)</span><br><span class="line">        udp_data = udp_test[<span class="number">0</span>]</span><br><span class="line">        udp_port = udp_test[<span class="number">1</span>]</span><br><span class="line">        print(str(udp_port), <span class="string">": "</span>, udp_data.decode(<span class="string">"gbk"</span>))</span><br><span class="line">        <span class="keyword">if</span> (udp_data.decode(<span class="string">"gbk"</span>) == <span class="string">"exit"</span></span><br><span class="line">                <span class="keyword">or</span> udp_data.decode(<span class="string">"gbk"</span>) == <span class="string">"exit()"</span>):</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    udp_socket.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>发送端代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># this is client and server UDP_socket.</span></span><br><span class="line"><span class="comment"># this is client-send</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line">    client_addr = (<span class="string">"127.0.0.1"</span>, <span class="number">14000</span>)</span><br><span class="line">    client_data = <span class="string">"this is a data from client, 我是客戶发送端!"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 綁定自己的發送端信息;可以不綁定,系統自動分配.</span></span><br><span class="line">    udp_socket.bind(client_addr)</span><br><span class="line">    udp_socket.sendto(client_data.encode(<span class="string">"gbk"</span>), (<span class="string">"127.0.0.1"</span>, <span class="number">15000</span>))</span><br><span class="line">    client_data = <span class="keyword">None</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> (client_data == <span class="string">"exit"</span> <span class="keyword">or</span> client_data ==<span class="string">"exit()"</span>):</span><br><span class="line">        client_data = input(<span class="string">"請輸入要要发送的数据:"</span>)</span><br><span class="line">        udp_socket.sendto(client_data.encode(<span class="string">"gbk"</span>), (<span class="string">"127.0.0.1"</span>, <span class="number">15000</span>))</span><br><span class="line">    udp_socket.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/GaoMing_18000211.github.io/tags/Python-Socket/" rel="tag"># Python&&Socket</a>
+          
+            <a href="/GaoMing_18000211.github.io/tags/SecureCRT/" rel="tag"># SecureCRT</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/GaoMing_18000211.github.io/2018/12/18/Python&&Files/" rel="next" title="Python&&Files">
+                <i class="fa fa-chevron-left"></i> Python&&Files
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">CS_GaoMing</p>
+              <p class="site-description motion-element" itemprop="description">在这里记录我的人生&学习！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/GaoMing_18000211.github.io/archives/">
+              
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/GaoMing_18000211.github.io/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/GaoMing_18000211.github.io/tags/index.html">
+                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/SusuDOS/GaoMing_18000211.github.io" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:WD329416525@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.baidu.com/" title="友情链接： 百度一下，你就知道!" target="_blank">友情链接： 百度一下，你就知道!</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://cn.bing.com/?FORM=BEHPTB&ensearch=1" title="友情链接： 微软Bing搜索 - 国际版" target="_blank">友情链接： 微软Bing搜索 - 国际版</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-amp-amp-Windows-amp-amp-Socket"><span class="nav-number">1.</span> <span class="nav-text">Linux &amp;&amp; Windows &amp;&amp; Socket</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SecureCRT使用"><span class="nav-number">1.1.</span> <span class="nav-text">SecureCRT使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-amp-amp-Socket"><span class="nav-number">1.2.</span> <span class="nav-text">Python &amp;&amp; Socket</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#面向连接"><span class="nav-number">1.2.1.</span> <span class="nav-text">面向连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非连接"><span class="nav-number">1.2.2.</span> <span class="nav-text">非连接</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CS_GaoMing</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/GaoMing_18000211.github.io/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("KLxNLWbLaIRMIzmVAFzVQtVO-gzGzoHsz", "7OrQVy3Sq37h0CqHuUqxeut2");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+ 
+</body>
+</html>
