@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/GaoMing_18000211.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/GaoMing_18000211.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/GaoMing_18000211.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/GaoMing_18000211.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/GaoMing_18000211.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/GaoMing_18000211.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/GaoMing_18000211.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="SQL操作," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="– 数据库的操作 -- 链接数据库 mysql -uroot -p mysql -uroot -pmysql  -- 退出数据库 exit/quit/ctrl+d   -- sql语句最后需要有分号;结尾 -- 显示数据库版本 select version();  -- 显示时间 select now();  -- 查看所有数据库 show databases;   -- 创建数据库 -- cre">
+<meta name="keywords" content="SQL操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python3&amp;SQL">
+<meta property="og:url" content="http://yoursite.com/2019/01/01/SQL-基本操作/index.html">
+<meta property="og:site_name" content="GaoMing&#39;  Blog">
+<meta property="og:description" content="– 数据库的操作 -- 链接数据库 mysql -uroot -p mysql -uroot -pmysql  -- 退出数据库 exit/quit/ctrl+d   -- sql语句最后需要有分号;结尾 -- 显示数据库版本 select version();  -- 显示时间 select now();  -- 查看所有数据库 show databases;   -- 创建数据库 -- cre">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-01T13:01:58.613Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python3&amp;SQL">
+<meta name="twitter:description" content="– 数据库的操作 -- 链接数据库 mysql -uroot -p mysql -uroot -pmysql  -- 退出数据库 exit/quit/ctrl+d   -- sql语句最后需要有分号;结尾 -- 显示数据库版本 select version();  -- 显示时间 select now();  -- 查看所有数据库 show databases;   -- 创建数据库 -- cre">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/GaoMing_18000211.github.io/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":15,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/01/SQL-基本操作/"/>
+
+
+
+
+
+  <title>Python3&SQL | GaoMing'  Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  
+  	<script type="text/javascript"
+	color="0,0,0" opacity='0.7' zIndex="-1" count="100"
+	src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/GaoMing_18000211.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">GaoMing'  Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">主页简介</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/GaoMing_18000211.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/GaoMing_18000211.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/GaoMing_18000211.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-books">
+          <a href="/GaoMing_18000211.github.io/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-films">
+          <a href="/GaoMing_18000211.github.io/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-film"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/GaoMing_18000211.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/GaoMing_18000211.github.io/2019/01/01/SQL-基本操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CS_GaoMing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/GaoMing_18000211.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GaoMing'  Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python3&SQL</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-01T06:09:58+08:00">
+                2018-12-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/GaoMing_18000211.github.io/categories/Python基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/GaoMing_18000211.github.io/2019/01/01/SQL-基本操作/" class="leancloud_visitors" data-flag-title="Python3&SQL">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>– 数据库的操作</p>
+<pre><code>-- 链接数据库
+mysql -uroot -p
+mysql -uroot -pmysql
+
+-- 退出数据库
+exit/quit/ctrl+d
+
+
+-- sql语句最后需要有分号;结尾
+-- 显示数据库版本
+select version();
+
+-- 显示时间
+select now();
+
+-- 查看所有数据库
+show databases;
+
+
+-- 创建数据库
+-- create database 数据库名 charset=utf8;
+create database python04;
+create database python04new charset=utf8;
+
+
+-- 查看创建数据库的语句
+-- show crate database ....
+show create database python04;
+
+
+-- 查看当前使用的数据库
+select database();
+
+-- 使用数据库
+-- use 数据库的名字
+use python04new;
+
+-- 删除数据库
+-- drop database 数据库名;
+drop database python04;
+</code></pre><p>– 数据表的操作</p>
+<pre><code>-- 查看当前数据库中所有表
+show tables;
+
+
+-- 创建表
+-- auto_increment表示自动增长
+-- not null 表示不能为空
+-- primary key 表示主键
+-- default 默认值
+-- create table 数据表名字 (字段 类型 约束[, 字段 类型 约束]);
+create table xxxxx(id int, name varchar(30));
+create table yyyyy(id int primary key not null auto_increment, name varchar(30));
+create table zzzzz(
+    id int primary key not null auto_increment,
+    name varchar(30)
+);
+
+-- 查看表结构
+-- desc 数据表的名字;
+desc xxxxx;
+
+-- 创建students表(id、name、age、high、gender、cls_id)
+create table students(
+    id int unsigned not null auto_increment primary key,
+    name varchar(30),
+    age tinyint unsigned default 0,
+    high decimal(5,2),
+    gender enum(&quot;男&quot;, &quot;女&quot;, &quot;中性&quot;, &quot;保密&quot;) default &quot;保密&quot;,
+    cls_id int unsigned
+);
+
+insert into students values(0, &quot;老王&quot;, 18, 188.88, &quot;男&quot;, 0);
+select * from students;
+
+-- 创建classes表(id、name)
+create table classes(
+    id int unsigned not null auto_increment primary key,
+    name varchar(30)
+);
+
+insert into classes values(0, &quot;python04大神&quot;);
+select * from classes;
+
+-- 查看表的创建语句
+-- show create table 表名字;
+show create table students;
+
+
+-- 修改表-添加字段
+-- alter table 表名 add 列名 类型;
+alter table students add birthday datetime;
+
+
+-- 修改表-修改字段：不重命名版
+-- alter table 表名 modify 列名 类型及约束;
+alter table students modify birthday date;
+
+
+-- 修改表-修改字段：重命名版
+-- alter table 表名 change 原名 新名 类型及约束;
+alter table students change birthday birth date default &quot;2000-01-01&quot;;
+
+
+-- 修改表-删除字段
+-- alter table 表名 drop 列名;
+alter table students drop high;
+
+
+-- 删除表
+-- drop table 表名;
+-- drop database 数据库;
+-- drop table 数据表;
+drop table xxxxx;
+</code></pre><p>– 增删改查(curd)</p>
+<pre><code>-- 增加
+    -- 全列插入
+    -- insert [into] 表名 values(...)
+    -- 主键字段 可以用 0  null   default 来占位
+    -- 向classes表中插入 一个班级
+    insert into classes values(0, &quot;菜鸟班&quot;);
+
+
+    +--------+-------------------------------------+------+-----+------------+----------------+
+    | Field  | Type                                | Null | Key | Default    | Extra          |
+    +--------+-------------------------------------+------+-----+------------+----------------+
+    | id     | int(10) unsigned                    | NO   | PRI | NULL       | auto_increment |
+    | name   | varchar(30)                         | YES  |     | NULL       |                |
+    | age    | tinyint(3) unsigned                 | YES  |     | 0          |                |
+    | gender | enum(&apos;男&apos;,&apos;女&apos;,&apos;中性&apos;,&apos;保密&apos;)       | YES  |     | 保密       |                |
+    | cls_id | int(10) unsigned                    | YES  |     | NULL       |                |
+    | birth  | date                                | YES  |     | 2000-01-01 |                |
+    +--------+-------------------------------------+------+-----+------------+----------------+
+
+    -- 向students表插入 一个学生信息
+    insert into students values(0, &quot;小李飞刀&quot;, 20, &quot;女&quot;, 1, &quot;1990-01-01&quot;);
+    insert into students values(null, &quot;小李飞刀&quot;, 20, &quot;女&quot;, 1, &quot;1990-01-01&quot;);
+    insert into students values(default, &quot;小李飞刀&quot;, 20, &quot;女&quot;, 1, &quot;1990-01-01&quot;);
+
+    -- 失败
+    -- insert into students values(default, &quot;小李飞刀&quot;, 20, &quot;第4性别&quot;, 1, &quot;1990-02-01&quot;);
+
+    -- 枚举中 的 下标从1 开始 1---“男” 2---&gt;&quot;女&quot;....
+    insert into students values(default, &quot;小李飞刀&quot;, 20, 1, 1, &quot;1990-02-01&quot;);
+
+    -- 部分插入
+    -- insert into 表名(列1,...) values(值1,...)
+    insert into students (name, gender) values (&quot;小乔&quot;, 2);
+
+
+    -- 多行插入
+    insert into students (name, gender) values (&quot;大乔&quot;, 2),(&quot;貂蝉&quot;, 2);
+    insert into students values(default, &quot;西施&quot;, 20, &quot;女&quot;, 1, &quot;1990-01-01&quot;), (default, &quot;王昭君&quot;, 20, &quot;女&quot;, 1, &quot;1990-01-01&quot;);
+
+
+-- 修改
+-- update 表名 set 列1=值1,列2=值2... where 条件;
+    update students set gender=1; -- 全部都改
+    update students set gender=1 where name=&quot;小李飞刀&quot;; -- 只要name是小李飞刀的 全部的修改
+    update students set gender=1 where id=3; -- 只要id为3的 进行修改
+    update students set age=22, gender=1 where id=3; -- 只要id为3的 进行修改
+
+-- 查询基本使用
+    -- 查询所有列
+    -- select * from 表名;
+    select * from students;
+
+    ---定条件查询
+    select * from students where name=&quot;小李飞刀&quot;; -- 查询 name为小李飞刀的所有信息
+    select * from students where id&gt;3; -- 查询 name为小李飞刀的所有信息
+
+
+    -- 查询指定列
+    -- select 列1,列2,... from 表名;
+    select name,gender from students;
+
+
+    -- 可以使用as为列或表指定别名
+    -- select 字段[as 别名] , 字段[as 别名] from 数据表 where ....;
+    select name as 姓名,gender as 性别 from students;
+
+
+    -- 字段的顺序
+    select id as 序号, gender as 性别, name as 姓名 from students;
+
+
+-- 删除
+    -- 物理删除
+    -- delete from 表名 where 条件
+    delete from students; -- 整个数据表中的所有数据全部删除
+    delete from students where name=&quot;小李飞刀&quot;;
+
+    -- 逻辑删除
+    -- 用一个字段来表示 这条信息是否已经不能再使用了
+    -- 给students表添加一个is_delete字段 bit 类型
+    alter table students add is_delete bit default 0;
+    update students set is_delete=1 where id=6;
+</code></pre><p>–new targs:–<br>– 数据的准备<br>    – 创建一个数据库<br>    create database python_test charset=utf8;</p>
+<pre><code>-- 使用一个数据库
+use python_test;
+
+-- 显示使用的当前数据是哪个?
+select database();
+
+-- 创建一个数据表
+-- students表
+create table students(
+    id int unsigned primary key auto_increment not null,
+    name varchar(20) default &apos;&apos;,
+    age tinyint unsigned default 0,
+    height decimal(5,2),
+    gender enum(&apos;男&apos;,&apos;女&apos;,&apos;中性&apos;,&apos;保密&apos;) default &apos;保密&apos;,
+    cls_id int unsigned default 0,
+    is_delete bit default 0
+);
+
+-- classes表
+create table classes (
+    id int unsigned auto_increment primary key not null,
+    name varchar(30) not null
+);
+</code></pre><p>– 查询<br>    – 查询所有字段<br>    – select <em> from 表名;<br>    select </em> from students;<br>    select * from classes;<br>    select id, name from classes;</p>
+<pre><code>-- 查询指定字段
+-- select 列1,列2,... from 表名;
+select name, age from students;
+
+-- 使用 as 给字段起别名
+-- select 字段 as 名字.... from 表名;
+select name as 姓名, age as 年龄 from students;
+
+-- select 表名.字段 .... from 表名;
+select students.name, students.age from students;
+
+
+-- 可以通过 as 给表起别名
+-- select 别名.字段 .... from 表名 as 别名;
+select students.name, students.age from students;
+select s.name, s.age from students as s;
+-- 失败的select students.name, students.age from students as s;
+
+
+-- 消除重复行
+-- distinct 字段
+select distinct gender from students;
+</code></pre><p>– 条件查询<br>    – 比较运算符<br>        – select …. from 表名 where …..<br>        – &gt;<br>        – 查询大于18岁的信息<br>        select * from students where age&gt;18;<br>        select id,name,gender from students where age&gt;18;</p>
+<pre><code>    -- &lt;
+    -- 查询小于18岁的信息
+    select * from students where age&lt;18;
+
+    -- &gt;=
+    -- &lt;=
+    -- 查询小于或者等于18岁的信息
+
+    -- =
+    -- 查询年龄为18岁的所有学生的名字
+    select * from students where age=18;
+
+
+    -- != 或者 &lt;&gt;
+
+
+-- 逻辑运算符
+    -- and
+    -- 18到28之间的所以学生信息
+    select * from students where age&gt;18 and age&lt;28;
+    -- 失败select * from students where age&gt;18 and &lt;28;
+
+
+    -- 18岁以上的女性
+    select * from students where age&gt;18 and gender=&quot;女&quot;;
+    select * from students where age&gt;18 and gender=2;
+
+
+    -- or
+    -- 18以上或者身高查过180(包含)以上
+    select * from students where age&gt;18 or height&gt;=180;
+
+
+    -- not
+    -- 不在 18岁以上的女性 这个范围内的信息
+    -- select * from students where not age&gt;18 and gender=2;
+    select * from students where not (age&gt;18 and gender=2);
+
+    -- 年龄不是小于或者等于18 并且是女性
+    select * from students where (not age&lt;=18) and gender=2;
+
+
+-- 模糊查询
+    -- like
+    -- % 替换1个或者多个
+    -- _ 替换1个
+    -- 查询姓名中 以 &quot;小&quot; 开始的名字
+    select name from students where name=&quot;小&quot;;
+    select name from students where name like &quot;小%&quot;;
+
+    -- 查询姓名中 有 &quot;小&quot; 所有的名字
+    select name from students where name like &quot;%小%&quot;;
+
+    -- 查询有2个字的名字
+    select name from students where name like &quot;__&quot;;
+
+    -- 查询有3个字的名字
+    select name from students where name like &quot;__&quot;;
+
+    -- 查询至少有2个字的名字
+    select name from students where name like &quot;__%&quot;;
+
+
+    -- rlike 正则
+    -- 查询以 周开始的姓名
+    select name from students where name rlike &quot;^周.*&quot;;
+
+    -- 查询以 周开始、伦结尾的姓名
+    select name from students where name rlike &quot;^周.*伦$&quot;;
+
+
+-- 范围查询
+    -- in (1, 3, 8)表示在一个非连续的范围内
+    -- 查询 年龄为18、34的姓名
+    select name,age from students where age=18 or age=34;
+    select name,age from students where age=18 or age=34 or age=12;
+    select name,age from students where age in (12, 18, 34);
+
+
+
+    -- not in 不非连续的范围之内
+    -- 年龄不是 18、34岁之间的信息
+    select name,age from students where age not in (12, 18, 34);
+
+
+    -- between ... and ...表示在一个连续的范围内
+    -- 查询 年龄在18到34之间的的信息
+    select name, age from students where age between 18 and 34;
+
+
+    -- not between ... and ...表示不在一个连续的范围内
+    -- 查询 年龄不在在18到34之间的的信息
+    select * from students where age not between 18 and 34;
+    select * from students where not age between 18 and 34;
+    -- 失败的select * from students where age not (between 18 and 34);
+
+
+-- 空判断
+    -- 判空is null
+    -- 查询身高为空的信息
+    select * from students where height is null;
+    select * from students where height is NULL;
+    select * from students where height is Null;
+
+    -- 判非空is not null
+    select * from students where height is not null;
+</code></pre><p>– 排序<br>    – order by 字段<br>    – asc从小到大排列，即升序<br>    – desc从大到小排序，即降序</p>
+<pre><code>-- 查询年龄在18到34岁之间的男性，按照年龄从小到到排序
+select * from students where (age between 18 and 34) and gender=1;
+select * from students where (age between 18 and 34) and gender=1 order by age;
+select * from students where (age between 18 and 34) and gender=1 order by age asc;
+
+
+-- 查询年龄在18到34岁之间的女性，身高从高到矮排序
+select * from students where (age between 18 and 34) and gender=2 order by height desc;
+
+
+-- order by 多个字段
+-- 查询年龄在18到34岁之间的女性，身高从高到矮排序, 如果身高相同的情况下按照年龄从小到大排序
+select * from students where (age between 18 and 34) and gender=2 order by height desc,id desc;
+
+
+-- 查询年龄在18到34岁之间的女性，身高从高到矮排序, 如果身高相同的情况下按照年龄从小到大排序,
+-- 如果年龄也相同那么按照id从大到小排序
+select * from students where (age between 18 and 34) and gender=2 order by height desc,age asc,id desc;
+
+
+-- 按照年龄从小到大、身高从高到矮的排序
+select * from students order by age asc, height desc;
+</code></pre><p>– 聚合函数<br>    – 总数<br>    – count<br>    – 查询男性有多少人，女性有多少人<br>    select <em> from students where gender=1;<br>    select count(</em>) from students where gender=1;<br>    select count(<em>) as 男性人数 from students where gender=1;<br>    select count(</em>) as 女性人数 from students where gender=2;</p>
+<pre><code>-- 最大值
+-- max
+-- 查询最大的年龄
+select age from students;
+select max(age) from students;
+
+-- 查询女性的最高 身高
+select max(height) from students where gender=2;
+
+-- 最小值
+-- min
+
+
+-- 求和
+-- sum
+-- 计算所有人的年龄总和
+select sum(age) from students;
+
+
+-- 平均值
+-- avg
+-- 计算平均年龄
+select avg(age) from students;
+
+
+-- 计算平均年龄 sum(age)/count(*)
+select sum(age)/count(*) from students;
+
+
+-- 四舍五入 round(123.23 , 1) 保留1位小数
+-- 计算所有人的平均年龄，保留2位小数
+select round(sum(age)/count(*), 2) from students;
+select round(sum(age)/count(*), 3) from students;
+
+-- 计算男性的平均身高 保留2位小数
+select round(avg(height), 2) from students where gender=1;
+-- select name, round(avg(height), 2) from students where gender=1;
+</code></pre><p>– 分组</p>
+<pre><code>-- group by
+-- 按照性别分组,查询所有的性别
+select name from students group by gender;
+select * from students group by gender;
+select gender from students group by gender;
+-- 失败select * from students group by gender;
+
+-- 计算每种性别中的人数
+select gender,count(*) from students group by gender;
+
+
+-- 计算男性的人数
+select gender,count(*) from students where gender=1 group by gender;
+
+
+-- group_concat(...)
+-- 查询同种性别中的姓名
+ select gender,group_concat(name) from students where gender=1 group by gender;
+ select gender,group_concat(name, age, id) from students where gender=1 group by gender;
+ select gender,group_concat(name, &quot;_&quot;, age, &quot; &quot;, id) from students where gender=1 group by gender;
+
+-- having
+-- 查询平均年龄超过30岁的性别，以及姓名 having avg(age) &gt; 30
+select gender, group_concat(name),avg(age) from students group by gender having avg(age)&gt;30;
+
+-- 查询每种性别中的人数多于2个的信息
+select gender, group_concat(name) from students group by gender having count(*)&gt;2;
+</code></pre><p>– 分页<br>    – limit start, count</p>
+<pre><code>-- 限制查询出来的数据个数
+select * from students where gender=1 limit 2;
+
+-- 查询前5个数据
+select * from students limit 0, 5;
+
+-- 查询id6-10（包含）的书序
+select * from students limit 5, 5;
+
+
+-- 每页显示2个，第1个页面
+select * from students limit 0,2;
+
+-- 每页显示2个，第2个页面
+select * from students limit 2,2;
+
+-- 每页显示2个，第3个页面
+select * from students limit 4,2;
+
+-- 每页显示2个，第4个页面
+select * from students limit 6,2; -- -----&gt; limit (第N页-1)*每个的个数, 每页的个数;
+
+-- 每页显示2个，显示第6页的信息, 按照年龄从小到大排序
+-- 失败select * from students limit 2*(6-1),2;
+-- 失败select * from students limit 10,2 order by age asc;
+select * from students order by age asc limit 10,2;
+
+select * from students where gender=2 order by height desc limit 0,2;
+</code></pre><p>– 连接查询<br>    – inner join … on</p>
+<pre><code>-- select ... from 表A inner join 表B;
+select * from students inner join classes;
+
+-- 查询 有能够对应班级的学生以及班级信息
+select * from students inner join classes on students.cls_id=classes.id;
+
+-- 按照要求显示姓名、班级
+select students.*, classes.name from students inner join classes on students.cls_id=classes.id;
+select students.name, classes.name from students inner join classes on students.cls_id=classes.id;
+
+-- 给数据表起名字
+select s.name, c.name from students as s inner join classes as c on s.cls_id=c.id;
+
+-- 查询 有能够对应班级的学生以及班级信息，显示学生的所有信息，只显示班级名称
+select s.*, c.name from students as s inner join classes as c on s.cls_id=c.id;
+
+-- 在以上的查询中，将班级姓名显示在第1列
+select c.name, s.* from students as s inner join classes as c on s.cls_id=c.id;
+
+-- 查询 有能够对应班级的学生以及班级信息, 按照班级进行排序
+-- select c.xxx s.xxx from student as s inner join clssses as c on .... order by ....;
+select c.name, s.* from students as s inner join classes as c on s.cls_id=c.id order by c.name;
+
+-- 当时同一个班级的时候，按照学生的id进行从小到大排序
+select c.name, s.* from students as s inner join classes as c on s.cls_id=c.id order by c.name,s.id;
+
+-- left join
+-- 查询每位学生对应的班级信息
+select * from students as s left join classes as c on s.cls_id=c.id;
+
+-- 查询没有对应班级信息的学生
+-- select ... from xxx as s left join xxx as c on..... where .....
+-- select ... from xxx as s left join xxx as c on..... having .....
+select * from students as s left join classes as c on s.cls_id=c.id having c.id is null;
+select * from students as s left join classes as c on s.cls_id=c.id where c.id is null;
+
+-- right join   on
+-- 将数据表名字互换位置，用left join完成
+</code></pre><p>– 自关联<br>    – 省级联动 url:<a href="http://demo.lanrenzhijia.com/2014/city0605/" target="_blank" rel="noopener">http://demo.lanrenzhijia.com/2014/city0605/</a></p>
+<pre><code>-- 查询所有省份
+select * from areas where pid is null;
+
+-- 查询出山东省有哪些市
+select * from areas as province inner join areas as city on city.pid=province.aid having province.atitle=&quot;山东省&quot;;
+select province.atitle, city.atitle from areas as province inner join areas as city on city.pid=province.aid having province.atitle=&quot;山东省&quot;;
+
+-- 查询出青岛市有哪些县城
+select province.atitle, city.atitle from areas as province inner join areas as city on city.pid=province.aid having province.atitle=&quot;青岛市&quot;;
+select * from areas where pid=(select aid from areas where atitle=&quot;青岛市&quot;)
+</code></pre><p>– 子查询<br>    – 标量子查询<br>    – 查询出高于平均身高的信息</p>
+<pre><code>-- 查询最高的男生信息
+select * from students where height = 188;
+select * from students where height = (select max(height) from students);
+
+-- 列级子查询
+-- 查询学生的班级号能够对应的学生信息
+-- select * from students where cls_id in (select id from classes);
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/GaoMing_18000211.github.io/tags/SQL操作/" rel="tag"># SQL操作</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/GaoMing_18000211.github.io/2018/12/30/Server Response-浏览器/" rel="next" title="Server Response-浏览器">
+                <i class="fa fa-chevron-left"></i> Server Response-浏览器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/GaoMing_18000211.github.io/2019/01/02/WSCI模版-迭代版本/" rel="prev" title="Python3&WSGI">
+                Python3&WSGI <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">CS_GaoMing</p>
+              <p class="site-description motion-element" itemprop="description">在这里记录我的人生&学习！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/GaoMing_18000211.github.io/archives/">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/GaoMing_18000211.github.io/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/GaoMing_18000211.github.io/tags/index.html">
+                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/SusuDOS/GaoMing_18000211.github.io" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:WD329416525@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.baidu.com/" title="友情链接： 百度一下，你就知道!" target="_blank">友情链接： 百度一下，你就知道!</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://cn.bing.com/?FORM=BEHPTB&ensearch=1" title="友情链接： 微软Bing搜索 - 国际版" target="_blank">友情链接： 微软Bing搜索 - 国际版</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CS_GaoMing</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/GaoMing_18000211.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/GaoMing_18000211.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/GaoMing_18000211.github.io/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("KLxNLWbLaIRMIzmVAFzVQtVO-gzGzoHsz", "7OrQVy3Sq37h0CqHuUqxeut2");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+ 
+</body>
+</html>
