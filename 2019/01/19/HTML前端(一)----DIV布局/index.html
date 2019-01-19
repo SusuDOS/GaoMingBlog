@@ -129,7 +129,7 @@
 <meta property="og:image" content="https://i.imgur.com/jEBRpE7.png">
 <meta property="og:image" content="https://i.imgur.com/LxRaABL.png">
 <meta property="og:image" content="https://i.imgur.com/37Xhmt5.png">
-<meta property="og:updated_time" content="2019-01-19T06:33:59.678Z">
+<meta property="og:updated_time" content="2019-01-19T06:42:44.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML前端(一)----DIV布局">
 <meta name="twitter:description" content="HTML的基本结构 使用sublime的快捷键生成HTML的模版文件格式. 生成HTMl5.0的文件格式 ! + tab  1234567891011&amp;lt;!-- 这个是注释符号测试. --&amp;gt;&amp;lt;!-- 在sublime下输入！再按一下tab键即可快速生成. --&amp;gt;&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;    &amp;lt;head&amp;gt">
@@ -582,94 +582,94 @@
 <p>6、<code>&lt;option&gt;</code>标签 与<code>&lt;select&gt;</code>标签配合，定义下拉表单元素中的选项.</p>
 <h4 id="表单实例"><a href="#表单实例" class="headerlink" title="表单实例"></a>表单实例</h4><details><br><br><font color="blue"><summary>点击:代码展开</summary></font><br><code>html
 &lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;表单&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;注册表单&lt;/h1&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;表单&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;注册表单&lt;/h1&gt;
 
-    &lt;!-- 表单的数据类型众多. --&gt;
+        &lt;!-- 表单的数据类型众多. --&gt;
 
-    &lt;!-- 提交当前的内容，方式为post. --&gt;
-    &lt;form action=&quot;&quot; method=&quot;post&quot;&gt;        
-        &lt;div&gt;
+        &lt;!-- 提交当前的内容，方式为post. --&gt;
+        &lt;form action=&quot;&quot; method=&quot;post&quot;&gt;        
+            &lt;div&gt;
 
-            &lt;!-- for的功能是：实现点击用户名这几个字，鼠标开始定位到输入框. --&gt;
+                &lt;!-- for的功能是：实现点击用户名这几个字，鼠标开始定位到输入框. --&gt;
 
-            &lt;!-- label为普通的标签. --&gt;
-            &lt;label for=&quot;username&quot;&gt;用户名：&lt;/label&gt;
-            &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; /&gt;
-        &lt;/div&gt;        
-        &lt;br&gt;
-        &lt;div&gt;
-            &lt;label for=&quot;password&quot;&gt;密&amp;nbsp;&amp;nbsp;&amp;nbsp;码：&lt;/label&gt;
+                &lt;!-- label为普通的标签. --&gt;
+                &lt;label for=&quot;username&quot;&gt;用户名：&lt;/label&gt;
+                &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; /&gt;
+            &lt;/div&gt;        
+            &lt;br&gt;
+            &lt;div&gt;
+                &lt;label for=&quot;password&quot;&gt;密&amp;nbsp;&amp;nbsp;&amp;nbsp;码：&lt;/label&gt;
 
-            &lt;!-- 类型为password，则输入后，将值显示为小黑点. --&gt;
-            &lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot;&gt;
-        &lt;/div&gt;
-        &lt;br&gt;
-        &lt;div&gt;
-            &lt;label&gt;性&amp;nbsp;&amp;nbsp;&amp;nbsp;别：&lt;/label&gt;
-            &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;0&quot; id=&quot;male&quot;&gt; &lt;label for=&quot;male&quot;&gt;男&lt;/label&gt;
-            &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;1&quot; id=&quot;female&quot;&gt; &lt;label for=&quot;female&quot;&gt;女&lt;/label&gt;
-        &lt;/div&gt;
-        &lt;br&gt;
-        &lt;div&gt;
-            &lt;label&gt;爱&amp;nbsp;&amp;nbsp;&amp;nbsp;好：&lt;/label&gt;
+                &lt;!-- 类型为password，则输入后，将值显示为小黑点. --&gt;
+                &lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot;&gt;
+            &lt;/div&gt;
+            &lt;br&gt;
+            &lt;div&gt;
+                &lt;label&gt;性&amp;nbsp;&amp;nbsp;&amp;nbsp;别：&lt;/label&gt;
+                &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;0&quot; id=&quot;male&quot;&gt; &lt;label for=&quot;male&quot;&gt;男&lt;/label&gt;
+                &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;1&quot; id=&quot;female&quot;&gt; &lt;label for=&quot;female&quot;&gt;女&lt;/label&gt;
+            &lt;/div&gt;
+            &lt;br&gt;
+            &lt;div&gt;
+                &lt;label&gt;爱&amp;nbsp;&amp;nbsp;&amp;nbsp;好：&lt;/label&gt;
 
-            &lt;!-- 设置value值，目的是为了提交上去。 --&gt;
-            &lt;input type=&quot;checkbox&quot; name=&quot;like&quot; value=&quot;eat&quot;&gt; 吃饭
-            &lt;input type=&quot;checkbox&quot; name=&quot;like&quot; value=&quot;sleep&quot;&gt; 睡觉
-            &lt;input type=&quot;checkbox&quot; name=&quot;like&quot; value=&quot;play&quot;&gt; 打游戏
-            &lt;input type=&quot;checkbox&quot; name=&quot;like&quot; value=&quot;movie&quot;&gt; 看电影
+                &lt;!-- 设置value值，目的是为了提交上去。 --&gt;
+                &lt;input type=&quot;checkbox&quot; name=&quot;like&quot; value=&quot;eat&quot;&gt; 吃饭
+                &lt;input type=&quot;checkbox&quot; name=&quot;like&quot; value=&quot;sleep&quot;&gt; 睡觉
+                &lt;input type=&quot;checkbox&quot; name=&quot;like&quot; value=&quot;play&quot;&gt; 打游戏
+                &lt;input type=&quot;checkbox&quot; name=&quot;like&quot; value=&quot;movie&quot;&gt; 看电影
 
-        &lt;/div&gt;
+            &lt;/div&gt;
 
-        &lt;br&gt;
+            &lt;br&gt;
 
-        &lt;div&gt;
-            &lt;label&gt;照&amp;nbsp;&amp;nbsp;&amp;nbsp;骗：&lt;/label&gt;
-            &lt;input type=&quot;file&quot; name=&quot;&quot;&gt;
-        &lt;/div&gt;
-        &lt;br&gt;
+            &lt;div&gt;
+                &lt;label&gt;照&amp;nbsp;&amp;nbsp;&amp;nbsp;骗：&lt;/label&gt;
+                &lt;input type=&quot;file&quot; name=&quot;&quot;&gt;
+            &lt;/div&gt;
+            &lt;br&gt;
 
-        &lt;div&gt;
-            &lt;label&gt;个人介绍：&lt;/label&gt;
-            &lt;textarea name=&quot;introduce&quot;&gt;&lt;/textarea&gt;
-        &lt;/div&gt;
+            &lt;div&gt;
+                &lt;label&gt;个人介绍：&lt;/label&gt;
+                &lt;textarea name=&quot;introduce&quot;&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
 
-        &lt;br&gt;
+            &lt;br&gt;
 
-        &lt;div&gt;
-            &lt;label&gt;籍&amp;nbsp;&amp;nbsp;&amp;nbsp;贯：&lt;/label&gt;
-            &lt;select name=&quot;site&quot;&gt;
-                &lt;option value=&quot;0&quot;&gt;北京&lt;/option&gt;
-                &lt;option value=&quot;1&quot;&gt;上海&lt;/option&gt;                    
-                &lt;option value=&quot;2&quot;&gt;河南&lt;/option&gt;    
-                &lt;option value=&quot;3&quot;&gt;河北&lt;/option&gt;    
-                &lt;option value=&quot;4&quot;&gt;广州&lt;/option&gt;    
-            &lt;/select&gt;
+            &lt;div&gt;
+                &lt;label&gt;籍&amp;nbsp;&amp;nbsp;&amp;nbsp;贯：&lt;/label&gt;
+                &lt;select name=&quot;site&quot;&gt;
+                    &lt;option value=&quot;0&quot;&gt;北京&lt;/option&gt;
+                    &lt;option value=&quot;1&quot;&gt;上海&lt;/option&gt;                    
+                    &lt;option value=&quot;2&quot;&gt;河南&lt;/option&gt;    
+                    &lt;option value=&quot;3&quot;&gt;河北&lt;/option&gt;    
+                    &lt;option value=&quot;4&quot;&gt;广州&lt;/option&gt;    
+                &lt;/select&gt;
 
-        &lt;/div&gt;
-        &lt;br&gt;
+            &lt;/div&gt;
+            &lt;br&gt;
 
-        &lt;input type=&quot;hidden&quot; name=&quot;hid01&quot; value=&quot;12&quot;&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;hid01&quot; value=&quot;12&quot;&gt;
 
-        &lt;div&gt;
+            &lt;div&gt;
 
-            &lt;input type=&quot;submit&quot; name=&quot;&quot; value=&quot;提交&quot;&gt;
+                &lt;input type=&quot;submit&quot; name=&quot;&quot; value=&quot;提交&quot;&gt;
 
-            &lt;!-- 以下的方式不推荐使用. --&gt;
+                &lt;!-- 以下的方式不推荐使用. --&gt;
 
-            &lt;!-- &lt;input type=&quot;image&quot; src=&quot;images/goods.jpg&quot; name=&quot;&quot;&gt; --&gt;
+                &lt;!-- &lt;input type=&quot;image&quot; src=&quot;images/goods.jpg&quot; name=&quot;&quot;&gt; --&gt;
 
 
-            &lt;input type=&quot;reset&quot; name=&quot;&quot; value=&quot;重置&quot;&gt;
-        &lt;/div&gt;
-    &lt;/form&gt;
-&lt;/body&gt;
+                &lt;input type=&quot;reset&quot; name=&quot;&quot; value=&quot;重置&quot;&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
 &lt;/html&gt;</code><br></details>
 
 <ul>
