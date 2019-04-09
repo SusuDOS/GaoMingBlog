@@ -106,7 +106,7 @@
 
 
 
-  <meta name="keywords" content="jupyter notebook,tensorflow环境局域网访问," />
+  <meta name="keywords" content="Ubuntu-TensorFlow-GPU,DeepLearning," />
 
 
 
@@ -117,23 +117,18 @@
 
 
 
-<meta name="description" content="ubuntu下的virtual环境配置jupyter notebook局域网访问深度学习中，若是局域网内有一台运行ubuntu的主机是一件非常方便的事，很多事情就会变得容易处理。比如，练习ubuntu命令，学习配置深度学习环境，运行jupyter服务。 由于我们要保证系统的稳定性，也就是说我们的主机是存在出故障的可能性的，所以我建议的是针对不同的服务，将不同的环境单独建立起来存在虚拟环境中，使用的">
-<meta name="keywords" content="jupyter notebook,tensorflow环境局域网访问">
+<meta name="description" content="NVIDIA-Docker2深度-人工智能-tensorflow环境搭建这篇文章是作为我在ubuntu18.04LTS上搭建我的深度环境并且运行的最悲催的血泪史，主要是记录我的环境搭建的问题，以便将来有一天电脑再over的时候作为一种快速回血的方式，同时以此纪念我的耗费三天时间的无力感。 我想我需要把我觉得最重要的一件事情写在前面，请务必学会利用VPS搭建自己的科学上网服务器，第二件事请学会在ub">
+<meta name="keywords" content="Ubuntu-TensorFlow-GPU,DeepLearning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu下的virtual环境配置jupyter notebook局域网访问">
-<meta property="og:url" content="http://yoursite.com/2019/04/02/jupyter notebook/index.html">
+<meta property="og:title" content="Nvidia-docker2 for ubuntu18.04初试！">
+<meta property="og:url" content="http://yoursite.com/2019/03/15/Nvidia-docker2 for ubuntu18.04初试！/index.html">
 <meta property="og:site_name" content="GaoMing&#39;  Blog">
-<meta property="og:description" content="ubuntu下的virtual环境配置jupyter notebook局域网访问深度学习中，若是局域网内有一台运行ubuntu的主机是一件非常方便的事，很多事情就会变得容易处理。比如，练习ubuntu命令，学习配置深度学习环境，运行jupyter服务。 由于我们要保证系统的稳定性，也就是说我们的主机是存在出故障的可能性的，所以我建议的是针对不同的服务，将不同的环境单独建立起来存在虚拟环境中，使用的">
+<meta property="og:description" content="NVIDIA-Docker2深度-人工智能-tensorflow环境搭建这篇文章是作为我在ubuntu18.04LTS上搭建我的深度环境并且运行的最悲催的血泪史，主要是记录我的环境搭建的问题，以便将来有一天电脑再over的时候作为一种快速回血的方式，同时以此纪念我的耗费三天时间的无力感。 我想我需要把我觉得最重要的一件事情写在前面，请务必学会利用VPS搭建自己的科学上网服务器，第二件事请学会在ub">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.loli.net/2019/04/01/5ca1d83b21080.png">
-<meta property="og:image" content="https://i.loli.net/2019/04/01/5ca1d8d9cb2f2.png">
-<meta property="og:image" content="https://i.loli.net/2019/04/01/5ca1d8d9eeb1d.png">
-<meta property="og:image" content="https://i.loli.net/2019/04/01/5ca1d7f679c52.png">
-<meta property="og:updated_time" content="2019-04-01T09:51:01.423Z">
+<meta property="og:updated_time" content="2019-04-09T12:11:04.093Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu下的virtual环境配置jupyter notebook局域网访问">
-<meta name="twitter:description" content="ubuntu下的virtual环境配置jupyter notebook局域网访问深度学习中，若是局域网内有一台运行ubuntu的主机是一件非常方便的事，很多事情就会变得容易处理。比如，练习ubuntu命令，学习配置深度学习环境，运行jupyter服务。 由于我们要保证系统的稳定性，也就是说我们的主机是存在出故障的可能性的，所以我建议的是针对不同的服务，将不同的环境单独建立起来存在虚拟环境中，使用的">
-<meta name="twitter:image" content="https://i.loli.net/2019/04/01/5ca1d83b21080.png">
+<meta name="twitter:title" content="Nvidia-docker2 for ubuntu18.04初试！">
+<meta name="twitter:description" content="NVIDIA-Docker2深度-人工智能-tensorflow环境搭建这篇文章是作为我在ubuntu18.04LTS上搭建我的深度环境并且运行的最悲催的血泪史，主要是记录我的环境搭建的问题，以便将来有一天电脑再over的时候作为一种快速回血的方式，同时以此纪念我的耗费三天时间的无力感。 我想我需要把我觉得最重要的一件事情写在前面，请务必学会利用VPS搭建自己的科学上网服务器，第二件事请学会在ub">
 
 
 
@@ -163,13 +158,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/02/jupyter notebook/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/03/15/Nvidia-docker2 for ubuntu18.04初试！/"/>
 
 
 
 
 
-  <title>ubuntu下的virtual环境配置jupyter notebook局域网访问 | GaoMing'  Blog</title>
+  <title>Nvidia-docker2 for ubuntu18.04初试！ | GaoMing'  Blog</title>
   
 
 
@@ -355,7 +350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/GaoMing_18000211.github.io/2019/04/02/jupyter notebook/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/GaoMing_18000211.github.io/2019/03/15/Nvidia-docker2 for ubuntu18.04初试！/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CS_GaoMing">
@@ -372,7 +367,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ubuntu下的virtual环境配置jupyter notebook局域网访问</h1>
+          <h1 class="post-title" itemprop="name headline">Nvidia-docker2 for ubuntu18.04初试！</h1>
         
 
         <div class="post-meta">
@@ -384,8 +379,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-02T01:49:24+08:00">
-                2019-04-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-15T05:32:56+08:00">
+                2019-03-14
               </time>
             
 
@@ -407,8 +402,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/GaoMing_18000211.github.io/categories/jupyter-notebook/" itemprop="url" rel="index">
-                    <span itemprop="name">jupyter notebook</span>
+                  <a href="/GaoMing_18000211.github.io/categories/Nvidia-docker2/" itemprop="url" rel="index">
+                    <span itemprop="name">Nvidia-docker2</span>
                   </a>
                 </span>
 
@@ -424,7 +419,7 @@
 
           
           
-             <span id="/GaoMing_18000211.github.io/2019/04/02/jupyter notebook/" class="leancloud_visitors" data-flag-title="ubuntu下的virtual环境配置jupyter notebook局域网访问">
+             <span id="/GaoMing_18000211.github.io/2019/03/15/Nvidia-docker2 for ubuntu18.04初试！/" class="leancloud_visitors" data-flag-title="Nvidia-docker2 for ubuntu18.04初试！">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -455,32 +450,105 @@
       
 
       
-        <h2 id="ubuntu下的virtual环境配置jupyter-notebook局域网访问"><a href="#ubuntu下的virtual环境配置jupyter-notebook局域网访问" class="headerlink" title="ubuntu下的virtual环境配置jupyter notebook局域网访问"></a>ubuntu下的virtual环境配置jupyter notebook局域网访问</h2><p>深度学习中，若是局域网内有一台运行ubuntu的主机是一件非常方便的事，很多事情就会变得容易处理。比如，练习ubuntu命令，学习配置深度学习环境，运行jupyter服务。</p>
-<p>由于我们要保证系统的稳定性，也就是说我们的主机是存在出故障的可能性的，所以我建议的是针对不同的服务，将不同的环境单独建立起来存在虚拟环境中，使用的时候，激活需要使用的环境，在该环境下运行对应的命令行即可。</p>
-<p>PS:<font color="red">推荐使用python3.*版本！</font></p>
-<ul>
-<li>ubuntu创建自己的虚拟环境.</li>
+        <h1 id="NVIDIA-Docker2深度-人工智能-tensorflow环境搭建"><a href="#NVIDIA-Docker2深度-人工智能-tensorflow环境搭建" class="headerlink" title="NVIDIA-Docker2深度-人工智能-tensorflow环境搭建"></a>NVIDIA-Docker2深度-人工智能-tensorflow环境搭建</h1><p>这篇文章是作为我在ubuntu18.04LTS上搭建我的深度环境并且运行的最悲催的血泪史，主要是记录我的环境搭建的问题，以便将来有一天电脑再over的时候作为一种快速回血的方式，同时以此纪念我的耗费三天时间的无力感。</p>
+<p>我想我需要把我觉得最重要的一件事情写在前面，<font color="red">请务必学会利用VPS搭建自己的科学上网服务器，第二件事请学会在ubuntu上将利用ss+polipo实现电脑的科学上网</font><font color="blue">(<strong>必须是全局模式的！</strong>，本文没有使用ss+polipo…</font>)</p>
+<h2 id="nvidia-docker2的搭建"><a href="#nvidia-docker2的搭建" class="headerlink" title="nvidia-docker2的搭建"></a>nvidia-docker2的搭建</h2><p>正如TensorFlow官方文档所说：<a href="https://tensorflow.google.cn/install/docker" target="_blank" rel="noopener">https://tensorflow.google.cn/install/docker</a></p>
+<p>使用TensorFlow最方便的事情就是利用docker去实现了，因为自从nvidia-docker2开始不再需要自己安装CUDA，这一个是非常重要的事情。至于功能方便的增加修改，daemon的各种优化，不再使用等问题对我等只使用的人而言并没有什么太大的理解价值。</p>
+<p>最常用的框架是TensorFlow，利用NVIDIA-docker2再pull的镜像去运行我们所需要的脚本或者是py程序可能是最合适的方式。</p>
+<h3 id="nvidia-docker2的前提条件"><a href="#nvidia-docker2的前提条件" class="headerlink" title="nvidia-docker2的前提条件"></a>nvidia-docker2的前提条件</h3><ul>
+<li><p>在本地主机上安装 <code>Docker</code>。</p>
+</li>
+<li><p>安装NVIDIA的显卡驱动。</p>
+</li>
+<li>安装cuDNN(可以不用安装，但是我认为安装也是可以的！</li>
+<li>其他环境问题：<a href="https://blog.csdn.net/CS_GaoMing/article/details/88561764" target="_blank" rel="noopener">https://blog.csdn.net/CS_GaoMing/article/details/88561764</a></li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装创建虚拟环境所需要等待对应的安装包和创建虚拟环境名称.</span></span><br><span class="line">sudo apt-get install python3-pip python3-dev python-virtualenv</span><br><span class="line"></span><br><span class="line"><span class="comment"># 名称为tensorflow，位置为当前用户的home目录下.</span></span><br><span class="line">virtualenv --system-site-packages -p python3 ~/tensorflow</span><br></pre></td></tr></table></figure>
+<h4 id="Docker-安装步骤"><a href="#Docker-安装步骤" class="headerlink" title="Docker 安装步骤"></a><code>Docker</code> 安装步骤</h4><p>可以借鉴该文章：<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04#step-1-%E2%80%94-installing-docker" title="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04#step-1-%E2%80%94-installing-docker" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04#step-1-%E2%80%94-installing-docker</a></p>
+<font color="green">友情提示：其实与官方的描述大同小异，只不过该文章将具体的实现步骤简化了。</font>
+
+<p>官方Ubuntu存储库中提供的Docker安装包可能不是最新版本。为了确保我们获得最新版本，我们将从官方Docker存储库安装Docker。为此，我们将添加一个新的包源，从Docker添加GPG密钥以确保下载有效，然后安装该包。</p>
 <ul>
-<li>激活环境&amp;安装对应安装包</li>
+<li><p>step1 首先，更新现有的包列表：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者是这样亦可...</span></span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>step2 接下来，安装一些允许apt通过HTTPS使用包的必备软件包：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install apt-transport-https ca-certificates curl software-properties-common</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>step3 然后将官方Docker存储库的GPG密钥添加到您的系统：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>step4 将Docker存储库添加到APT源：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository <span class="string">"deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>step5 接下来，使用新添加的repo中的Docker包更新包数据库：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>step6 确保您要从Docker repo而不是默认的Ubuntu repo安装：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-cache policy docker-ce</span><br></pre></td></tr></table></figure>
+<p>  虽然Docker的版本号可能不同，但您可能会看到这样的输出：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">apt-cache policydocker-ce output</span><br><span class="line">docker-ce:</span><br><span class="line">  Installed: (none)</span><br><span class="line">  Candidate: 18.03.1~ce~3-0~ubuntu</span><br><span class="line">  Version table:</span><br><span class="line">     18.03.1~ce~3-0~ubuntu 500</span><br><span class="line">        500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages</span><br></pre></td></tr></table></figure>
+<p>  请注意，docker-ce未安装，但安装的候选者来自Ubuntu 18.04（bionic）的Docker存储库。</p>
+</li>
+<li><p>step7 最后，安装Docker：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install docker-ce</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>step8 现在应该安装好了Docker，守护进程启动，并启用进程启动进程。检查它是否正在运行：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status docker</span><br></pre></td></tr></table></figure>
+<p>  输出应类似于以下内容，表明该服务处于活动状态并正在运行：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Output</span><br><span class="line">● docker.service - Docker Application Container Engine</span><br><span class="line">   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)</span><br><span class="line">   Active: active (running) since Thu 2018-07-05 15:08:39 UTC; 2min 55s ago</span><br><span class="line">     Docs: https://docs.docker.com</span><br><span class="line"> Main PID: 10096 (dockerd)</span><br><span class="line">    Tasks: 16</span><br><span class="line">   CGroup: /system.slice/docker.service</span><br><span class="line">           ├─10096 /usr/bin/dockerd -H fd://</span><br><span class="line">           └─10113 docker-containerd --config /var/run/docker/containerd/containerd.toml</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/tensorflow/bin/activate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新pip命令行，其实这个是苹果系统的更新命令，可能源于linux吧，使用并没有任何问题.</span></span><br><span class="line">easy_install -U pip</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装jupyter，包名有好几个，使用不同的包名安装并没有什么问题。</span></span><br><span class="line"><span class="comment"># 使用清华镜像目前可能是最好的选择，理由是速度相对于阿里云，网易云，速度会差一点，但是稳定，可能是习惯使然吧.</span></span><br><span class="line">pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple jupyter ipython vim</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成配置文件，默认生成文件的位置为:~/.jupyter/jupyter_notebook_config.py</span></span><br><span class="line">jupyter notebook --generate-config</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置文件信息.</span></span><br><span class="line">ipython</span><br><span class="line"></span><br><span class="line">In [1]: from notebook.auth import passwd</span><br><span class="line">In [2]: passwd()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以上由ipython对话式，生成密文.</span></span><br><span class="line">Enter password: </span><br><span class="line">Verify password: </span><br><span class="line">Out[2]: <span class="string">'sha1:5462a9592a3d:e502996ab12a5564638f588bd1bd661fcf8b9ad7'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在~/.jupyter/jupyter_notebook_config.py末尾添加.</span></span><br><span class="line"><span class="comment">#c.ConnectionFileMixin.ip = '0.0.0.0'#若有问题请添加改行上去...</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">'0.0.0.0'</span></span><br><span class="line">c.NotebookApp.open_browser = False</span><br><span class="line">c.NotebookApp.password = <span class="string">'sha1:5462a9592a3d:e502996ab12a5564638f588bd1bd661fcf8b9ad7'</span></span><br><span class="line">c.NotebookApp.port = 12345</span><br></pre></td></tr></table></figure>
-<p>信息如图：<br><img src="https://i.loli.net/2019/04/01/5ca1d83b21080.png" alt="演示样例0002.PNG"></p>
+<h5 id="在没有Sudo的情况下执行Docker命令—-（可选）"><a href="#在没有Sudo的情况下执行Docker命令—-（可选）" class="headerlink" title="在没有Sudo的情况下执行Docker命令—-（可选）"></a>在没有Sudo的情况下执行Docker命令—-（可选）</h5><p>默认情况下，该docker命令只能由root用户或docker组中的用户运行，该用户在Docker的安装过程中自动创建。如果您尝试运行该docker命令而不使用sudo或不在docker组中作为前缀，您将获得如下输出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Output</span><br><span class="line">docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?.</span><br><span class="line">See <span class="string">'docker run --help'</span>.</span><br></pre></td></tr></table></figure>
+<p>如果要sudo在运行docker命令时避免键入，请将用户名添加到docker组中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG docker <span class="variable">$&#123;USER&#125;</span></span><br></pre></td></tr></table></figure>
+<p>要应用新的组成员身份，请注销服务器并重新登录，或键入以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su - <span class="variable">$&#123;USER&#125;</span></span><br></pre></td></tr></table></figure>
+<p>系统将提示您输入用户密码以继续。</p>
+<p>通过键入以下内容确认您的用户现已添加到docker组：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">id -nG</span><br><span class="line">Output</span><br><span class="line">sammy sudo docker</span><br></pre></td></tr></table></figure></p>
+<p>如果您需要将用户添加到docker您未登录的组中，请明确声明该用户名：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG docker username</span><br></pre></td></tr></table></figure>
+<font color="green">如果您选择不这样做，请在前面添加命令sudo或者切换到su</font>。<br><br>#### Nvidia的安装方式.<br><br>至于nvidia显卡驱动的安装方式一般上而言就是只有这三种。<br><br>嗯，这里也甩一个参看网址：<a href="https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux" title="https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux" target="_blank" rel="noopener">https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux</a><br><br>虽然也英文的，但是在墙内还是可以看的，看不懂的请试用有道2.0网页插件，或者是chrome浏览器直接右键翻译成简体中文即可。<br>- method1<br><br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu-drivers devices</span><br></pre></td></tr></table></figure><br><br>    会显示类似这样的界面.<br><br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">pc-gmxy@pc-pc-gmxy:~$ ubuntu-drivers devices</span><br><span class="line">== /sys/devices/pci0000:00/0000:00:02.0/0000:01:00.0 ==</span><br><span class="line">modalias : pci:v000010DEd00001380sv00001462sd00003102bc03sc00i00</span><br><span class="line">vendor   : NVIDIA Corporation</span><br><span class="line">model    : GM107 [GeForce GTX 750 Ti]</span><br><span class="line">driver   : nvidia-driver-415 - third-party free</span><br><span class="line">driver   : nvidia-driver-410 - third-party free</span><br><span class="line">driver   : nvidia-driver-418 - third-party free recommended</span><br><span class="line">driver   : nvidia-340 - distro non-free</span><br><span class="line">driver   : nvidia-driver-390 - distro non-free</span><br><span class="line">driver   : nvidia-driver-396 - third-party free</span><br><span class="line">driver   : xserver-xorg-video-nouveau - distro free <span class="built_in">builtin</span></span><br></pre></td></tr></table></figure><br><br>    然后自动安装或者是手动.<br><br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 自动安装方式.</span></span><br><span class="line">sudo ubuntu-drivers autoinstall</span><br><span class="line"><span class="comment"># 手动安装方式.</span></span><br><span class="line">sudo apt install nvidia-driver-415</span><br></pre></td></tr></table></figure><br><br>    <font color="red">请重启电脑，重启电脑最重要，有什么事情请重启再说！</font>
+
+
 <ul>
-<li>运行<code>jupyter notebook</code></li>
+<li><p>method2</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:graphics-drivers/ppa</span><br><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<p>  然后跳到method1，over！</p>
+</li>
+<li>method3</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 后台运行jupyter，且将重定向文件定位为，当前用户home目录下的log目录下的jupyter.log文件中.</span></span><br><span class="line">nohup jupyter notebook &gt;~/<span class="built_in">log</span>/jupyter.log 2&gt;&amp;1&amp;</span><br></pre></td></tr></table></figure>
-<p>默认是没有该文件的，可以vi ~/log/jupyter.log，会生成对应文件目录+文件.或者：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/<span class="built_in">log</span>/</span><br><span class="line">touch jupyter.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 再后台运行.</span></span><br><span class="line">nohup jupyter notebook &gt;~/<span class="built_in">log</span>/jupyter.log 2&gt;&amp;1&amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># or直接运行</span></span><br><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
-<p>浏览器登录如图：<br><img src="https://i.loli.net/2019/04/01/5ca1d8d9cb2f2.png" alt="338900.PNG"><br><img src="https://i.loli.net/2019/04/01/5ca1d8d9eeb1d.png" alt="338901.PNG"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看显卡.</span></span><br><span class="line">lshw -numeric -C display</span><br><span class="line"><span class="comment"># or这样...</span></span><br><span class="line">$ lspci -vnn | grep VGA</span><br><span class="line"></span><br><span class="line"><span class="comment"># 浏览器取官方网站下载显卡驱动的bin文件。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#切换到下载文件夹</span></span><br><span class="line"><span class="built_in">cd</span> Down+Tab</span><br><span class="line"><span class="comment">#or在下载文件夹下，右键打开终端，或者Ctrl+Alt+T打开终端，类似于这样的文件。</span></span><br><span class="line">NVIDIA-Linux-x86_64-410.73.bin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译bin文件，前提条件！</span></span><br><span class="line">sudo dpkg --add-architecture i386</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install build-essential libc6:i386</span><br><span class="line"></span><br><span class="line"><span class="comment">#再然后我都不想看了，麻烦，而且编译源码时间花费很感人，于是....告辞！</span></span><br></pre></td></tr></table></figure>
+<font color="red">请重启电脑，请重启电脑，请重启电脑，有什么事情请重启再说！</font><br>### nvidia-docker2的安装<br><br>重点来了，基本上前面的安装若是无误基本上这一步就是可以正常安装的，可是这一步巨坑，比天坑还坑。<br><br>目前存在的我遇到的问题有三大类：<br><br>第一种就是：某些文件下载失败，被忽略或者过时，解决办法，在github的issue上给出了n多种方法，我试过了许多种给解决了，就是多添加几种镜像源。<br><br>第二种就是：版本的依赖性问题，解决方式有n多中，什么保证最新版安装啊，嗯哼，告辞！根本解决不了问题，方法只有一个就是按照前面的步骤，务必保证步骤中不出错至于给出的用老版本的问题，你看一下TensorFlow+cuda+驱动的版本对应问题吧，若是你掉进这个坑一天之内别想起来你了。<br><br>第三种就是：<em>**.d/list</em>文件第一行错误，无法读取，这个github的issue也有，目前已关闭，解决方式是删除了，重新<code>sudo apt-get update</code>这个也是天坑—根本解决不了这个问题的。<br><br><font color="red">核心：请试用ss+polipo实现全局 科学上网 ，同时更改源地址，网易的，阿里的都可以，最重要的是将索引的ip都添加进去，界面方式实现的话只有一个ip。</font>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 正常情况.</span></span><br><span class="line">sudo apt-get install nvidia-docker2</span><br><span class="line">sudo pkill -SIGHUP dockerd</span><br></pre></td></tr></table></figure>
+<p>正常的情况下实现很简单的，但是重点是基本这一步的问题都是找不到与nvidia-docker2文件子类的。</p>
+<p>解决方法，不能科学上网的话，嗯，到此基本上就死了。问题就是源库-镜像源库找不到对应的文件，所以失败….</p>
+<font color="red">多次尝试还不成功，请务必使用：’sudo apt-get update –fix-missing’，保证中间的环节不出问题亦可安装！</font>
+
+<h2 id="nvidia-docker2的镜像拉取"><a href="#nvidia-docker2的镜像拉取" class="headerlink" title="nvidia-docker2的镜像拉取"></a>nvidia-docker2的镜像拉取</h2><ul>
+<li>实现测试nvidia-docker2时候安装成功.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其实我认为完全没有必要，要相信自己！</span></span><br><span class="line">nvidia-smi</span><br><span class="line">docker run --runtime=nvidia --rm hello-world</span><br></pre></td></tr></table></figure>
+<p>因为没有镜像文件，所以会下载，cuda镜像，这个大概会下载1h+…</p>
+<p>显示的是显卡状况,只要弹出unable/unlocal，然后会下载一串文件就是正常安装的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 只是检查驱动可以这样...</span></span><br><span class="line">nvidia-smi</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每秒刷新10次，可以这样！</span></span><br><span class="line">watch -n 0.1 -d nvidia-smi</span><br></pre></td></tr></table></figure>
 <ul>
-<li>结束该程序</li>
+<li>拉取镜像</li>
 </ul>
-<p>后台运行一旦关闭该窗口，是无法通过其他terminal窗口查看该进程的，可以通过：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep jupyter，查看进程pid.</span><br><span class="line"></span><br><span class="line"><span class="comment"># 干掉该后台进程.</span></span><br><span class="line"><span class="built_in">kill</span> -9 pid编号.</span><br></pre></td></tr></table></figure>
-<p>如图示例：<br><img src="https://i.loli.net/2019/04/01/5ca1d7f679c52.png" alt="演示样例0001.PNG"></p>
-<p>特别链接：后台运行命令行，<a href="https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/index.html" title="https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/index.html</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#拉取之前可以查看有哪些镜像，或者搜索一下有哪些镜像。</span></span><br><span class="line"><span class="comment"># 拉取TensorFlow-gpu镜像</span></span><br><span class="line">sudo docker run -it tensorflow/tensorflow:latest-gpu</span><br></pre></td></tr></table></figure>
+<ul>
+<li>搜索镜像</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker search tensorflow-gpu</span><br></pre></td></tr></table></figure>
+<h2 id="nvidia-docker2的镜像-TensorFlow环境的运行"><a href="#nvidia-docker2的镜像-TensorFlow环境的运行" class="headerlink" title="nvidia-docker2的镜像/TensorFlow环境的运行."></a>nvidia-docker2的镜像/TensorFlow环境的运行.</h2><ul>
+<li><p>比如，我写好了一个py程序，我需要 该程序 在我的tensorflow-gpu-py3的镜像中运行.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 首先我需要加载镜像.</span></span><br><span class="line">docker run tensorflow-gpu-py3 <span class="comment">#显然使用这种格式运行是不可行的，因为没有制定好nvidia-docker2的运行环境，除非已经设置好配置文件.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用交互方式方式:-it;后台方式：-d，-p指定端口.</span></span><br><span class="line">docker run --runtime=nvidia -it -p 8888:8888 tensorflow/tensorflow:tensorflow-gpu-py3</span><br><span class="line"></span><br><span class="line"><span class="comment"># 若不小心关闭了，如何进入容器.</span></span><br><span class="line">sudo docker ps -a </span><br><span class="line"></span><br><span class="line"><span class="comment"># 找到容器的一串id，如：62fflkee1e1，键入如下，即可进入. </span></span><br><span class="line">sudo docker <span class="built_in">exec</span> -it 62fflkee1e1 /bin/bash </span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制文件到容器之中：docker cp 源路径 目标路径 </span></span><br><span class="line">docker cp ~/MyTest.py mycontainerID:/opt/MyWorK/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调换源路径/目标路径，效果可逆.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 容器id=d9b10f2f636，运行/停止/删除容器.</span></span><br><span class="line">docker start/stop/rm d9b10f2f636</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入容器之后，显示如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@d9b10f2f636:</span><br><span class="line"><span class="comment"># 运行我们的Mytest 文件.</span></span><br><span class="line">python3 /opt/MyWorK/MyTest.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其他直接在加载镜像时候即可运行不列举.</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -498,9 +566,9 @@
       
         <div class="post-tags">
           
-            <a href="/GaoMing_18000211.github.io/tags/jupyter-notebook/" rel="tag"># jupyter notebook</a>
+            <a href="/GaoMing_18000211.github.io/tags/Ubuntu-TensorFlow-GPU/" rel="tag"># Ubuntu-TensorFlow-GPU</a>
           
-            <a href="/GaoMing_18000211.github.io/tags/tensorflow环境局域网访问/" rel="tag"># tensorflow环境局域网访问</a>
+            <a href="/GaoMing_18000211.github.io/tags/DeepLearning/" rel="tag"># DeepLearning</a>
           
         </div>
       
@@ -523,8 +591,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/GaoMing_18000211.github.io/2019/04/02/999/" rel="prev" title="999">
-                999 <i class="fa fa-chevron-right"></i>
+              <a href="/GaoMing_18000211.github.io/2019/04/02/jupyter notebook局域网访问/" rel="prev" title="ubuntu下的virtual环境配置jupyter notebook局域网访问">
+                ubuntu下的virtual环境配置jupyter notebook局域网访问 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -602,7 +670,7 @@
               
                 <a href="/GaoMing_18000211.github.io/archives/">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -613,7 +681,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/GaoMing_18000211.github.io/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -624,7 +692,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/GaoMing_18000211.github.io/tags/index.html">
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -691,7 +759,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ubuntu下的virtual环境配置jupyter-notebook局域网访问"><span class="nav-number">1.</span> <span class="nav-text">ubuntu下的virtual环境配置jupyter notebook局域网访问</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NVIDIA-Docker2深度-人工智能-tensorflow环境搭建"><span class="nav-number">1.</span> <span class="nav-text">NVIDIA-Docker2深度-人工智能-tensorflow环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nvidia-docker2的搭建"><span class="nav-number">1.1.</span> <span class="nav-text">nvidia-docker2的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nvidia-docker2的前提条件"><span class="nav-number">1.1.1.</span> <span class="nav-text">nvidia-docker2的前提条件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Docker-安装步骤"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Docker 安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在没有Sudo的情况下执行Docker命令—-（可选）"><span class="nav-number">1.1.1.1.1.</span> <span class="nav-text">在没有Sudo的情况下执行Docker命令—-（可选）</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nvidia-docker2的镜像拉取"><span class="nav-number">1.2.</span> <span class="nav-text">nvidia-docker2的镜像拉取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nvidia-docker2的镜像-TensorFlow环境的运行"><span class="nav-number">1.3.</span> <span class="nav-text">nvidia-docker2的镜像/TensorFlow环境的运行.</span></a></li></ol></li></ol></div>
             
 
           </div>
